@@ -1,0 +1,16 @@
+{
+  "name": "Sa 一家三口 · 健康餐單",
+  "short_name": "Sa 餐單",
+  "description": "Sa Recipes × 三人每週 Cooking Menu × 逐餐營養 × 購物清單",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fafaf9",
+  "theme_color": "#0f766e",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
