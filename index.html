@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f766e">
+<meta name="application-name" content="Elsapciz">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Elsapciz">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon.svg">
-<title>Sa 一家三口 · 健康餐單｜Sa Recipes × 每週 Cooking Menu</title>
+<title>Elsapciz · Sa × Eddie × Eliz 健康飲食系統｜Sa Recipes × 3 人 Cooking Menu</title>
 <style>
 :root{
   --teal:#0f766e;--teal-d:#115e59;--teal-l:#14b8a6;--mint:#f0fdfa;--mint-2:#ccfbf1;
@@ -179,6 +181,46 @@ h1,h2,h3,h4{margin:0;line-height:1.3;letter-spacing:-.01em}p{margin:0}ul{margin:
 .spark{width:100%;height:86px;margin-top:8px}.fasting-num{font-size:28px;font-weight:850;font-variant-numeric:tabular-nums}
 .water-cups{display:flex;gap:4px;flex-wrap:wrap}.water-cups span{width:14px;height:18px;border:2px solid #bfdbfe;border-radius:3px 3px 6px 6px;background:#fff}.water-cups span.on{background:var(--blue);border-color:var(--blue)}
 
+/* body records */
+.body-card{overflow:hidden}
+.bc-head{padding:15px 17px;color:#fff;display:flex;gap:11px;align-items:center}
+.bc-head .av{width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:23px}
+.bc-head h3{font-size:16px}.bc-head .role{font-size:11px;opacity:.9}
+.bc-body{padding:16px 17px}
+.bc-weight{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+.bc-weight b{font-size:33px;font-weight:850;letter-spacing:-.035em;line-height:1}
+.bc-weight small{font-size:12px;color:var(--muted)}
+.bc-scale{font-size:11.5px;color:var(--muted);margin-bottom:11px}
+.bc-chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:11px}
+.bc-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:10px 0}
+.bc-metrics div{background:#f9fafb;border:1px solid var(--line);border-radius:9px;padding:7px 9px;font-size:10.5px;color:var(--muted)}
+.bc-metrics b{display:block;font-size:14px;color:var(--ink);font-weight:800}
+.bc-metrics em{font-style:normal;font-size:10px;color:var(--faint)}
+.bc-analysis{border-top:1px dashed var(--line);padding-top:11px;margin-top:11px}
+.bc-analysis h4{font-size:12.5px;color:var(--teal-d);margin-bottom:6px}
+.bc-analysis ol{margin:0 0 10px;padding-left:17px;font-size:11.8px;line-height:1.72;color:var(--ink-2)}
+.bc-analysis ol li{margin-bottom:6px}
+.bc-actions{background:var(--mint);border-radius:10px;padding:10px 11px;font-size:11.5px;line-height:1.7}
+.bc-actions b{display:block;color:var(--teal-d);margin-bottom:4px;font-size:11.5px}
+.bc-goal{background:var(--amber-l);border:1px solid #fde68a;color:#92400e;border-radius:10px;padding:9px 11px;font-size:11.5px;line-height:1.65;margin-top:9px}
+.cmp-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:9px}
+.cmp-table th,.cmp-table td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:center}
+.cmp-table th:first-child,.cmp-table td:first-child{text-align:left;font-weight:700;color:var(--ink-2)}
+.cmp-table thead th{font-size:11px;color:var(--muted);background:#f9fafb}
+.cmp-table tr:last-child td{border-bottom:0}
+
+/* portion tweaks */
+.tweak-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:12.5px}
+.tweak-row .tn{flex:1;min-width:0}
+.tweak-row input{width:88px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:13px;text-align:right}
+.tweak-row .tu{width:46px;color:var(--muted);font-size:11.5px}
+.tweak-result{background:var(--mint);border:1px solid var(--mint-2);border-radius:12px;padding:12px;margin-top:12px}
+.tweak-big{font-size:27px;font-weight:850;letter-spacing:-.03em;line-height:1.1}
+.tweak-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.tweak-chips span{background:#fff;border:1px solid var(--mint-2);border-radius:8px;padding:5px 8px;font-size:11px}
+.tweak-chips b{display:block;font-size:14px}
+.badge-my{background:#fff7ed;border:1px solid #fed7aa;color:#c2410c}
+
 /* modal */
 .modal-mask{position:fixed;inset:0;background:rgba(17,24,39,.5);backdrop-filter:blur(3px);z-index:100;display:flex;align-items:flex-start;justify-content:center;padding:36px 14px;overflow:auto}
 .modal{background:#fff;border-radius:18px;box-shadow:var(--sh-l);width:min(700px,100%)}
@@ -205,15 +247,16 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
 </head>
 <body>
 <nav class="nav"><div class="nav-in">
-  <div class="brand"><span class="logo">🍲</span><span>Sa 一家三口<small>FAMILY PLAN</small></span></div>
+  <div class="brand"><span class="logo">🍲</span><span>Elsapciz<small>SA · EDDIE · ELIZ</small></span></div>
   <div class="tabs" id="tabs">
     <button class="tab active" data-tab="home">總覽</button>
     <button class="tab" data-tab="family">👨‍👩‍👧 我屋企</button>
+    <button class="tab" data-tab="body">📊 身體紀錄</button>
     <button class="tab" data-tab="plan">每週 Cooking Menu</button>
     <button class="tab" data-tab="recipes">Sa Recipes</button>
     <button class="tab" data-tab="shopping">購物清單</button>
     <button class="tab" data-tab="nutrition">營養追蹤</button>
-    <button class="tab" data-tab="update">🔄 搵 WorkBuddy Update</button>
+    <button class="tab" data-tab="update">🔄 Update</button>
   </div>
   <div class="nav-tools"><span class="today-chip" id="todayChip"></span><button class="btn btn-ghost btn-sm" data-action="export">⬇ 備份</button><button class="btn btn-ghost btn-sm" data-action="import-backup">⬆ 還原</button></div>
 </div></nav>
@@ -222,12 +265,13 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
 <section class="view active" id="view-home">
   <div class="hero"><div class="hero-in">
     <div>
-      <span class="eyebrow">Sa × Eddie × Eliz · 3 人專屬</span>
-      <h1>唔係普通餐單，<br>係<em>我屋企三個人</em>嘅健康飲食系統</h1>
-      <p class="sub">見到好食譜就 upload；比條片我，我幫你轉成文字食譜存入 <b>Sa Recipes</b>；每星期由入面揀菜排 3 人 Cooking Menu，逐餐自動計營養，同時按 Eddie 護心低鈉、Sa 高鈣、Eliz 補腦減脂嘅需要提提你。仲有我幫你喺坊間搵返嚟、附來源嘅營養食譜。</p>
+      <span class="eyebrow">Elsapciz · Sa × Eddie × Eliz · 3 人專屬</span>
+      <h1>Elsapciz：<br><em>我屋企三個人</em>嘅健康飲食系統</h1>
+      <p class="sub">見到好食譜就 upload（截圖／IG／FB 都得）；比條片我，我幫你轉成文字食譜存入 <b>Sa Recipes</b>，無相我幫你上網搵；每星期由入面揀菜排 3 人 Cooking Menu，逐餐自動計營養，試煮完仲可以自己改份量即刻重算 calories。同時按 Eddie 護心低鈉、Sa 高鈣、Eliz 補腦減脂嘅需要提提你。</p>
       <div class="hero-cta">
         <button class="btn btn-primary" data-go="plan">📅 排呢個禮拜嘅餐</button>
         <button class="btn btn-ghost" data-go="recipes">⭐ 開 Sa Recipes</button>
+        <button class="btn btn-ghost" data-go="body">📊 三人身體紀錄</button>
         <button class="btn btn-ghost" data-go="update">🔗 比條 link 我轉食譜</button>
       </div>
       <div class="chips"><span class="tag green">🍽 3 人份自動計</span><span class="tag blue">❤️ Eddie 低鈉穩糖</span><span class="tag purple">🦴 Sa 高鈣</span><span class="tag amber">🧠 Eliz 補腦減脂</span><span class="tag gray">📱 手機／電腦都用得</span></div>
@@ -249,6 +293,17 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
   <div class="section"><div class="notice"><b>⚠️ 重要聲明：</b>呢個網站係飲食規劃工具，唔係醫療意見。Eddie 有心臟手術史同糖尿病，<b>低鈉／高鉀飲食（例如 DASH、代鹽、鉀補充劑）必須先問主診醫生</b>，尤其正服用 ACEI／ARB／保鉀利尿劑；Sa 甲狀腺指數邊緣要定期覆驗 TSH，唔好自行食碘或硒補充劑；Eliz 未滿 18 歲，減重前請先問醫生／註冊營養師，唔好大幅扣熱量。所有營養數字都係估算值。</div></div>
 </div></div></section>
 
+<!-- ================= BODY ================= -->
+<section class="view" id="view-body"><div class="wrap"><div class="section">
+  <div class="section-head"><div><span class="eyebrow">Body Composition · 智能體重磅報告</span><h2>我屋企三個人嘅身體紀錄</h2><p>三張報告逐項抄錄，加埋逐人分析同飲食行動；同網站每日目標互相對照。</p></div>
+    <button class="btn btn-ghost btn-sm" data-go="family">睇飲食檔案 →</button></div>
+  <div class="notice" id="bodyMeta"></div>
+  <div class="g3" id="bodyCards" style="margin-top:16px"></div>
+  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:4px">👨‍👩‍👧 三人對照</h3><p class="tiny muted">同一晚量度，方便一齊睇；Eliz 未成年，磅無提供嘅項目留空，唔作推算。</p><div style="overflow-x:auto"><table class="cmp-table" id="bodyCompare"></table></div></div></div>
+  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:8px">🧭 整體觀察（我幫你睇完三張報告嘅結論）</h3><div id="bodyFamilyNote"></div></div></div>
+  <div class="section"><div class="notice" id="bodyDisclaimer"></div></div>
+</div></div></section>
+
 <!-- ================= PLAN ================= -->
 <section class="view" id="view-plan"><div class="wrap"><div class="section">
   <div class="section-head"><div><span class="eyebrow">Weekly Cooking Menu · 3 人</span><h2>每星期 Cooking Menu</h2><p>由 Sa Recipes 揀菜入格；份量、營養、購物清單全部按 3 人計。</p></div>
@@ -266,20 +321,20 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
 
 <!-- ================= RECIPES ================= -->
 <section class="view" id="view-recipes"><div class="wrap">
-  <div class="section"><div class="section-head"><div><span class="eyebrow">Sa Recipes · 我嘅食譜庫</span><h2>見到好嘢，就入庫</h2><p>4 種入庫方法：手動寫、貼文字、上載相片、貼我幫你轉好嘅 JSON。</p></div></div>
+  <div class="section"><div class="section-head"><div><span class="eyebrow">Sa Recipes · 我嘅食譜庫</span><h2>見到好嘢，就入庫</h2><p>截圖／IG／FB 連結／文字／相片／JSON 都收；一堆食譜可以一次過交俾我。</p></div></div>
     <div class="card import-box no-print">
-      <h3>🔗 貼連結／食譜文字 + 📷 相片 + 📋 JSON</h3>
-      <p>見到 YouTube／IG／TikTok 好食譜？貼低連結入「待轉收件箱」，一鍵複製訊息俾我，我幫你變成文字食譜。</p>
-      <div class="notice" style="margin-bottom:11px"><b>示範模式講清楚：</b>網站本身<b>唔會自己抓片</b>（要後端＋轉錄 API，訪客端亦唔會直接 call API）。「AUTO」係：你貼 link → 我喺對話度攞影片字幕／內容 → 我轉成結構化文字食譜 → 寫入 <b>data/recipes.js</b> 或直接俾你 JSON 貼入庫。純文字就由網站本地規則即時解析。</div>
+      <h3>🔗 一堆連結／食譜文字 + 📷 一堆相片 + 📋 JSON</h3>
+      <p>見到 YouTube／IG／Facebook／TikTok 好食譜？<b>可以一次過貼多條（每行一條）</b>入「待轉收件箱」，一鍵複製訊息俾我，我幫你變成文字食譜；食譜截圖就直接貼去 WorkBuddy 對話，我會讀圖入庫。無相嘅食譜我會上網搵相關食物相片，存低喺網站本地 <code>images/</code> 並標明來源。</p>
+      <div class="notice" style="margin-bottom:11px"><b>示範模式講清楚：</b>網站本身<b>唔會自己抓片</b>（要後端＋轉錄 API，訪客端亦唔會直接 call API）。「AUTO」係：你貼 link／截圖 → 我喺對話度攞影片字幕／頁面內容／讀圖 → 我轉成結構化文字食譜 → 寫入 <b>data/recipes.js</b> 或直接俾你 JSON 貼入庫。純文字就由網站本地規則即時解析。</div>
       <div class="g2" style="gap:10px">
-        <div class="field"><label>貼連結（入待轉收件箱）或貼「材料＋步驟」文字</label><textarea id="importText" rows="4" placeholder="https://www.youtube.com/watch?v=...&#10;&#10;或：&#10;檸檬香草雞胸&#10;材料：&#10;- 雞胸肉 200 g&#10;- 檸檬 1 個&#10;步驟：&#10;1. 醃 10 分鐘&#10;2. 煎至金黃"></textarea></div>
-        <div class="field"><label>貼 WorkBuddy 俾你嘅食譜 JSON（即刻入 Sa Recipes）</label><textarea id="jsonInput" rows="4" placeholder='{"name":"...","ingredients":[...],"steps":[...],"nut":{...}} 或 {"recipes":[...]}'></textarea></div>
+        <div class="field"><label>貼連結（可多行，一次過入待轉收件箱）或貼「材料＋步驟」文字</label><textarea id="importText" rows="4" placeholder="https://www.instagram.com/reel/...&#10;https://www.facebook.com/...&#10;&#10;或：&#10;檸檬香草雞胸&#10;材料：&#10;- 雞胸肉 200 g&#10;- 檸檬 1 個&#10;步驟：&#10;1. 醃 10 分鐘&#10;2. 煎至金黃"></textarea></div>
+        <div class="field"><label>貼 WorkBuddy 俾你嘅食譜 JSON（即刻入 Sa Recipes，可一次過多道）</label><textarea id="jsonInput" rows="4" placeholder='{"recipes":[{...},{...}]} 或 {"name":"...","ingredients":[...],"steps":[...],"nut":{...}}'></textarea></div>
       </div>
       <div style="display:flex;gap:8px;margin-top:11px;flex-wrap:wrap">
         <button class="btn btn-primary btn-sm" data-action="parse-import">✨ 解析文字／連結</button>
         <button class="btn btn-ghost btn-sm" data-action="add-inbox">📥 連結入待轉收件箱</button>
         <button class="btn btn-soft btn-sm" data-action="import-json">📋 貼 JSON 即刻入庫</button>
-        <label class="btn btn-ghost btn-sm" style="cursor:pointer">📷 上載相片<input type="file" id="photoInput" accept="image/*" class="hidden"></label>
+        <label class="btn btn-ghost btn-sm" style="cursor:pointer">📷 上載相片（可揀多張）<input type="file" id="photoInput" accept="image/*" multiple class="hidden"></label>
         <button class="btn btn-ghost btn-sm" data-action="new-recipe">✍️ 手動新增</button>
         <button class="btn btn-ghost btn-sm" data-action="sample-text">填入範例</button>
       </div>
@@ -320,9 +375,9 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
     <div style="display:flex;flex-direction:column;gap:15px">
       <div class="card panel"><h3>💧 飲水紀錄</h3><p class="desc">目標 8 杯／日（每杯約 250 ml）。</p>
         <div style="display:flex;align-items:center;gap:12px"><button class="btn btn-ghost btn-sm" data-action="water-minus">−</button><div style="font-size:26px;font-weight:850" id="waterNum">0 <small style="font-size:12px;color:var(--faint)">/ 8 杯</small></div><button class="btn btn-primary btn-sm" data-action="water-plus">＋ 一杯</button></div><div class="water-cups" id="waterCups" style="margin-top:12px"></div></div>
-      <div class="card panel"><h3>⚖️ 體重日記（Sa／家庭共用）</h3><p class="desc">記低體重，睇住趨勢。Eliz 唔好日日磅，壓力大反而唔開心。</p>
-        <div style="display:flex;gap:8px"><input id="weightInput" class="field" type="number" step="0.1" placeholder="例如 58.5" style="flex:1"><button class="btn btn-primary btn-sm" data-action="add-weight">記錄 kg</button></div>
-        <svg class="spark" id="weightSpark" viewBox="0 0 320 86" preserveAspectRatio="none"></svg><div class="tiny muted" id="weightInfo"></div></div>
+      <div class="card panel"><h3>⚖️ 體重日記（跟上面揀咗嘅成員）</h3><p class="desc">單位用 <b>lb</b>（同你部磅一致）；已帶入 07/11/2026 三張報告嘅真實磅數。Eliz 唔好日日磅，兩星期一次就夠。</p>
+        <div style="display:flex;gap:8px"><input id="weightInput" class="field" type="number" step="0.1" placeholder="例如 142.0" style="flex:1"><button class="btn btn-primary btn-sm" data-action="add-weight">記錄 lb</button></div>
+        <svg class="spark" id="weightSpark" viewBox="0 0 320 86" preserveAspectRatio="none"></svg><div class="tiny muted" id="weightInfo"></div><div class="mini" style="margin-top:5px"><button class="link" data-go="body">📊 睇完整身體紀錄 →</button></div></div>
       <div class="card panel"><h3>⏳ 間歇性斷食計時</h3><p class="desc">只供成年人參考；Eliz 準備 DSE，唔建議斷食，要食夠先有腦力。</p>
         <div class="fasting-num" id="fastingNum">00:00:00</div><div class="tiny muted" id="fastingInfo" style="margin:5px 0 12px">未開始計時</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-primary btn-sm" data-action="fasting-toggle">開始斷食</button><button class="btn btn-ghost btn-sm" data-action="fasting-reset">重設</button><span class="tag amber" style="align-self:center">目標 16 小時</span></div></div>
@@ -341,31 +396,40 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
       <div id="updateInbox"></div>
       <div style="display:flex;gap:8px;margin-top:11px;flex-wrap:wrap"><button class="btn btn-soft btn-sm" data-action="copy-prompt">📋 複製訊息俾 WorkBuddy</button><button class="btn btn-ghost btn-sm" data-action="copy-json-template">📄 複製食譜 JSON 格式</button></div>
     </div>
-    <div class="card pad"><h3 style="font-size:15.5px;margin-bottom:6px">📁 檔案放喺邊 / 我點改</h3>
+    <div class="card pad"><h3 style="font-size:15.5px;margin-bottom:6px">📁 檔案放喺邊 / 我點改（Elsapciz）</h3>
       <div class="mc-line"><b>本機</b><span>WorkBuddy 工作區 <code>sa-family-mealplan/</code>，你隨時開個對話叫我改就得</span></div>
       <div class="mc-line"><b>食譜庫</b><span><code>data/recipes.js</code> —— 唯一來源，我加／改食譜只改呢個檔</span></div>
-      <div class="mc-line"><b>網站</b><span><code>index.html</code>（版面＋功能）、<code>manifest.webmanifest</code>／<code>sw.js</code>（手機 PWA）</span></div>
-      <div class="mc-line"><b>個人資料</b><span>你 upload 嘅食譜、餐單、勾選狀態存喺瀏覽器 localStorage，另有 ⬇ 備份／⬆ 還原</span></div>
-      <div class="mc-line"><b>上網</b><span>將成個資料夾放到 GitHub repo + 開 GitHub Pages，就有永久 https 連結，手機／電腦一樣開到，仲可以「加到主畫面」當 App 用</span></div>
+      <div class="mc-line"><b>身體紀錄</b><span><code>data/body.js</code> —— 三人磅報告同分析，換新報告我改呢個檔</span></div>
+      <div class="mc-line"><b>相片</b><span><code>images/*.jpg</code> —— 本地示意相片，來源／授權寫喺每道食譜嘅 <code>imgCredit</code></span></div>
+      <div class="mc-line"><b>網站</b><span><code>index.html</code>（版面＋功能）、<code>manifest.webmanifest</code>／<code>sw.js</code>（手機 PWA，名係 Elsapciz）</span></div>
+      <div class="mc-line"><b>個人資料</b><span>你 upload 嘅食譜、改咗嘅份量、餐單、勾選狀態存喺瀏覽器 localStorage，另有 ⬇ 備份／⬆ 還原</span></div>
+      <div class="mc-line"><b>上網</b><span>GitHub Pages 永久 https 連結，手機／電腦一樣開到，仲可以「加到主畫面」當 App 用；我改檔 push 完，你 refresh 就見到</span></div>
       <div class="divider"></div><div class="notice ok"><b>更新一次嘅實際動作：</b>你貼 link → 我改 <code>data/recipes.js</code>（或將 JSON 直接寫入）→ commit / push → 你 refresh 就見到新食譜，<b>唔使改 code、唔使重新裝 App</b>。<br><br>如果你只想即時用，唔等部署：喺「Sa Recipes」頁撳「貼 JSON 即刻入庫」，我俾你嘅 JSON 一貼就入庫。</div>
     </div>
   </div></div>
+  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:4px">📦 有一堆食譜想一次過交俾我？</h3><p class="tiny muted" style="margin-bottom:11px">截圖、IG／FB link、文字、相片，全部收，唔使逐道慢慢嚟。</p>
+    <div class="mc-line"><b>① 截圖</b><span>直接喺 WorkBuddy 對話貼圖（可以一次過貼多張）。我會讀圖抽出菜名、材料、份量、步驟，估算每份營養，再寫入食譜庫。睇唔清嘅位我會標明「估算」唔會作嘢。</span></div>
+    <div class="mc-line"><b>② IG／FB</b><span>喺「Sa Recipes」或下面收件箱<b>一次過貼多條 link（每行一條）</b>，撳「複製訊息俾 WorkBuddy」再貼去對話；我逐條轉成文字食譜，順便標埋來源平台同連結。</span></div>
+    <div class="mc-line"><b>③ 無相</b><span>可以，我幫你上網搵相關食物相片（Wikimedia Commons 可自由使用來源），壓縮後存落網站 <code>images/</code>，喺食譜詳情標明作者同授權。<b>相片屬示意圖</b>，唔係該道菜嘅實物相，亦唔會用外連 hotlink，離線都睇到。</span></div>
+    <div class="mc-line"><b>④ 試煮後</b><span>喺食譜撳「🍳 我試過・改份量」，自己改材料份量同人數，網站即時重算每份／全家 calories 同其他營養，儲存成「我嘅版本」；餐單、購物清單、營養追蹤會一齊跟住改。想永久保存就撳「複製調整俾 WorkBuddy」，我幫你覆核再寫入 <code>data/recipes.js</code>，咁手機電腦都同步。</span></div>
+  </div></div>
   <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:8px">❓ 常見問題</h3>
-    <div class="mc-line"><b>自己 upload</b><span>可以。手動新增／相片封面／貼文字／貼 JSON，四種都得；資料即時存低。</span></div>
+    <div class="mc-line"><b>自己 upload</b><span>可以。手動新增／一次過上載多張相片／貼文字／貼 JSON，全部都得；資料即時存低。</span></div>
     <div class="mc-line"><b>手機同步</b><span>而家各自裝置獨立（localStorage）。要真・跨裝置同步，就要加雲端資料庫或者全部經 <code>data/recipes.js</code> 由我統一寫入 —— 後者唔使訪客端 call API。</span></div>
     <div class="mc-line"><b>影片轉食譜</b><span>我會拎影片字幕／頁面內容，抽材料、步驟、份量，估算每份營養，再標「邊個啱食／邊個要留意」。無字幕嘅片會用畫面描述＋食譜常理重建，並標明估算。</span></div>
-    <div class="mc-line"><b>營養數字</b><span>全部係每份估算值，用嚟比較同規劃；唔取代營養師計算或醫療建議。</span></div>
+    <div class="mc-line"><b>營養數字</b><span>全部係每份估算值，用嚟比較同規劃；改份量後嘅數字係「以原本估算校準嘅按比例重算」，唔取代營養師計算或醫療建議。</span></div>
   </div></div>
 </div></section>
 
-<footer><div class="footer-in"><div><b style="color:var(--ink)">Sa 一家三口 · 健康餐單</b> ｜ 由 YouMealPlan 概念延伸，專為 Eddie・Sa・Eliz 而設</div><div>純前端・訪客端不呼叫外部 API・營養為估算・不構成醫療建議 ｜ <span id="dataVersion"></span></div></div></footer>
+<footer><div class="footer-in"><div><b style="color:var(--ink)">Elsapciz</b> ｜ Sa × Eddie × Eliz 健康飲食系統・由 YouMealPlan 概念延伸</div><div>純前端・訪客端不呼叫外部 API・相片為 Commons 示意圖（來源見食譜詳情）・營養為估算・不構成醫療建議 ｜ <span id="dataVersion"></span></div></div></footer>
 
 <div id="modal-root"></div><div id="toast"></div>
 <input type="file" id="importFile" accept="application/json,.json" class="hidden">
 <script src="data/recipes.js"></script>
+<script src="data/body.js"></script>
 <script>
 /* ============================================================
-   Sa's Family Meal Plan · 純前端 / localStorage / 訪客端零 API
+   Elsapciz · 純前端 / localStorage / 訪客端零 API
    ============================================================ */
 const KEY='sa_family_mealplan_v1';
 const MEALS=[['breakfast','早餐'],['lunch','午餐'],['dinner','晚餐']];
@@ -377,6 +441,76 @@ const FLAG_LABEL={heart:'❤️ 護心',calcium:'🦴 高鈣',brain:'🧠 補腦
 const NUT_KEYS=['kcal','carbs','protein','fat','fiber','sugar','added','sodium','satfat','calcium','omega3'];
 const NUT_LABEL={kcal:'熱量 kcal',carbs:'碳水 g',protein:'蛋白 g',fat:'脂肪 g',fiber:'纖維 g',sugar:'總糖 g（含天然）',added:'添加糖 g',sodium:'鈉 mg',satfat:'飽和脂肪 g',calcium:'鈣 mg',omega3:'Omega-3 g'};
 const GOAL_KEYS=['kcal','protein','carbs','fat','fiber','sodium','added','satfat','calcium'];
+
+/* ---------- 材料營養對照（「我試過・改份量」重算用） ----------
+   粗略參考值：basis '100' = 每 100 g／100 ml；'piece' = 每 1 件；'spoon' = 每 1 湯匙（茶匙自動 ×1/3）。
+   最後會用食譜原本嘅每份估算做校準，所以重點係「改咗份量之後嘅相對變化」，唔係絕對化驗值。 */
+const ING_NUT=[
+ // [關鍵字, basis, kcal, carbs, protein, fat, fiber, sugar, added, sodium, satfat, calcium, omega3]
+ ['雞胸肉','100',165,0,31,3.6,0,0,0,74,1,15,.1],
+ ['西蘭花','piece',50,10,4,.6,5,2,0,50,70,.1,0],
+ ['蒜頭','piece',4,1,.2,0,0,0,0,1,5,0,0],
+ ['橄欖油','spoon',120,0,0,14,0,0,0,0,2,0,0],
+ ['檸檬','piece',20,6,.7,.2,2,2,0,2,20,0,0],
+ ['洋蔥','piece',45,11,1.2,.1,1.5,5,0,5,25,0,0],
+ ['減鹽豉油','spoon',10,1,1,0,0,0,0,500,0,5,0],
+ ['無鹽清湯','100',8,1,.5,.2,0,0,0,20,0,3,0],
+ ['清湯','100',8,1,.5,.2,0,0,0,150,0,3,0],
+ ['無糖加鈣豆漿','100',33,2,3,1.5,.5,1,0,30,120,.2,0],
+ ['無糖希臘乳酪','100',60,4,10,.5,0,3,0,35,110,.3,0],
+ ['燕麥','100',380,66,13,7,10,1,0,3,50,1.2,0],
+ ['牛柳','100',175,0,26,7,0,0,0,60,15,3,0],
+ ['番茄','piece',22,5,1,.2,1.5,3,0,5,10,0,0],
+ ['瘦肉','100',150,0,22,6,0,0,0,60,10,2,0],
+ ['白芝麻','spoon',50,2,1.6,4.5,1,0,0,1,90,.7,0],
+ ['白身魚柳','100',100,0,21,1.5,0,0,0,70,20,.4,.3],
+ ['白飯','piece',200,45,4,.5,.6,0,0,2,10,.1,0],
+ ['硬豆腐','piece',90,2,10,5,1,0,0,10,250,.8,0],
+ ['粟米','piece',90,19,3,1.2,2,3,0,5,10,.2,0],
+ ['糙米','100',370,77,8,3,3.5,1,0,5,20,.6,0],
+ ['肉桂粉','spoon',18,6,.3,.1,3,0,0,1,60,0,0],
+ ['芥蘭','100',30,4,2.5,.4,2.5,1,0,30,130,.1,0],
+ ['菜心','100',25,4,2,.3,2,1,0,30,120,0,0],
+ ['菠菜','100',23,3.6,2.9,.4,2.2,.4,0,79,99,.1,0],
+ ['蔥','piece',5,1,.2,0,.3,0,0,1,7,0,0],
+ ['薑黃粉','spoon',24,4.5,.6,.3,1.5,0,0,3,15,0,0],
+ ['薑','piece',2,.5,0,0,0,0,0,0,1,0,0],
+ ['藍莓','100',57,14,.7,.3,2.4,10,0,1,6,0,0],
+ ['蝦仁','100',99,0,21,1,0,0,0,110,40,.2,.5],
+ ['車厘茄','piece',3,.6,.1,0,.2,.5,0,1,2,0,0],
+ ['雞蛋','piece',78,.6,6.3,5.3,0,.3,0,60,28,1.6,.1],
+ ['雲呢拿粉','spoon',12,3,0,0,0,0,0,0,0,0,0],
+ ['青瓜','piece',30,7,1.4,.2,1,4,0,3,30,0,0],
+ ['香草黑椒','spoon',18,4.5,.6,.3,1.5,0,0,3,15,0,0],
+ ['香蕉','piece',105,27,1.3,.4,3,14,0,1,8,.1,0],
+ ['鱸魚','piece',420,0,80,8,0,0,0,300,80,2,1],
+ ['黑椒','spoon',18,4.5,.6,.3,1.5,0,0,3,15,0,0],
+ ['黑豆','100',132,24,9,.5,8,0,0,1,60,.1,0],
+ ['三文魚柳','100',208,0,20,13,0,0,0,60,20,3,2.2],
+ ['低脂牛奶','100',45,5,3.4,1.5,0,5,0,45,120,1,0],
+ ['全麥麵','piece',220,43,8,1.5,6,2,0,150,30,.3,0],
+ ['合桃','100',650,14,15,65,7,2,0,2,100,6,9],
+ ['奇亞籽','spoon',60,5,2,4,4,0,0,1,75,.4,2],
+ ['小魚乾','100',300,0,45,8,0,0,0,1500,1200,2,1.5],
+ ['油','spoon',120,0,0,14,0,0,0,0,2,0,0],
+ ['鹽','spoon',0,0,0,0,0,0,0,6900,0,0,0],
+ ['糖','spoon',48,12,0,0,0,12,12,0,0,0,0]
+];
+const NUT_VEC=['kcal','carbs','protein','fat','fiber','sugar','added','sodium','satfat','calcium','omega3'];
+function ingNutRow(name){let best=null;ING_NUT.forEach(r=>{if(r[0].split('/').some(k=>String(name).indexOf(k)>=0)&&(!best||r[0].length>best[0].length))best=r;});return best;}
+function ingNutVec(i){const r=ingNutRow(i.name||''),q=Number(i.qty)||0,u=String(i.unit||'份'),o=emptyNut();
+  if(!r){o.kcal=30*q;o.carbs=4*q;o.protein=q;o.fat=q;o.fiber=.5*q;o.sodium=5*q;o.calcium=5*q;return o;}
+  let f=1;if(r[1]==='100')f=/^(g|克|ml|毫升)$/i.test(u)?q/100:(/^kg$/i.test(u)?q*10:q/100);
+  else if(r[1]==='spoon')f=q*(u==='茶匙'?1/3:1);else f=q;
+  NUT_VEC.forEach((k,j)=>o[k]=(r[2+j]||0)*f);return o;}
+function sumIngNut(ings){const t=emptyNut();(ings||[]).forEach(i=>{const v=ingNutVec(i);NUT_KEYS.forEach(k=>t[k]+=v[k]||0);});return t;}
+function recalcNut(baseNut,baseIngs,baseServings,newIngs,newServings){
+  const bs=Number(baseServings)||2,ns=Number(newServings)||2,a=sumIngNut(baseIngs),b=sumIngNut(newIngs),out=emptyNut();
+  NUT_KEYS.forEach(k=>{const r0=a[k]/bs,r1=b[k]/ns,cal=r0>0?(Number(baseNut[k])>0?Number(baseNut[k])/r0:1):1;out[k]=Math.round(r1*cal*10)/10;});return out;}
+function applyTweaks(){S.tweaks=S.tweaks||{};S.originals=S.originals||{};
+  S.recipes.forEach(r=>{const t=S.tweaks[r.id],o=S.originals[r.id];
+    if(t){r.ingredients=clone(t.ingredients);r.servings=t.servings;r.nut=clone(t.nut);r.myVersion=t.date;}
+    else if(o&&r.myVersion){r.ingredients=clone(o.ingredients);r.servings=o.servings;r.nut=clone(o.nut);delete r.myVersion;}});}
 
 const FAMILY=[
  {id:'eddie',name:'Eddie',role:'老公',emoji:'👨',color:'#2563eb',focus:'護心 low sodium・穩血糖・慢慢戒 Zero',
@@ -457,9 +591,10 @@ function emptyNut(){const o={};NUT_KEYS.forEach(k=>o[k]=0);return o;}
 /* ---------- state ---------- */
 function defaultGoals(){const g={};FAMILY.forEach(f=>g[f.id]=clone(f.goals));return g;}
 function defaultState(){return {recipes:[],inbox:[],plan:{},checked:{},custom:[],goals:defaultGoals(),logs:{},water:{},weights:{},fasting:{start:null},
+  tweaks:{},originals:{},bodySeedVersion:0,
   ui:{weekOffset:0,member:'sa',recipeTab:'all',people:3,parsed:null}};}
 let S;try{const raw=localStorage.getItem(KEY);S=raw?Object.assign(defaultState(),JSON.parse(raw)):defaultState();}catch(e){S=defaultState();}
-['ui','goals','logs','water','weights','checked','plan','custom','inbox','recipes'].forEach(k=>{if(!S[k])S[k]=defaultState()[k];});
+['ui','goals','logs','water','weights','checked','plan','custom','inbox','recipes','tweaks','originals'].forEach(k=>{if(!S[k])S[k]=defaultState()[k];});
 FAMILY.forEach(f=>{if(!S.goals[f.id])S.goals[f.id]=clone(f.goals);if(!S.weights[f.id])S.weights[f.id]=[];});
 if(!S.ui.people)S.ui.people=3;
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){toast('⚠️ 儲存失敗（可能相片太大）：'+e.message);}}
@@ -487,8 +622,17 @@ function seedPlan(){ // 七日示範菜單：早 1 + 午 2 + 晚 2，優先低�
   weekDates(0).forEach((d,i)=>{const k=todayKey(d);if(S.plan[k])return;const m=SEED_MENU[i%7],p=S.ui.people;
     S.plan[k]={breakfast:[{id:pick(m[0]),people:p}],lunch:[{id:pick(m[1]),people:p},{id:pick(m[2]),people:p}],dinner:[{id:pick(m[3]),people:p},{id:pick(m[4]),people:p}]};});
 }
-mergeLibrary();seedPlan();
-if(!S.weights.sa.length)S.weights.sa=[{date:todayKey(Date.now()-86400000*12),kg:59.2},{date:todayKey(Date.now()-86400000*8),kg:58.9},{date:todayKey(Date.now()-86400000*4),kg:58.6},{date:todayKey(),kg:58.4}];
+function lb2kg(lb){return Math.round(lb*0.45359237*10)/10;}
+function shiftDate(iso,days){const d=new Date(iso+'T12:00:00');d.setDate(d.getDate()+days);return todayKey(d);}
+function seedBodyWeights(){
+  if(S.bodySeedVersion)return;
+  const B=window.SA_BODY;if(!B||!B.members)return;
+  const back={sa:6,eddie:15,eliz:19},prev={sa:142.0,eddie:193.1,eliz:164.0};
+  FAMILY.forEach(f=>{const b=B.members[f.id];if(!b)return;
+    S.weights[f.id]=[{date:shiftDate(b.date,-back[f.id]),lb:prev[f.id],kg:lb2kg(prev[f.id])},{date:b.date,lb:b.weight,kg:lb2kg(b.weight)}];});
+  S.bodySeedVersion=1;
+}
+mergeLibrary();seedPlan();seedBodyWeights();
 if(S.water[todayKey()]===undefined)S.water[todayKey()]=5;
 
 /* ---------- routing ---------- */
@@ -607,30 +751,81 @@ function renderToday(){
 }
 function renderWidgets(){
   const w=S.water[todayKey()]||0;let cups='';for(let i=0;i<8;i++)cups+='<span class="'+(i<w?'on':'')+'"></span>';
-  const ws=S.weights.sa;const f=S.fasting.start?fmtDur(Date.now()-S.fasting.start):'00:00:00';
+  const wm=S.ui.member,ws=S.weights[wm]||[],lastW=ws.length?ws[ws.length-1]:null,wlbv=lastW?wlb(lastW):null;
   const n=dayNut(todayKey());
   $('#widgetGrid').innerHTML=
    wcard('🔥','今日熱量／人','<div class="w-num">'+n.kcal+' <small>kcal</small></div><div class="bar"><i style="width:'+Math.min(100,Math.round(n.kcal/S.goals.sa.kcal*100))+'%"></i></div><div class="w-sub">Sa 目標 '+S.goals.sa.kcal+' kcal</div>','nutrition')+
    wcard('🧂','今日鈉／人','<div class="w-num">'+n.sodium+' <small>mg</small></div><div class="bar"><i class="'+(n.sodium>S.goals.eddie.sodium?'over':'')+'" style="width:'+Math.min(100,Math.round(n.sodium/S.goals.eddie.sodium*100))+'%"></i></div><div class="w-sub">Eddie 目標 ≤'+S.goals.eddie.sodium+' mg</div>','nutrition')+
    wcard('💧','飲水','<div class="w-num">'+w+' <small>/ 8 杯</small></div><div class="water-cups">'+cups+'</div><button class="btn btn-soft btn-sm" style="margin-top:6px;align-self:flex-start" data-action="water-plus">＋ 記一杯</button>','nutrition')+
-   wcard('⚖️','體重日記','<div class="w-num">'+(ws.length?ws[ws.length-1].kg:'—')+' <small>kg</small></div><div class="w-sub">共 '+ws.length+' 筆・記得唔好日日磅 😊</div>','nutrition');
+   wcard('⚖️',F(wm).name+' 體重','<div class="w-num">'+(wlbv!=null?wlbv:'—')+' <small>lb</small></div><div class="w-sub">約 '+(wlbv!=null?lb2kg(wlbv):'—')+' kg・共 '+ws.length+' 筆・唔好日日磅 😊</div>','nutrition');
   function wcard(ico,t,b,tab){return '<div class="card widget"><div class="w-top"><span>'+t+'</span><span>'+ico+'</span></div>'+b+'<button class="link" style="margin-top:auto" data-go="'+tab+'">開啟 →</button></div>';}
 }
 
 /* ---------- render: family ---------- */
 function renderFamily(){
   $('#familyDetail').innerHTML=FAMILY.map(f=>{
-    const g=S.goals[f.id];
+    const g=S.goals[f.id],B=window.SA_BODY,b=B&&B.members?B.members[f.id]:null;
+    const bodyLine=b?'<div class="mc-line"><b>最新磅數</b><span>'+b.weight+' lb（'+lb2kg(b.weight)+' kg）・BMI '+b.bmi+'・體脂 '+b.bodyfat+'% <button class="link" data-go="body">📊 睇完整報告 →</button></span></div>':'';
     return '<div class="card member-card"><div class="mc-head" style="background:'+f.color+'"><div class="av">'+f.emoji+'</div><div><h3>'+f.name+'</h3><div class="role">'+f.role+'</div></div></div><div class="mc-body">'+
       '<div class="chiprow" style="margin-bottom:9px">'+f.conditions.map(c=>'<span class="tag gray">'+esc(c)+'</span>').join('')+'</div>'+
       '<div class="tiny" style="color:var(--teal-d);font-weight:800;margin-bottom:9px">🎯 '+esc(f.focus)+'</div>'+
-      '<div class="goal-grid">'+[['kcal','熱量'],['protein','蛋白 g'],['sodium','鈉 mg'],['calcium','鈣 mg']].map(x=>'<div>'+x[1]+'<b>'+g[x[0]]+'</b></div>').join('')+'</div>'+
+      '<div class="goal-grid">'+[['kcal','熱量'],['protein','蛋白 g'],['sodium','鈉 mg'],['calcium','鈣 mg']].map(x=>'<div>'+x[1]+'<b>'+g[x[0]]+'</b></div>').join('')+'</div>'+bodyLine+
       '<div class="divider"></div><div class="mc-line"><b>要多啲</b><span>'+esc(f.more)+'</span></div><div class="mc-line"><b>要少啲</b><span>'+esc(f.less)+'</span></div>'+
       '<div class="divider"></div><ul style="font-size:12px;line-height:1.75;padding-left:17px">'+f.tips.map(t=>'<li style="margin-bottom:5px">'+esc(t)+'</li>').join('')+'</ul>'+
       '<div class="divider"></div><div class="mini">依據：'+f.src.map(u=>'<a href="'+u+'" target="_blank" rel="noopener">'+esc(new URL(u).hostname.replace('www.',''))+'</a>').join('・')+'</div></div></div>';
   }).join('');
   const data=window.SA_DATA;
   $('#sourceList').innerHTML=(data&&data.sources?data.sources:[]).map(s=>'<div>🔗 <a href="'+s.url+'" target="_blank" rel="noopener">'+esc(s.title)+'</a></div>').join('')||'<div class="muted">（資料檔未載入）</div>';
+}
+
+/* ---------- render: body records ---------- */
+function bdelta(v){return v==null||v===0?'':'<em> '+(v>0?'↑':'↓')+Math.abs(v)+'</em>';}
+function bcell(label,val,unit,d){return '<div>'+label+'<b>'+(val==null?'—':val)+(unit||'')+'</b>'+(d!=null?bdelta(d):'')+'</div>';}
+function renderBody(){
+  const B=window.SA_BODY;
+  if(!B||!B.members){$('#bodyMeta').innerHTML='<b>⚠️ 搵唔到 data/body.js</b>，請連同 data 資料夾一齊放。';$('#bodyCards').innerHTML='';return;}
+  const M=B.members;
+  $('#bodyMeta').innerHTML='<b>📏 點讀呢份紀錄：</b>量度 '+esc(B.meta.measured)+' '+esc(B.meta.measuredAt)+'（單位 lb）・'+esc(B.meta.source)+'。'+esc(B.meta.note)+' 生物電阻抗磅嘅絕對值受水份／進食／運動影響，<b>趨勢比單次數字重要</b>。';
+  $('#bodyDisclaimer').innerHTML='<b>⚠️ 聲明：</b>'+esc(B.disclaimer);
+  $('#bodyCards').innerHTML=FAMILY.map(f=>{
+    const b=M[f.id];if(!b)return '';const m=b.metrics||{},t=b.targets||{},c=b.composition||{};
+    const chips=[
+      '<span class="tag '+(b.bmi>=30?'red':b.bmi>=23?'amber':'green')+'">BMI '+b.bmi+(b.bmiDelta!=null?' '+(b.bmiDelta>0?'↑':'↓')+Math.abs(b.bmiDelta):'')+'</span>',
+      '<span class="tag amber">體脂 '+b.bodyfat+'%'+(b.bodyfatDelta!=null?' '+(b.bodyfatDelta>0?'↑':'↓')+Math.abs(b.bodyfatDelta):'')+'</span>',
+      '<span class="tag '+(m.visceral>=10?'red':'gray')+'">'+(m.visceral==null?'內臟脂肪：未成年不提供':'內臟脂肪 '+m.visceral)+'</span>',
+      '<span class="tag blue">BMR '+m.bmr+' kcal</span>',
+      '<span class="tag gray">身體年齡 '+m.bodyAge+' 歲</span>',
+      b.score!=null?'<span class="tag green">得分 '+b.score+'</span>':''
+    ].join('');
+    const metrics=[
+      bcell('肌肉量',m.muscle,' lb',m.muscleDelta),bcell('肌肉率',m.musclePct,'%',m.musclePctDelta),
+      bcell('身體水分',m.waterPct,'%',m.waterPctDelta),bcell('蛋白質率',m.proteinPct,'%',m.proteinPctDelta),
+      bcell('骨量／骨鹽率',m.bonePct,'%',m.bonePctDelta),bcell('骨骼肌量',m.skeletalMuscle,' lb',m.skeletalMuscleDelta),
+      bcell('基礎代謝率',m.bmr,' kcal',m.bmrDelta),bcell('去脂體重',m.lean,' lb',m.leanDelta),
+      bcell('心率',m.heartRate,' 次/分'),bcell('推測腰臀比',m.waistHip==null?null:m.waistHip,''),
+      bcell('身體水分量',c.water,' lb'),bcell('脂肪量 / 蛋白質量',c.fat+' / '+c.protein,' lb')
+    ].join('');
+    return '<div class="card body-card"><div class="bc-head" style="background:'+f.color+'"><div class="av">'+f.emoji+'</div><div><h3>'+esc(b.name)+' <span style="font-size:11px;opacity:.85">('+esc(b.profile)+')</span></h3><div class="role">'+esc(b.role)+' · '+esc(b.date)+' '+esc(b.time)+'</div></div></div>'+
+      '<div class="bc-body"><div class="bc-weight"><b>'+b.weight+'</b><small>lb（'+lb2kg(b.weight)+' kg）'+(b.weightTag?' · 磅評：'+esc(b.weightTag):'')+'</small></div>'+
+      '<div class="bc-scale">'+esc(b.scale||'')+(b.bodyType?' ・身體類型「'+esc(b.bodyType)+'」':'')+'</div>'+
+      '<div class="bc-chips">'+chips+'</div>'+
+      (b.scoreNote?'<div class="tiny muted" style="margin-bottom:8px">📝 '+esc(b.scoreNote)+'</div>':'')+
+      '<div class="bc-metrics">'+metrics+'</div>'+
+      (t&&t.standardWeight?'<div class="tiny muted">🎯 磅嘅體重建議：標準體重 '+t.standardWeight+' lb・體重控制 '+t.weightControl+' lb・脂肪控制 '+t.fatControl+' lb・肌肉 '+esc(t.muscleControl)+'<br><span class="mini">呢啲係磅用 BMI≈22 推算，唔等於醫生建議，唔使當硬目標。</span></div>':'<div class="tiny muted">🎯 未成年：磅無提供體重建議，我亦唔會代佢推算。</div>')+
+      '<div class="bc-analysis"><h4>🔍 '+esc(b.headline)+'</h4><ol>'+b.points.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ol>'+
+      '<div class="bc-actions"><b>✅ 飲食／生活行動</b>'+b.actions.map(a=>'<div>・'+esc(a)+'</div>').join('')+'</div>'+
+      '<div class="bc-goal"><b>🎯 同網站每日目標對照</b>'+esc(b.goalCheck)+'</div></div></div></div>';
+  }).join('');
+  const rows=[
+    ['體重 (lb)',b=>b.weight],['BMI',b=>b.bmi+(b.bmiTag?'（'+b.bmiTag+'）':'')],
+    ['體脂率',b=>b.bodyfat+'%'],['內臟脂肪等級',b=>b.metrics.visceral==null?'—（未成年）':b.metrics.visceral+'（'+b.metrics.visceralTag+'）'],
+    ['基礎代謝 (kcal)',b=>b.metrics.bmr],['身體年齡',b=>b.metrics.bodyAge+' 歲'],
+    ['肌肉量 (lb)',b=>b.metrics.muscle],['去脂體重 (lb)',b=>b.metrics.lean],
+    ['近期趨勢',b=>esc(b.scale)]
+  ];
+  $('#bodyCompare').innerHTML='<thead><tr><th>項目</th>'+FAMILY.map(f=>'<th>'+f.emoji+' '+f.name+'</th>').join('')+'</tr></thead><tbody>'+
+    rows.map(([l,fn])=>'<tr><td>'+l+'</td>'+FAMILY.map(f=>'<td>'+fn(M[f.id])+'</td>').join('')+'</tr>').join('')+'</tbody>';
+  $('#bodyFamilyNote').innerHTML='<ul style="font-size:12.5px;line-height:1.8;padding-left:18px">'+B.familyNote.map(n=>'<li style="margin-bottom:7px">'+esc(n)+'</li>').join('')+'</ul>';
 }
 
 /* ---------- render: planner ---------- */
@@ -673,30 +868,34 @@ function renderRecipes(){
   if(!list.length){$('#recipeGrid').innerHTML='<div class="card empty" style="grid-column:1/-1"><span class="big">🍽️</span>'+(tab==='mine'?'Sa Recipes 仲係空嘅 —— 上載相片、貼文字，或者比條片我幫你轉就得。':'搵唔到符合嘅食譜')+'</div>';renderInbox();return;}
   $('#recipeGrid').innerHTML=list.map(r=>{
     const n=nutOf(r),fit=suitability(r),flags=(r.flags||[]).slice(0,3);
-    const cover=r.cover?'<img src="'+r.cover+'" alt="">':r.emoji;
+    const cover=r.cover?'<img src="'+esc(r.cover)+'" alt="">':(r.img?'<img src="'+esc(r.img)+'" alt="" loading="lazy">':r.emoji);
     const og=r.origin==='sa'?'⭐ Sa Recipes':r.origin==='research'?'🔬 坊間營養':'📚 入門';
     const fitChips=FAMILY.map(f=>{const w=fit.warn[f.id].length,g=fit.good[f.id].length;return '<span class="tag '+(w?'red':g?'green':'gray')+'">'+f.emoji+' '+(w?'留意':g?'啱食':'一般')+'</span>';}).join('');
+    const myTag=r.myVersion?'<span class="tag badge-my">🍳 我試過 '+esc(r.myVersion)+'</span>':'';
+    const photoTag=(r.img&&!r.cover)?'<span class="tag gray" title="Wikimedia Commons 示意相片">📷 示意相</span>':'';
     return '<div class="card recipe"><div class="recipe-cover">'+cover+'<span class="og">'+og+'</span><span class="ck">'+n.kcal+' kcal/份</span></div><div class="recipe-body">'+
-      '<h3>'+esc(r.name)+'</h3><div class="recipe-meta"><span>⏱ '+(r.mins||20)+' 分鐘</span><span>🍽 原本 '+(r.servings||2)+' 人份</span><span>🥣 '+(r.ingredients||[]).length+' 種材料</span></div>'+
-      '<div class="recipe-tags"><span class="tag">'+esc(r.cat||'其他')+'</span>'+flags.map(x=>'<span class="tag blue">'+FLAG_LABEL[x]+'</span>').join('')+'</div>'+
+      '<h3>'+esc(r.name)+'</h3><div class="recipe-meta"><span>⏱ '+(r.mins||20)+' 分鐘</span><span>🍽 '+(r.servings||2)+' 人份</span><span>🥣 '+(r.ingredients||[]).length+' 種材料</span></div>'+
+      '<div class="recipe-tags"><span class="tag">'+esc(r.cat||'其他')+'</span>'+flags.map(x=>'<span class="tag blue">'+FLAG_LABEL[x]+'</span>').join('')+myTag+photoTag+'</div>'+
       '<div class="fit-row">'+fitChips+'</div>'+
       '<div class="recipe-actions"><button class="btn btn-soft btn-sm" data-action="view-recipe" data-id="'+r.id+'">查看</button><button class="btn btn-ghost btn-sm" data-action="add-today" data-id="'+r.id+'">加到今日</button><span class="spacer"></span>'+
+      '<button class="btn-icon" data-action="open-tweak" data-id="'+r.id+'" title="我試過・改份量，即時重算 calories">🍳</button>'+
       '<button class="btn-icon" data-action="edit-recipe" data-id="'+r.id+'" title="編輯">✎</button><button class="btn-icon" data-action="delete-recipe" data-id="'+r.id+'" title="刪除">🗑</button></div></div></div>';
   }).join('');
   renderInbox();
 }
 function renderInbox(){
-  const html='<h3 style="font-size:14.5px;margin-bottom:4px">📥 待轉食譜收件箱 <span class="tag gray">'+S.inbox.length+'</span></h3><p class="tiny muted" style="margin-bottom:11px">比條 link 我，我幫你將條片變成文字食譜，再入 Sa Recipes。</p>'+
-    (S.inbox.length?S.inbox.map(x=>'<div class="inbox-item"><span>🔗</span><span class="u">'+esc(x.url)+'</span><span class="tag '+(x.status==='done'?'green':'amber')+'">'+(x.status==='done'?'已入庫':'待轉文字')+'</span><button class="btn-icon" data-action="remove-inbox" data-id="'+x.id+'">×</button></div>').join(''):'<div class="tiny muted">暫無待轉連結。</div>')+
-    '<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn btn-soft btn-sm" data-action="copy-prompt">📋 複製訊息俾 WorkBuddy</button><button class="btn btn-ghost btn-sm" data-go="update">睇更新流程 →</button></div>';
-  $('#inboxPanel').innerHTML=html;$('#updateInbox').innerHTML=html;
+  const head='<h3 style="font-size:14.5px;margin-bottom:4px">📥 待轉食譜收件箱 <span class="tag gray">'+S.inbox.length+'</span></h3><p class="tiny muted" style="margin-bottom:11px">比條 link 我，我幫你將條片變成文字食譜，再入 Sa Recipes。</p>';
+  const rest=(S.inbox.length?S.inbox.map(x=>'<div class="inbox-item"><span>🔗</span><span class="u">'+esc(x.url)+'</span>'+(x.platform?'<span class="tag blue">'+esc(x.platform)+'</span>':'')+'<span class="tag '+(x.status==='done'?'green':'amber')+'">'+(x.status==='done'?'已入庫':'待轉文字')+'</span><button class="btn-icon" data-action="remove-inbox" data-id="'+x.id+'">×</button></div>').join(''):'<div class="tiny muted">暫無待轉連結。</div>')+
+    '<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn btn-soft btn-sm" data-action="copy-prompt">📋 複製訊息俾 WorkBuddy</button>'+
+    '<button class="btn btn-ghost btn-sm" data-action="copy-json-template">📄 複製食譜 JSON 格式</button></div>';
+  $('#inboxPanel').innerHTML=head+rest;$('#updateInbox').innerHTML=rest;
 }
 function renderUpdate(){
   const steps=[
-   ['1','你見到好嘢','喺「Sa Recipes」或「待轉收件箱」貼低 YouTube／IG／TikTok／食譜網 link；亦可以直接喺 WorkBuddy 對話貼俾我。'],
-   ['2','交俾我 AUTO 轉','撳「複製訊息俾 WorkBuddy」，貼去對話。我會拎影片字幕／內容，抽出材料、份量、步驟，估算每份營養，並標埋邊個啱食、邊個要留意。'],
-   ['3','入 Sa Recipes','我直接寫入 data/recipes.js（commit / push），或者俾你一段食譜 JSON，你喺「貼 JSON 即刻入庫」一貼就用得。'],
-   ['4','排餐 ＋ 計營養','去每週 Cooking Menu 由 Sa Recipes 揀菜，份量按 3 人放大、逐餐計 calories／鈉／鈣／蛋白，購物清單同步自動出。']];
+   ['1','一堆食譜交俾我','食譜截圖直接貼去 WorkBuddy 對話；IG／FB／YouTube／TikTok link 可以喺「Sa Recipes」或收件箱<b>一次過貼多條（每行一條）</b>，唔使逐道嚟。'],
+   ['2','我 AUTO 轉 ＋ 搵相','我讀圖／拎影片字幕同頁面內容，抽出材料、份量、步驟，估算每份營養，標埋邊個啱食、邊個要留意；無相嘅我上網搵相關食物相片存落 images/ 並標來源。'],
+   ['3','入 Sa Recipes','我直接寫入 data/recipes.js（commit / push）＋ data/body.js（身體紀錄），或者俾你一段 JSON，你喺「貼 JSON 即刻入庫」一貼就用得。'],
+   ['4','排餐・計營養・再試煮','去每週 Cooking Menu 由 Sa Recipes 揀菜，3 人份放大、逐餐計 calories；試煮完撳「🍳 我試過・改份量」自己改，網站即時重算，購物清單同步跟住改。']];
   $('#flowSteps').innerHTML=steps.map(s=>'<div class="card flow-step"><div class="n">'+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div>').join('');
   renderInbox();
 }
@@ -736,17 +935,18 @@ function renderFasting(){const el=$('#fastingNum');if(!el)return;
   el.textContent=S.fasting.start?fmtDur(Date.now()-S.fasting.start):'00:00:00';
   $('#fastingInfo').textContent=S.fasting.start?'由 '+new Date(S.fasting.start).toLocaleString('zh-Hant')+' 開始':'未開始計時';
   const b=document.querySelector('[data-action="fasting-toggle"]');if(b)b.textContent=S.fasting.start?'結束斷食':'開始斷食';}
-function renderWeight(){const svg=$('#weightSpark');if(!svg)return;const ws=S.weights.sa.slice(-10);
-  if(ws.length<2){svg.innerHTML='<text x="10" y="46" fill="#9ca3af" font-size="11">記低至少兩筆體重，先至畫到趨勢圖</text>';$('#weightInfo').textContent='共 '+ws.length+' 筆';return;}
-  const v=ws.map(x=>x.kg),mn=Math.min(...v)-.5,mx=Math.max(...v)+.5;
-  const pts=ws.map((x,i)=>[10+i*(300/(ws.length-1)),74-((x.kg-mn)/(mx-mn))*60]);
+function wlb(x){return x.lb!=null?x.lb:Math.round((x.kg||0)*2.20462*10)/10;}
+function renderWeight(){const svg=$('#weightSpark');if(!svg)return;const m=S.ui.member,all=S.weights[m]||[],ws=all.slice(-10);
+  if(ws.length<2){svg.innerHTML='<text x="10" y="46" fill="#9ca3af" font-size="11">記低至少兩筆體重，先至畫到趨勢圖</text>';$('#weightInfo').textContent=F(m).name+' 共 '+all.length+' 筆';return;}
+  const v=ws.map(wlb),mn=Math.min(...v)-.5,mx=Math.max(...v)+.5;
+  const pts=ws.map((x,i)=>[10+i*(300/(ws.length-1)),74-((wlb(x)-mn)/(mx-mn))*60]);
   const line=pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
   svg.innerHTML='<defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#14b8a6" stop-opacity=".28"/><stop offset="100%" stop-color="#14b8a6" stop-opacity="0"/></linearGradient></defs>'+
     '<line x1="10" y1="80" x2="310" y2="80" stroke="#e5e7eb"/><polygon points="10,80 '+line+' '+pts[pts.length-1][0].toFixed(1)+',80" fill="url(#wg)"/>'+
     '<polyline points="'+line+'" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round"/>'+pts.map(p=>'<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="3.2" fill="#fff" stroke="#0f766e" stroke-width="2"/>').join('');
-  const d=(ws[ws.length-1].kg-ws[0].kg).toFixed(1);$('#weightInfo').textContent='共 '+S.weights.sa.length+' 筆・最近 '+(d>0?'+':'')+d+' kg・最新 '+ws[ws.length-1].kg+' kg';
+  const d=(v[v.length-1]-v[0]).toFixed(1);$('#weightInfo').textContent=F(m).name+' 共 '+all.length+' 筆・最近 '+(d>0?'+':'')+d+' lb・最新 '+v[v.length-1]+' lb（'+lb2kg(v[v.length-1])+' kg）';
 }
-function renderAll(){renderHeroCard();renderFamilyStrip();renderToday();renderWidgets();renderFamily();renderPlan();renderRecipes();renderShopping();renderNutrition();renderUpdate();
+function renderAll(){applyTweaks();renderHeroCard();renderFamilyStrip();renderToday();renderWidgets();renderFamily();renderBody();renderPlan();renderRecipes();renderShopping();renderNutrition();renderUpdate();
   $('#todayChip').textContent='📅 '+new Date().toLocaleDateString('zh-Hant',{year:'numeric',month:'long',day:'numeric',weekday:'short'});}
 
 /* ---------- modal ---------- */
@@ -759,16 +959,54 @@ function openPicker(key,meal){pendingSlot={key:key,meal:meal};
   openModal('＋ 由 Sa Recipes 揀菜',body,'<button class="btn btn-ghost btn-sm" data-action="close-modal">完成</button>');
   setTimeout(()=>{const i=$('#pickerSearch');if(i)i.oninput=()=>{const q=i.value.toLowerCase();document.querySelectorAll('#pickerList .pick-item').forEach(el=>el.classList.toggle('hidden',el.dataset.name.toLowerCase().indexOf(q)<0));};},0);
 }
-function openDetail(id){const r=recipeById(id);if(!r)return;const n=nutOf(r),fit=suitability(r),src=r.source||{};
-  const body='<div style="display:flex;gap:13px;align-items:center;margin-bottom:15px"><div style="font-size:38px">'+(r.cover?'<img src="'+r.cover+'" style="width:62px;height:62px;object-fit:cover;border-radius:12px">':r.emoji)+'</div><div><h3 style="font-size:17px">'+esc(r.name)+'</h3><div class="tiny muted">'+esc(r.cat)+'・'+(r.mins||20)+' 分鐘・原本 '+(r.servings||2)+' 人份・'+(r.tags||[]).map(esc).join(' / ')+'</div></div></div>'+
+function openDetail(id){const r=recipeById(id);if(!r)return;const n=nutOf(r),fit=suitability(r),src=r.source||{},ic=r.imgCredit||{},thumb=r.cover||r.img;
+  const body='<div style="display:flex;gap:13px;align-items:center;margin-bottom:15px"><div style="font-size:38px">'+(thumb?'<img src="'+esc(thumb)+'" style="width:62px;height:62px;object-fit:cover;border-radius:12px">':r.emoji)+'</div><div><h3 style="font-size:17px">'+esc(r.name)+'</h3><div class="tiny muted">'+esc(r.cat)+'・'+(r.mins||20)+' 分鐘・'+(r.servings||2)+' 人份・'+(r.tags||[]).map(esc).join(' / ')+'</div></div></div>'+
+   (r.myVersion?'<div class="notice ok" style="margin-bottom:11px"><b>🍳 呢個係我嘅版本（'+esc(r.myVersion)+'）</b>：材料份量同人數已按你試煮後嘅調整改動，下面營養、餐單、購物清單都係用緊呢個版本。<button class="link" data-action="open-tweak" data-id="'+r.id+'">再改／還原 →</button></div>':'')+
+   '<div class="notice" style="margin-bottom:13px"><b>🍳 試煮完想改份量？</b>自己改材料份量同人數，網站即時重算每份／全家 calories，儲存成「我嘅版本」，餐單同購物清單會一齊跟住改。<div style="margin-top:8px"><button class="btn btn-soft btn-sm" data-action="open-tweak" data-id="'+r.id+'">🍳 我試過・改份量</button></div></div>'+
    '<div class="detail-sec"><h4>🩺 邊個啱食／邊個要留意</h4>'+FAMILY.map(f=>'<div style="font-size:12.5px;padding:6px 0;border-bottom:1px dashed var(--line)"><b>'+f.emoji+' '+f.name+'</b>　'+fit.good[f.id].map(x=>'<span class="tag green">✅ '+esc(x)+'</span>').join(' ')+' '+fit.warn[f.id].map(x=>'<span class="tag red">⚠️ '+esc(x)+'</span>').join(' ')+(fit.good[f.id].length+fit.warn[f.id].length?'':'<span class="tag gray">一般</span>')+'</div>').join('')+'</div>'+
-   '<div class="detail-sec"><h4>🧾 材料（原本 '+(r.servings||2)+' 人份）</h4>'+(r.ingredients||[]).map(i=>'<div class="ing-line"><span>'+esc(i.name)+' <span class="tag gray">'+esc(i.cat||'其他')+'</span></span><b>'+esc(qtyText(i.qty,i.unit))+'</b></div>').join('')+'<div class="mini" style="margin-top:6px">排入 3 人餐單時會自動 ×'+(3/(r.servings||2))+' 計入購物清單。</div></div>'+
+   '<div class="detail-sec"><h4>🧾 材料（'+(r.servings||2)+' 人份）</h4>'+(r.ingredients||[]).map(i=>'<div class="ing-line"><span>'+esc(i.name)+' <span class="tag gray">'+esc(i.cat||'其他')+'</span></span><b>'+esc(qtyText(i.qty,i.unit))+'</b></div>').join('')+'<div class="mini" style="margin-top:6px">排入 '+S.ui.people+' 人餐單時會自動 ×'+(Math.round(S.ui.people/(r.servings||2)*100)/100)+' 計入購物清單。</div></div>'+
    '<div class="detail-sec"><h4>👩‍🍳 步驟</h4>'+(r.steps||[]).map((s,i)=>'<div class="step-line"><span class="n">'+(i+1)+'</span><span>'+esc(s)+'</span></div>').join('')+'</div>'+
    '<div class="detail-sec"><h4>📊 每份營養（估算）</h4><div class="nutri-chips">'+NUT_KEYS.map(k=>'<span>'+NUT_LABEL[k]+'<b>'+n[k]+'</b></span>').join('')+'</div></div>'+
-   (src.url?'<div class="detail-sec"><h4>🔗 坊間來源</h4><a href="'+src.url+'" target="_blank" rel="noopener">'+esc(src.title||src.url)+'</a></div>':'')+
+   (src.url?'<div class="detail-sec"><h4>🔗 坊間來源</h4><a href="'+esc(src.url)+'" target="_blank" rel="noopener">'+esc(src.title||src.url)+'</a></div>':'')+
+   (ic.url?'<div class="detail-sec"><h4>📷 相片來源（示意圖）</h4><div class="tiny">'+esc(ic.title)+'<br>作者：'+esc(ic.author)+'・授權：'+esc(ic.license)+'<br><a href="'+esc(ic.url)+'" target="_blank" rel="noopener">去 Wikimedia Commons 原頁 →</a><br><span class="mini">相片係相關菜式嘅示意圖，唔係呢道菜嘅實物相；已存喺網站本地 images/，離線都睇到，唔係外連 hotlink。</span></div></div>':'')+
    '<div class="detail-sec"><h4>📅 加到餐單</h4><div style="display:flex;gap:7px;flex-wrap:wrap"><select id="detailDate" class="field" style="flex:1;min-width:140px">'+weekDates(0).map(d=>'<option value="'+todayKey(d)+'"'+(todayKey(d)===todayKey()?' selected':'')+'>'+fmtShort(d)+' 週'+DOW[(d.getDay()+6)%7]+'</option>').join('')+'</select><select id="detailMeal" class="field" style="width:105px">'+MEALS.map(m=>'<option value="'+m[0]+'">'+m[1]+'</option>').join('')+'</select><button class="btn btn-primary btn-sm" data-action="detail-add" data-id="'+r.id+'">加入</button></div></div>';
   openModal('食譜詳情',body,'<button class="btn btn-ghost btn-sm" data-action="close-modal">關閉</button>');
 }
+/* ---------- 我試過・改份量（即時重算 calories） ---------- */
+function tweakBase(id){const r=recipeById(id);if(!r)return null;
+  if(S.originals[id])return S.originals[id];
+  return {ingredients:clone(r.ingredients||[]),servings:r.servings||2,nut:nutOf(r)};}
+function tweakRead(){const base=tweakBase(S.ui.tweakId),ings=clone(base.ingredients);
+  document.querySelectorAll('[data-ing]').forEach(inp=>{const i=+inp.dataset.ing;if(ings[i])ings[i].qty=Math.max(0,parseFloat(inp.value)||0);});
+  const serv=Math.max(1,parseInt(($('#tweakServings')||{}).value)||base.servings);
+  return {ings:ings,serv:serv,nut:recalcNut(base.nut,base.ingredients,base.servings,ings,serv),base:base};}
+function updateTweakResult(){if(!$('#tweakResult'))return;const d=tweakRead(),o=d.base.nut,p=S.ui.people;
+  const diff=(a,b)=>{const x=Math.round((a-b)*10)/10;return x>0?'<span class="tag red">+'+x+'</span>':x<0?'<span class="tag green">'+x+'</span>':'<span class="tag gray">不變</span>';};
+  $('#tweakResult').innerHTML='<div class="tiny muted">每份估算（以原本估算校準後按比例重算）</div>'+
+    '<div class="tweak-big">'+d.nut.kcal+' <small style="font-size:12px;color:var(--muted)">kcal／份</small> '+diff(d.nut.kcal,o.kcal)+'</div>'+
+    '<div class="tiny" style="margin-top:5px">全家 '+p+' 人合計 <b>'+Math.round(d.nut.kcal*p)+' kcal</b>・原本每份 '+o.kcal+' kcal・'+d.serv+' 人份</div>'+
+    '<div class="tweak-chips">'+['protein','carbs','fat','fiber','sodium','added','calcium','omega3'].map(k=>'<span>'+NUT_LABEL[k]+'<b>'+d.nut[k]+'</b></span>').join('')+'</div>';}
+function tweakPrompt(id){const r=recipeById(id),d=tweakRead(),b=d.base;
+  return '我試煮咗「'+r.name+'」，自己改咗份量。請幫我覆核 calories 同營養，然後寫入 Elsapciz 嘅 data/recipes.js 做永久版本（咁手機電腦都會同步）：\n\n'+
+   '原本：'+b.servings+' 人份／每份 '+b.nut.kcal+' kcal\n我嘅版本：'+d.serv+' 人份／每份 '+d.nut.kcal+' kcal\n\n'+
+   '【我改完嘅材料份量】\n'+d.ings.map(i=>'- '+i.name+' '+i.qty+i.unit).join('\n')+
+   '\n\n【網站即時重算（每份估算）】\n'+NUT_KEYS.map(k=>'- '+NUT_LABEL[k]+'：'+d.nut[k]).join('\n')+
+   '\n\n請用你嘅食材營養資料覆核，特別留意 Eddie 嘅鈉／添加糖、Sa 嘅鈣、Eliz 嘅蛋白同熱量；如無問題就更新食譜庫，並話我知改咗邊幾項。';}
+function openTweak(id){const r=recipeById(id);if(!r)return;S.ui.tweakId=id;
+  const b=tweakBase(id),cur=S.tweaks[id];
+  const rows=b.ingredients.map((i,x)=>'<div class="tweak-row"><span class="tn">'+esc(i.name)+' <span class="mini">('+esc(i.cat||'其他')+')</span></span><input type="number" step="any" min="0" data-ing="'+x+'" value="'+(cur?cur.ingredients[x].qty:i.qty)+'"><span class="tu">'+esc(i.unit)+'</span></div>').join('');
+  const body='<div class="notice ok" style="margin-bottom:12px"><b>🍳 試煮完改份量，即時計返 calories</b>：改下面任何一個數字，或者改「幾多人份」，結果即刻更新。儲存入「我嘅版本」之後，<b>每週餐單、購物清單、營養追蹤全部會跟住用新份量</b>。</div>'+
+   '<div class="field" style="margin-bottom:12px"><label>呢個版本係幾多人份</label><input id="tweakServings" type="number" min="1" step="1" value="'+(cur?cur.servings:b.servings)+'"><span class="hint">原本 '+b.servings+' 人份；改大份數會令「每份」營養攤薄。</span></div>'+
+   '<h4 style="font-size:12.5px;color:var(--teal-d);margin-bottom:5px">🧾 材料份量</h4>'+rows+
+   '<div class="tweak-result" id="tweakResult"></div>'+
+   '<div class="field" style="margin-top:12px"><label>試煮筆記（可選）</label><input id="tweakNote" placeholder="例如：加多咗 50g 雞胸、少咗 1 茶匙糖" value="'+esc(cur?cur.note||'':'')+'"></div>'+
+   '<div class="mini muted" style="margin-top:9px">點計：用內置食材營養表計出改前／改後嘅相對變化，再以呢道菜原本嘅每份估算校準。屬規劃用估算，唔取代營養師計算。</div>';
+  const foot='<button class="btn btn-ghost btn-sm" data-action="close-modal">取消</button>'+
+   '<button class="btn btn-ghost btn-sm" data-action="copy-tweak" data-id="'+id+'">📋 複製調整俾 WorkBuddy</button>'+
+   (cur?'<button class="btn btn-danger btn-sm" data-action="reset-tweak" data-id="'+id+'">↺ 還原原版</button>':'')+
+   '<button class="btn btn-primary btn-sm" data-action="save-tweak" data-id="'+id+'">💾 儲存我嘅版本</button>';
+  openModal('🍳 我試過・改份量 · '+esc(r.name),body,foot);updateTweakResult();}
+
 function openRecipeForm(id){const r=id?recipeById(id):null,n=r?nutOf(r):emptyNut();
   const ingText=r?(r.ingredients||[]).map(i=>[i.name,i.qty,i.unit,i.cat].join('|')).join('\n'):'雞胸肉|200|g|肉類\n西蘭花|1|個|蔬菜\n檸檬|1|個|水果';
   const body='<div class="form-grid"><div class="field"><label>食譜名稱</label><input id="f-name" value="'+esc(r?r.name:'')+'" placeholder="例如 檸檬香草雞胸"></div>'+
@@ -776,6 +1014,7 @@ function openRecipeForm(id){const r=id?recipeById(id):null,n=r?nutOf(r):emptyNut
    '<div class="field"><label>Emoji 封面</label><input id="f-emoji" value="'+esc(r?r.emoji:'🍽️')+'"></div>'+
    '<div class="field"><label>時間（分鐘）／原本幾人份</label><div style="display:flex;gap:7px"><input id="f-mins" type="number" value="'+(r?r.mins||20:20)+'"><input id="f-servings" type="number" value="'+(r?r.servings||2:2)+'"></div></div></div>'+
    '<div class="field" style="margin-top:12px"><label>標籤（逗號分隔）</label><input id="f-tags" value="'+esc(r?(r.tags||[]).join(', '):'快手, 家常')+'"></div>'+
+   '<div class="field" style="margin-top:12px"><label>相片檔名／網址（可選，例如 images/p1.jpg）</label><input id="f-img" value="'+esc(r&&r.img?r.img:'')+'"><span class="hint">留空就用 Emoji 封面；我幫你上網搵嘅相會存喺 images/ 並寫入食譜庫，唔使外連。</span></div>'+
    '<div class="field" style="margin-top:12px"><label>材料（每行：名稱|份量|單位|分類）</label><textarea id="f-ing" rows="5">'+esc(ingText)+'</textarea><span class="hint">分類：'+CATS.join('、')+'；留空自動判斷。</span></div>'+
    '<div class="field" style="margin-top:12px"><label>步驟（每行一步）</label><textarea id="f-steps" rows="4">'+esc(r?(r.steps||[]).join('\n'):'')+'</textarea></div>'+
    '<div class="field" style="margin-top:12px"><label>每份營養（估算）</label><div class="g4" style="gap:8px">'+NUT_KEYS.map(k=>'<div class="field"><label class="hint">'+NUT_LABEL[k]+'</label><input id="f-'+k+'" type="number" step="0.1" value="'+n[k]+'"></div>').join('')+'</div></div>'+
@@ -790,16 +1029,21 @@ function readRecipeForm(){const v=q=>$(q).value.trim();
   const flags=Object.keys(FLAG_LABEL).filter(k=>$('#fl-'+k).checked);
   return {name:v('#f-name')||'未命名食譜',cat:v('#f-cat'),emoji:v('#f-emoji')||'🍽️',mins:parseInt(v('#f-mins'))||20,servings:parseInt(v('#f-servings'))||2,
     tags:v('#f-tags').split(/[,，]/).map(s=>s.trim()).filter(Boolean),ingredients:ings,steps:v('#f-steps').split('\n').map(s=>s.trim()).filter(Boolean),nut:nut,flags:flags,
-    source:{title:v('#f-srctitle'),url:v('#f-srcurl')}};
+    img:v('#f-img')||'',source:{title:v('#f-srctitle'),url:v('#f-srcurl')}};
 }
 
 /* ---------- 文字 / 連結解析 ---------- */
 const SAMPLE_TEXT='檸檬香草雞胸配沙律\n\n材料：\n- 雞胸肉 200 g\n- 西蘭花 1 個\n- 檸檬 1 個\n- 橄欖油 1 湯匙\n- 鹽 1 茶匙\n\n步驟：\n1. 雞胸肉用檸檬汁同香草醃 15 分鐘\n2. 中火煎至兩面金黃\n3. 西蘭花灼熟，拌欖油上碟';
+function platformOf(u){try{const h=new URL(u).hostname.replace(/^www\./,'').toLowerCase();
+  if(h.indexOf('instagram.com')>=0)return 'IG';if(h.indexOf('facebook.com')>=0||h.indexOf('fb.watch')>=0)return 'FB';
+  if(h.indexOf('tiktok.com')>=0)return 'TikTok';if(h.indexOf('youtube.com')>=0||h.indexOf('youtu.be')>=0)return 'YouTube';
+  if(h.indexOf('pinterest')>=0)return 'Pinterest';return h;}catch(e){return '網頁';}}
 function parseImport(raw){const text=String(raw||'').trim();if(!text)return null;
-  if(/^https?:\/\//i.test(text)&&!text.includes('\n')){ // 連結 -> 入收件箱，唔扮 AI
-    let host='網頁';try{host=new URL(text).hostname.replace(/^www\./,'');}catch(e){}
-    return {link:true,url:text,host:host};}
-  const lines=text.split('\n').map(l=>l.trim()).filter(Boolean);let section='head',title='',ingLines=[],stepLines=[];
+  const lines0=text.split('\n').map(s=>s.trim()).filter(Boolean),urls=lines0.filter(l=>/^https?:\/\//i.test(l));
+  if(urls.length&&urls.length===lines0.length){ // 單條或多條連結 -> 全部入收件箱，唔扮 AI
+    return urls.length===1?{link:true,url:urls[0],host:platformOf(urls[0]),platform:platformOf(urls[0])}
+      :{links:urls.map(u=>({url:u,platform:platformOf(u)}))};}
+  const lines=lines0;let section='head',title='',ingLines=[],stepLines=[];
   lines.forEach(l=>{
     const ii=l.match(/^(材料|食材|用料|配料|ingredients?)\s*[:：]\s*(.+)$/i),ss=l.match(/^(步驟|做法|程序|煮法|steps?|directions?|method)\s*[:：]\s*(.+)$/i);
     if(ii){section='ing';ingLines.push(ii[2]);return;}if(ss){section='step';stepLines.push(ss[2]);return;}
@@ -820,7 +1064,7 @@ function parseImport(raw){const text=String(raw||'').trim();if(!text)return null
   const n=emptyNut();n.kcal=est.total.kcal;n.carbs=est.total.carbs;n.protein=est.total.protein;n.fat=est.total.fat;n.sodium=est.total.sodium;n.calcium=est.total.calcium;n.fiber=Math.round(ings.filter(i=>i.cat==='蔬菜').length*1.5);
   n.added=ings.filter(i=>/^(糖|砂糖|白糖|黑糖|蜜糖|蜂蜜|楓糖|糖漿|煉奶)/.test(i.name)).length*4; // 1 茶匙糖約 4 g 添加糖
   return {recipe:{id:uid(),origin:'sa',emoji:'🍽️',name:title||'貼上嘅食譜',cat:'其他',mins:25,servings:2,tags:['文字匯入'],flags:[],
-    ingredients:ings,steps:steps.length?steps:['（未辨識到步驟，可撳 ✎ 補上）'],nut:n,source:{title:'',url:''},cover:null}};
+    ingredients:ings,steps:steps.length?steps:['（未辨識到步驟，可撳 ✎ 補上）'],nut:n,source:{title:'',url:''},cover:null,img:''}};
 }
 function openParsePreview(p){S.ui.parsed=p;save();const r=p.recipe,n=nutOf(r);
   const body='<div class="notice ok" style="margin-bottom:13px"><b>✅ 文字解析完成</b>：本地規則抽出 '+r.ingredients.length+' 種材料、'+r.steps.length+' 個步驟；營養由食材表粗估，入庫後可撳 ✎ 改。</div>'+
@@ -833,9 +1077,15 @@ function openParsePreview(p){S.ui.parsed=p;save();const r=p.recipe,n=nutOf(r);
 function copyText(txt,okMsg){const done=()=>toast(okMsg||'✅ 已複製');
   if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done));else fallbackCopy(txt,done);}
 function fallbackCopy(txt,cb){const t=document.createElement('textarea');t.value=txt;t.style.position='fixed';t.style.opacity=0;document.body.appendChild(t);t.select();try{document.execCommand('copy');cb();}catch(e){toast('⚠️ 複製失敗');}t.remove();}
-function promptText(){const links=S.inbox.filter(x=>x.status!=='done').map(x=>x.url);
-  return '請幫我將以下影片／食譜連結轉成「文字食譜」，並直接寫入 sa-family-mealplan/data/recipes.js 嘅 recipes 陣列（origin: "sa"）：\n\n'+(links.length?links.map((u,i)=>(i+1)+'. '+u).join('\n'):'（我稍後喺訊息度貼連結）')+'\n\n【我屋企三個人】\n- Eddie（老公）：高血壓、心臟手術後、輕微糖尿 → 低鈉（≤1,500 mg/日）、低添加糖、低飽和脂肪；鍾意飲 Zero，想慢慢戒。\n- Sa（我）：膽固醇、開始更年期、腰酸背痛、甲狀腺邊緣、有時忟 → 高鈣（1,200 mg/日）、水溶性纖維、鎂／B 雜／Omega-3。\n- Eliz（阿女）：2027 DSE、壓力大、160 磅想溫和減脂 → 補腦（Omega-3／膽鹼／鐵／低 GI）、蛋白足夠、唔好節食、最緊要開心。\n\n【輸出要求】每道食譜要有：name、emoji、cat、mins、servings（原本幾人份）、ingredients（name/qty/unit/cat）、steps、nut（kcal/carbs/protein/fat/fiber/sugar 總糖/added 添加糖/sodium/satfat/calcium/omega3，每份估算；水果乳酪嘅天然糖計入 sugar，唔計入 added）、flags（heart/calcium/brain/slim/mood）、tags。\n最後用兩三句講：邊個最啱食、邊個要留意、有冇低鈉／減糖改法。無字幕嘅片請標明邊部分係估算。';}
-function jsonTemplate(){return JSON.stringify({name:'食譜名',emoji:'🍽️',cat:'主菜',mins:25,servings:2,tags:['快手'],flags:['heart'],ingredients:[{name:'雞胸肉',qty:200,unit:'g',cat:'肉類'}],steps:['步驟一','步驟二'],nut:{kcal:320,carbs:12,protein:38,fat:13,fiber:5,sugar:2,added:0,sodium:420,satfat:2.5,calcium:80,omega3:0.1},source:{title:'',url:''}},null,2);}
+function promptText(){const links=S.inbox.filter(x=>x.status!=='done');
+  const list=links.length?links.map((x,i)=>(i+1)+'. '+x.url+(x.platform?'（'+x.platform+'）':'')).join('\n'):'（我稍後喺訊息度貼連結／截圖）';
+  return '請幫我將以下食譜來源轉成「文字食譜」，並直接寫入 Elsapciz 嘅 sa-family-mealplan/data/recipes.js 嘅 recipes 陣列（origin: "sa"）：\n\n'+list+
+   '\n\n【來源類型】可能係 YouTube／IG／Facebook／TikTok 連結（可以一堆），或者我另外貼嘅食譜截圖 —— 截圖請直接讀圖抽出內容，唔好要我重打。'+
+   '\n【無相嘅食譜】請順便上網搵一張相關食物相片（Wikimedia Commons 可自由使用來源），壓縮存落 images/，並喺食譜加 img + imgCredit（title/author/license/url）；講清楚係示意圖，唔係實物相。'+
+   '\n\n【我屋企三個人】\n- Eddie（老公）：高血壓、心臟手術後、輕微糖尿 → 低鈉（≤1,500 mg/日）、低添加糖、低飽和脂肪；鍾意飲 Zero，想慢慢戒。\n- Sa（我）：膽固醇、開始更年期、腰酸背痛、甲狀腺邊緣、有時忟 → 高鈣（1,200 mg/日）、水溶性纖維、鎂／B 雜／Omega-3。\n- Eliz（阿女）：2027 DSE、壓力大、想溫和減脂 → 補腦（Omega-3／膽鹼／鐵／低 GI）、蛋白足夠、唔好節食、最緊要開心。'+
+   '\n\n【輸出要求】每道食譜要有：name、emoji、cat、mins、servings（原本幾人份）、ingredients（name/qty/unit/cat）、steps、nut（kcal/carbs/protein/fat/fiber/sugar 總糖/added 添加糖/sodium/satfat/calcium/omega3，每份估算；水果乳酪嘅天然糖計入 sugar，唔計入 added）、flags（heart/calcium/brain/slim/mood）、tags、source（原連結／平台）、img（本地 images/ 路徑）。'+
+   '\n最後用兩三句講：邊個最啱食、邊個要留意、有冇低鈉／減糖改法。無字幕嘅片請標明邊部分係估算。';}
+function jsonTemplate(){return JSON.stringify({name:'食譜名',emoji:'🍽️',cat:'主菜',mins:25,servings:2,tags:['快手'],flags:['heart'],ingredients:[{name:'雞胸肉',qty:200,unit:'g',cat:'肉類'}],steps:['步驟一','步驟二'],nut:{kcal:320,carbs:12,protein:38,fat:13,fiber:5,sugar:2,added:0,sodium:420,satfat:2.5,calcium:80,omega3:0.1},source:{title:'',url:''},img:'',imgCredit:{title:'',author:'',license:'',url:''}},null,2);}
 
 /* ---------- actions ---------- */
 document.addEventListener('click',e=>{const el=e.target.closest('[data-action]');if(!el)return;const a=el.dataset.action;
@@ -855,6 +1105,13 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-action]')
   if(a==='remove-meal'){const arr=planSlot(el.dataset.key,el.dataset.meal);arr.splice(+el.dataset.i,1);save();renderAll();return;}
   if(a==='add-today'){planSlot(todayKey(),'dinner').push({id:el.dataset.id,people:S.ui.people});save();renderAll();toast('✅ 已加到今日晚餐');return;}
   if(a==='view-recipe'){openDetail(el.dataset.id);return;}
+  if(a==='open-tweak'){openTweak(el.dataset.id);return;}
+  if(a==='save-tweak'){const id=el.dataset.id,r=recipeById(id);if(!r)return;const d=tweakRead(),note=$('#tweakNote')?$('#tweakNote').value.trim():'';
+    if(!S.originals[id])S.originals[id]=clone(d.base);
+    S.tweaks[id]={date:todayKey(),note:note,ingredients:clone(d.ings),servings:d.serv,nut:clone(d.nut)};
+    applyTweaks();save();closeModal();renderAll();toast('✅ 已儲存我嘅版本：'+d.nut.kcal+' kcal／份，餐單同購物清單已更新');return;}
+  if(a==='reset-tweak'){delete S.tweaks[el.dataset.id];applyTweaks();save();closeModal();renderAll();toast('↺ 已還原食譜原本份量');return;}
+  if(a==='copy-tweak'){copyText(tweakPrompt(el.dataset.id),'✅ 已複製調整結果，貼去 WorkBuddy 對話就得');return;}
   if(a==='detail-add'){planSlot($('#detailDate').value,$('#detailMeal').value).push({id:el.dataset.id,people:S.ui.people});save();renderAll();closeModal();toast('✅ 已加入餐單');return;}
   if(a==='new-recipe'){openRecipeForm(null);return;}
   if(a==='edit-recipe'){openRecipeForm(el.dataset.id);return;}
@@ -864,13 +1121,16 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-action]')
   if(a==='recipe-tab'){S.ui.recipeTab=el.dataset.k;save();renderRecipes();return;}
   if(a==='sample-text'){$('#importText').value=SAMPLE_TEXT;toast('已填入範例，撳「解析文字／連結」');return;}
   if(a==='parse-import'){const p=parseImport($('#importText').value);if(!p){toast('⚠️ 請先貼連結或食譜文字');return;}
-    if(p.link){S.inbox.unshift({id:uid(),url:p.url,date:todayKey(),status:'pending'});save();$('#importText').value='';renderAll();toast('📥 已入待轉收件箱，撳「複製訊息俾 WorkBuddy」');return;}
+    if(p.links){p.links.forEach(x=>S.inbox.unshift({id:uid(),url:x.url,platform:x.platform,date:todayKey(),status:'pending'}));save();$('#importText').value='';renderAll();toast('📥 已加入 '+p.links.length+' 條連結去待轉收件箱');return;}
+    if(p.link){S.inbox.unshift({id:uid(),url:p.url,platform:p.platform,date:todayKey(),status:'pending'});save();$('#importText').value='';renderAll();toast('📥 已入待轉收件箱（'+p.platform+'），撳「複製訊息俾 WorkBuddy」');return;}
     openParsePreview(p);return;}
   if(a==='confirm-parse'){if(!S.ui.parsed||!S.ui.parsed.recipe)return;const r=S.ui.parsed.recipe,nm=$('#p-name');if(nm&&nm.value.trim())r.name=nm.value.trim();
     S.recipes.unshift(r);S.ui.parsed=null;save();closeModal();$('#importText').value='';renderAll();toast('✅ 已加入 Sa Recipes：'+r.name);return;}
-  if(a==='add-inbox'){const inp=el.closest('.view').id==='view-update'?$('#inboxInput'):$('#importText');const u=(inp&&inp.value||'').trim();
-    if(!/^https?:\/\//i.test(u)){toast('⚠️ 請貼一條 http/https 連結');return;}
-    S.inbox.unshift({id:uid(),url:u,date:todayKey(),status:'pending'});save();inp.value='';renderAll();toast('📥 已加入待轉收件箱');return;}
+  if(a==='add-inbox'){const inp=el.closest('.view').id==='view-update'?$('#inboxInput'):$('#importText');const raw=(inp&&inp.value||'').trim();
+    const urls=raw.split(/[\s,，;；]+/).map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s));
+    if(!urls.length){toast('⚠️ 請貼 http/https 連結（可一次過多行）');return;}
+    urls.forEach(u=>S.inbox.unshift({id:uid(),url:u,platform:platformOf(u),date:todayKey(),status:'pending'}));
+    save();if(inp)inp.value='';renderAll();toast('📥 已加入 '+urls.length+' 條連結去待轉收件箱');return;}
   if(a==='remove-inbox'){S.inbox=S.inbox.filter(x=>x.id!==el.dataset.id);save();renderInbox();renderRecipes();return;}
   if(a==='copy-prompt'){copyText(promptText(),'✅ 已複製，貼去 WorkBuddy 對話就得');return;}
   if(a==='copy-json-template'){copyText(jsonTemplate(),'✅ 食譜 JSON 格式已複製');return;}
@@ -881,7 +1141,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-action]')
       const r={id:uid(),origin:'sa',name:String(x.name),emoji:x.emoji||'🍽️',cat:x.cat||'其他',mins:+x.mins||20,servings:+x.servings||2,
         tags:Array.isArray(x.tags)?x.tags:[],flags:Array.isArray(x.flags)?x.flags:[],
         ingredients:(Array.isArray(x.ingredients)?x.ingredients:[]).map(i=>typeof i==='string'?{name:i,qty:1,unit:'份',cat:guessCat(i)}:{name:i.name,qty:+i.qty||1,unit:i.unit||'份',cat:i.cat||guessCat(i.name||'')}),
-        steps:Array.isArray(x.steps)?x.steps:[],nut:n,source:x.source||{title:'',url:''},cover:null};
+        steps:Array.isArray(x.steps)?x.steps:[],nut:n,source:x.source||{title:'',url:''},cover:null,img:x.img||'',imgCredit:x.imgCredit||null};
       S.recipes.unshift(r);ok++;});
     if(!ok){toast('⚠️ 搵唔到有效食譜（最少要有 name）');return;}
     save();$('#jsonInput').value='';S.inbox.filter(x=>x.status!=='done').forEach(x=>x.status='done');renderAll();toast('✅ 已入庫 '+ok+' 道食譜');return;}
@@ -907,7 +1167,12 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-action]')
   if(a==='remove-log'){S.logs[todayKey()]=(S.logs[todayKey()]||[]).filter(l=>l.name!==el.dataset.name);save();renderNutrition();renderToday();return;}
   if(a==='reset-today'){if(!confirm('重設今日手動記錄、飲水同斷食計時？'))return;delete S.logs[todayKey()];delete S.water[todayKey()];S.fasting={start:null};save();renderAll();toast('已重設');return;}
   if(a==='water-plus'||a==='water-minus'){const k=todayKey();S.water[k]=Math.max(0,Math.min(20,(S.water[k]||0)+(a==='water-plus'?1:-1)));save();renderNutrition();renderWidgets();return;}
-  if(a==='add-weight'){const v=parseFloat($('#weightInput').value);if(!v||v<20||v>300){toast('請輸入合理體重（20–300 kg）');return;}const k=todayKey(),ex=S.weights.sa.find(w=>w.date===k);if(ex)ex.kg=v;else S.weights.sa.push({date:k,kg:v});$('#weightInput').value='';save();renderNutrition();renderWidgets();toast('✅ 已記錄');return;}
+  if(a==='add-weight'){const v=parseFloat($('#weightInput').value);if(!v||v<40||v>600){toast('請輸入合理體重（40–600 lb）');return;}
+    const m=S.ui.member,k=todayKey();if(!S.weights[m])S.weights[m]=[];
+    const ex=S.weights[m].find(w=>w.date===k),rec={date:k,lb:v,kg:lb2kg(v)};
+    if(ex)Object.assign(ex,rec);else S.weights[m].push(rec);
+    S.weights[m].sort((x,y)=>String(x.date).localeCompare(String(y.date)));
+    $('#weightInput').value='';save();renderNutrition();renderWidgets();toast('✅ 已記錄 '+F(m).name+' '+v+' lb');return;}
   if(a==='fasting-toggle'){S.fasting={start:S.fasting.start?null:Date.now()};save();renderFasting();toast(S.fasting.start?'⏳ 開始計時':'✅ 已結束');return;}
   if(a==='fasting-reset'){S.fasting={start:null};save();renderFasting();toast('已重設');return;}
 });
@@ -915,7 +1180,8 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-action]')
 /* ---------- 其他事件 ---------- */
 $('#recipeSearch').addEventListener('input',renderRecipes);
 $('#recipeFilter').addEventListener('change',renderRecipes);
-$('#memberSelect').addEventListener('change',e=>{S.ui.member=e.target.value;save();renderNutrition();renderFamilyStrip();});
+$('#memberSelect').addEventListener('change',e=>{S.ui.member=e.target.value;save();renderNutrition();renderFamilyStrip();renderWidgets();});
+$('#modal-root').addEventListener('input',e=>{if((e.target.matches&&e.target.matches('[data-ing]'))||e.target.id==='tweakServings'){if($('#tweakResult'))updateTweakResult();}});
 $('#estimateInput').addEventListener('keydown',e=>{if(e.key==='Enter')document.querySelector('[data-action="estimate"]').click();});
 $('#inboxInput').addEventListener('keydown',e=>{if(e.key==='Enter')document.querySelector('#view-update [data-action="add-inbox"]').click();});
 $('#jsonInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey))document.querySelector('[data-action="import-json"]').click();});
@@ -923,15 +1189,22 @@ $('#importFile').addEventListener('change',e=>{const f=e.target.files[0];if(!f)r
   rd.onload=()=>{try{const d=JSON.parse(rd.result);if(!d.recipes)throw new Error('唔似備份檔');if(!confirm('還原備份會覆蓋目前資料，確定？'))return;
     S=Object.assign(defaultState(),d);FAMILY.forEach(f=>{if(!S.goals[f.id])S.goals[f.id]=clone(f.goals);if(!S.weights[f.id])S.weights[f.id]=[];});mergeLibrary();save();renderAll();toast('✅ 備份已還原');
   }catch(err){toast('⚠️ 還原失敗：'+err.message);}};rd.readAsText(f);e.target.value='';});
-$('#photoInput').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();
-  rd.onload=()=>{const img=new Image();img.onload=()=>{const c=document.createElement('canvas'),sc=Math.min(1,520/Math.max(img.width,img.height));c.width=Math.round(img.width*sc);c.height=Math.round(img.height*sc);c.getContext('2d').drawImage(img,0,0,c.width,c.height);
-    const r={id:uid(),origin:'sa',emoji:'📷',name:'相片食譜（待填資料）',cat:'其他',mins:25,servings:2,tags:['相片'],flags:[],ingredients:[{name:'（請編輯加入材料）',qty:1,unit:'份',cat:'其他'}],steps:['撳 ✎ 編輯填入材料同步驟'],nut:emptyNut(),source:{title:'',url:''},cover:c.toDataURL('image/jpeg',.72)};
-    S.recipes.unshift(r);save();renderAll();toast('📷 相片已成為封面，撳 ✎ 補上內容');go('recipes');};img.onerror=()=>toast('⚠️ 讀取相片失敗');img.src=rd.result;};
-  rd.readAsDataURL(f);e.target.value='';});
+function photoRecipe(file,done){const rd=new FileReader();
+  rd.onload=()=>{const img=new Image();img.onload=()=>{const c=document.createElement('canvas'),sc=Math.min(1,520/Math.max(img.width,img.height));
+      c.width=Math.round(img.width*sc);c.height=Math.round(img.height*sc);c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      const nm=String(file.name||'').replace(/\.[^.]+$/,'').replace(/[_-]+/g,' ').trim()||'相片食譜（待填資料）';
+      S.recipes.unshift({id:uid(),origin:'sa',emoji:'📷',name:nm,cat:'其他',mins:25,servings:2,tags:['相片／截圖'],flags:[],
+        ingredients:[{name:'（請編輯加入材料）',qty:1,unit:'份',cat:'其他'}],steps:['撳 ✎ 編輯填入材料同步驟'],nut:emptyNut(),
+        source:{title:'',url:''},cover:c.toDataURL('image/jpeg',.72),img:''});done();};
+    img.onerror=()=>{toast('⚠️ 讀取相片失敗：'+file.name);done();};img.src=rd.result;};
+  rd.onerror=()=>{toast('⚠️ 讀取檔案失敗：'+file.name);done();};rd.readAsDataURL(file);}
+$('#photoInput').addEventListener('change',e=>{const inp=e.target,files=Array.from(inp.files||[]);if(!files.length)return;
+  let i=0;const next=()=>{if(i>=files.length){save();renderAll();go('recipes');toast('📷 已加入 '+files.length+' 張相片食譜，撳 ✎ 補上材料同步驟');inp.value='';return;}
+    photoRecipe(files[i++],next);};next();});
 if('serviceWorker' in navigator&&location.protocol.indexOf('http')===0){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 setInterval(()=>{if(S.fasting.start&&$('#view-nutrition').classList.contains('active'))renderFasting();},1000);
 renderAll();save();
-// 深連結：index.html?tab=plan / recipes / shopping / nutrition / family / update
+// 深連結：index.html?tab=plan / recipes / shopping / nutrition / family / body / update
 try{const q=new URLSearchParams(location.search).get('tab');if(q&&$('#view-'+q))go(q);}catch(e){}
 </script>
 </body>

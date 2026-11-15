@@ -1,15 +1,16 @@
-/* Sa's Family Meal Plan - 食譜庫唯一來源
- * WorkBuddy 收到影片連結後會將文字食譜加入 recipes 陣列（origin: "sa"）。
- * 改呢個檔 -> 儲存 -> 網站（手機／電腦）refresh 就見到，唔使改 index.html。
+/* Elsapciz · 食譜庫唯一來源（v3 / 2026-11-16）
+ * 我（WorkBuddy）收到影片連結／截圖後會將文字食譜寫入 recipes 陣列（origin: "sa"）。
+ * 改呢個檔 → commit / push → 網站（手機／電腦）refresh 就見到，唔使改 index.html。
  * nut.sugar = 總糖（含水果／乳酪天然糖）；nut.added = 添加糖（Eddie 戒醣對照用）。
- * 最後更新：2026-11-15 / v2
+ * img = 本地 images/ 示意相片；imgCredit = 作者／授權／來源頁，全部來自 Wikimedia Commons。
+ * ⚠️ 相片係「示意圖」，唔係該道菜嘅實物相；用戶自己上載嘅相片存喺瀏覽器 localStorage。
  */
 window.SA_DATA = {
   "meta": {
-    "version": 2,
-    "updated": "2026-11-15",
-    "owner": "Sa's Family Meal Plan",
-    "note": "呢個檔係食譜庫唯一來源。WorkBuddy 收到影片連結後會將文字食譜寫入 recipes 陣列（origin: sa）。網站啟動時自動讀取；本機直接開 index.html 會用內置備份資料。"
+    "version": 3,
+    "updated": "2026-11-16",
+    "owner": "Elsapciz",
+    "note": "食譜庫唯一來源。WorkBuddy 收到影片連結／截圖後會將文字食譜加入 recipes 陣列（origin: sa）；img 為本地 images/ 示意相片（Wikimedia Commons，授權見 imgCredit），唔係外連 hotlink。"
   },
   "sources": [
     {
@@ -125,6 +126,13 @@ window.SA_DATA = {
       "source": {
         "title": "入門港式食譜 · 低鈉改編",
         "url": ""
+      },
+      "img": "images/b1.jpg",
+      "imgCredit": {
+        "title": "Chicken breast, roast broccoli, and celery - Massachusetts.jpg",
+        "author": "Daderot",
+        "license": "CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Chicken_breast,_roast_broccoli,_and_celery_-_Massachusetts.jpg"
       }
     },
     {
@@ -197,6 +205,13 @@ window.SA_DATA = {
       "source": {
         "title": "入門港式食譜 · 減糖版",
         "url": ""
+      },
+      "img": "images/b2.jpg",
+      "imgCredit": {
+        "title": "Hunan cuisine, stir-fried tomato with eggs.jpg",
+        "author": "Huangdan2060",
+        "license": "CC BY 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Hunan_cuisine,_stir-fried_tomato_with_eggs.jpg"
       }
     },
     {
@@ -271,6 +286,13 @@ window.SA_DATA = {
       "source": {
         "title": "入門港式食譜 · 參考 DASH 減鈉改編",
         "url": "https://www.nhlbi.nih.gov/health/dash/living-with-dash"
+      },
+      "img": "images/b3.jpg",
+      "imgCredit": {
+        "title": "Chinese Steamed Perch.jpg",
+        "author": "Kent Wang",
+        "license": "CC BY-SA 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Chinese_Steamed_Perch.jpg"
       }
     },
     {
@@ -340,6 +362,13 @@ window.SA_DATA = {
       "source": {
         "title": "入門港式食譜",
         "url": ""
+      },
+      "img": "images/b4.jpg",
+      "imgCredit": {
+        "title": "Fried rice with chicken (17234644521).jpg",
+        "author": "Vee Satayamas from Bangkok, Thailand",
+        "license": "CC BY 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Fried_rice_with_chicken_(17234644521).jpg"
       }
     },
     {
@@ -408,6 +437,13 @@ window.SA_DATA = {
       "source": {
         "title": "按 DASH／更年期高鈣指引改編",
         "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/staying-healthy-after-menopause"
+      },
+      "img": "images/b5.jpg",
+      "imgCredit": {
+        "title": "Banana Oatmeal Breakfast Bowl (44302857265).jpg",
+        "author": "Ella Olsson from Stockholm, Sweden",
+        "license": "CC BY 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Banana_Oatmeal_Breakfast_Bowl_(44302857265).jpg"
       }
     },
     {
@@ -483,6 +519,13 @@ window.SA_DATA = {
       "source": {
         "title": "入門港式食譜 · 高鈣改編",
         "url": ""
+      },
+      "img": "images/b6.jpg",
+      "imgCredit": {
+        "title": "Tomato and egg soup.jpg",
+        "author": "NNU-10-HanRongrong",
+        "license": "CC BY 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Tomato_and_egg_soup.jpg"
       }
     },
     {
@@ -552,6 +595,13 @@ window.SA_DATA = {
       "source": {
         "title": "入門港式食譜",
         "url": ""
+      },
+      "img": "images/b7.jpg",
+      "imgCredit": {
+        "title": "Black-Pepper Beef (Sapi Lada Hitam), One Two Restaurant, Yogyakarta.jpg",
+        "author": "Crisco 1492",
+        "license": "CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Black-Pepper_Beef_(Sapi_Lada_Hitam),_One_Two_Restaurant,_Yogyakarta.jpg"
       }
     },
     {
@@ -624,6 +674,13 @@ window.SA_DATA = {
       "source": {
         "title": "入門港式食譜",
         "url": ""
+      },
+      "img": "images/b8.jpg",
+      "imgCredit": {
+        "title": "Shrimp and broccoli stir fry (8374790146).jpg",
+        "author": "jeffreyw",
+        "license": "CC BY 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Shrimp_and_broccoli_stir_fry_(8374790146).jpg"
       }
     },
     {
@@ -697,6 +754,13 @@ window.SA_DATA = {
       "source": {
         "title": "入門港式食譜",
         "url": ""
+      },
+      "img": "images/b9.jpg",
+      "imgCredit": {
+        "title": "Chicken Salad (7285807632).jpg",
+        "author": "Rod Waddington from Kergunyah, Australia",
+        "license": "CC BY-SA 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Chicken_Salad_(7285807632).jpg"
       }
     },
     {
@@ -766,6 +830,13 @@ window.SA_DATA = {
       "source": {
         "title": "入門港式食譜 · 全麥麵改編",
         "url": ""
+      },
+      "img": "images/b10.jpg",
+      "imgCredit": {
+        "title": "Pork Noodle Soup.jpg",
+        "author": "Gaurav Dhwaj Khadka",
+        "license": "CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Pork_Noodle_Soup.jpg"
       }
     },
     {
@@ -841,6 +912,13 @@ window.SA_DATA = {
       "source": {
         "title": "按 NHLBI DASH + 補腦食材（藍莓／合桃／Omega-3）改編",
         "url": "https://www.nhlbi.nih.gov/health/dash/living-with-dash"
+      },
+      "img": "images/p1.jpg",
+      "imgCredit": {
+        "title": "Blueberry oatmeal.jpg",
+        "author": "Shisma",
+        "license": "CC BY 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Blueberry_oatmeal.jpg"
       }
     },
     {
@@ -917,6 +995,13 @@ window.SA_DATA = {
       "source": {
         "title": "參考 American Heart Association 心臟友善食譜＋深海魚低鈉原則",
         "url": "https://recipes.heart.org/en/"
+      },
+      "img": "images/p2.jpg",
+      "imgCredit": {
+        "title": "Liat Portal for Foodie Disorder - Salmon with garlic and herbs, crushed potatoes and peas.jpg",
+        "author": "HaJunkiyada",
+        "license": "CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Salmon_with_garlic_and_herbs,_crushed_potatoes_and_peas.jpg"
       }
     },
     {
@@ -991,6 +1076,13 @@ window.SA_DATA = {
       "source": {
         "title": "按 Johns Hopkins／Endocrine Society 停經後鈣 1,200 mg 指引設計",
         "url": "https://www.endocrine.org/menopausemap/health-impacts/index.html"
+      },
+      "img": "images/p3.jpg",
+      "imgCredit": {
+        "title": "Gai lan.jpg",
+        "author": "Nthaci",
+        "license": "CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Gai_lan.jpg"
       }
     },
     {
@@ -1066,6 +1158,13 @@ window.SA_DATA = {
       "source": {
         "title": "按補腦食材（藍莓／合桃）＋更年期高鈣需求改編",
         "url": "https://www.nm.org/healthbeat/healthy-tips/nutrition/best-food-for-a-healthy-brain"
+      },
+      "img": "images/p4.jpg",
+      "imgCredit": {
+        "title": "Yogurt parfait with granola and blueberries in shot glasses with silverware spoons (17098581522).jpg",
+        "author": "Personal Creations",
+        "license": "CC BY 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Yogurt_parfait_with_granola_and_blueberries_in_shot_glasses_with_silverware_spoons_(17098581522).jpg"
       }
     },
     {
@@ -1148,6 +1247,13 @@ window.SA_DATA = {
       "source": {
         "title": "按 DASH for Diabetes／低 GI 穩血糖原則改編",
         "url": "https://www.hopkinsmedicine.org/news/articles/2025/10/dash-for-diabetes"
+      },
+      "img": "images/p5.jpg",
+      "imgCredit": {
+        "title": "2021-04-26 20 24 05 Chicken kabob, basmati white and brown rice and salad from the Herndon Grill Kabob in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+        "author": "Famartin",
+        "license": "CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:2021-04-26_20_24_05_Chicken_kabob,_basmati_white_and_brown_rice_and_salad_from_the_Herndon_Grill_Kabob_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.jpg"
       }
     },
     {
@@ -1224,6 +1330,13 @@ window.SA_DATA = {
       "source": {
         "title": "按更年期營養（鈣／鎂／B 雜）指引改編",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10780928/"
+      },
+      "img": "images/p6.jpg",
+      "imgCredit": {
+        "title": "Egg drop soup (蛋花湯).jpg",
+        "author": "NeoBatfreak",
+        "license": "CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Egg_drop_soup_(%E8%9B%8B%E8%8A%B1%E6%B9%AF).jpg"
       }
     },
     {
@@ -1300,6 +1413,13 @@ window.SA_DATA = {
       "source": {
         "title": "按補腦 Omega-3＋更年期高鈣需求改編",
         "url": "https://www.nm.org/healthbeat/healthy-tips/nutrition/best-food-for-a-healthy-brain"
+      },
+      "img": "images/p7.jpg",
+      "imgCredit": {
+        "title": "Chia Seed Pudding.jpg",
+        "author": "ParentingPatch",
+        "license": "CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Chia_Seed_Pudding.jpg"
       }
     },
     {
@@ -1381,6 +1501,13 @@ window.SA_DATA = {
       "source": {
         "title": "按 NHLBI DASH 減鈉 + AHA 心臟友善魚類食譜改編",
         "url": "https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/dash-diet/art-20047110"
+      },
+      "img": "images/p8.jpg",
+      "imgCredit": {
+        "title": "Hong Kong Village style steam Flathead grey mullet with salted lemon.jpg",
+        "author": "Peachyeung316",
+        "license": "CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Hong_Kong_Village_style_steam_Flathead_grey_mullet_with_salted_lemon.jpg"
       }
     }
   ]

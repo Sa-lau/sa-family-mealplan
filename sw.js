@@ -1,7 +1,8 @@
-/* Sa's Family Meal Plan - offline cache
-   食譜庫 data/recipes.js 用 network-first：WorkBuddy 一更新，用戶 refresh 就見到新食譜。 */
-const CACHE = 'sa-mealplan-v1';
-const CORE = ['./', './index.html', './manifest.webmanifest', './icon.svg', './data/recipes.js'];
+/* Elsapciz - offline cache
+   data/ 內嘅食譜庫同身體紀錄用 network-first：WorkBuddy 一更新，用戶 refresh 就見到。
+   其餘靜態檔 cache-first；改 CACHE 版本號會令舊快取自動清走。 */
+const CACHE = 'elsapciz-v3';
+const CORE = ['./', './index.html', './manifest.webmanifest', './icon.svg', './data/recipes.js', './data/body.js'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).catch(() => {}));
