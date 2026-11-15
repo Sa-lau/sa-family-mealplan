@@ -185,7 +185,7 @@ h1,h2,h3,h4{margin:0;line-height:1.3;letter-spacing:-.01em}p{margin:0}ul{margin:
 .body-card{overflow:hidden}
 .bc-head{padding:15px 17px;color:#fff;display:flex;gap:11px;align-items:center}
 .bc-head .av{width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:23px}
-.bc-head h3{font-size:16px}.bc-head .role{font-size:11px;opacity:.9}
+.bc-head h3{font-size:16px;line-height:1.35}.bc-head h3 span{display:inline-block;font-size:10.5px}.bc-head .role{font-size:10.5px;opacity:.92;line-height:1.45;overflow-wrap:anywhere}
 .bc-body{padding:16px 17px}
 .bc-weight{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
 .bc-weight b{font-size:33px;font-weight:850;letter-spacing:-.035em;line-height:1}
@@ -208,6 +208,55 @@ h1,h2,h3,h4{margin:0;line-height:1.3;letter-spacing:-.01em}p{margin:0}ul{margin:
 .cmp-table th:first-child,.cmp-table td:first-child{text-align:left;font-weight:700;color:var(--ink-2)}
 .cmp-table thead th{font-size:11px;color:var(--muted);background:#f9fafb}
 .cmp-table tr:last-child td{border-bottom:0}
+
+/* 合併檔案：數字 → 建議 */
+.derive-list{margin-top:10px;border-top:1px dashed var(--line);padding-top:9px}
+.derive-line{font-size:11.8px;line-height:1.68;color:var(--ink-2);padding:7px 0;border-bottom:1px dashed var(--line)}
+.derive-line:last-child{border-bottom:0}
+.derive-line .num{color:var(--teal-d);font-weight:800}
+.derive-line .arrow{color:var(--teal);font-weight:800;margin:0 3px}
+.derive-line .src{display:inline-block;font-size:9.5px;color:var(--faint);background:#f3f4f6;border-radius:5px;padding:1px 5px;margin-left:4px}
+.formula-box{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:10px}
+.formula-box .fb{background:#f9fafb;border:1px solid var(--line);border-radius:12px;padding:12px}
+.formula-box .fb h4{font-size:13px;margin-bottom:6px}
+.formula-box .eq{font-size:12px;color:var(--muted);line-height:1.8}
+.formula-box .eq b{color:var(--teal-d);font-size:15px}
+.latest-badge{display:inline-block;background:#fff;border:1px solid var(--mint-2);color:var(--teal-d);border-radius:8px;padding:4px 8px;font-size:11px;font-weight:700;margin-top:6px}
+.trend-line{font-size:12.5px;line-height:1.75;padding:7px 0;border-bottom:1px dashed var(--line)}
+.trend-line:last-child{border-bottom:0}
+
+/* 餐單食譜 */
+.meal-pill.clickable{cursor:pointer;transition:.15s}
+.meal-pill.clickable:hover{border-color:var(--teal-l);background:var(--mint);transform:translateX(2px)}
+.meal-pill .open{font-size:9.5px;color:var(--teal-d);display:block;margin-top:2px}
+.cook-item{border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:11px;background:#fff}
+.cook-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.cook-head img{width:46px;height:46px;border-radius:9px;object-fit:cover}
+.cook-head h4{font-size:14.5px}
+.cook-head .days{font-size:10.5px;color:var(--muted)}
+.cook-cols{display:grid;grid-template-columns:1fr 1.25fr;gap:14px}
+.cook-cols h5{font-size:11px;color:var(--teal-d);margin-bottom:5px}
+.cook-cols .ing{font-size:11.8px;line-height:1.75;color:var(--ink-2)}
+.cook-cols .stp{font-size:11.8px;line-height:1.75;color:var(--ink-2)}
+.cook-cols .stp b{color:var(--teal-d);margin-right:5px}
+
+/* 飲食日記 */
+.diary-row{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line);font-size:12.5px}
+.diary-row:last-child{border-bottom:0}
+.diary-row .dn{flex:1;min-width:0}
+.diary-row .dk{font-weight:800;white-space:nowrap;color:var(--teal-d)}
+.diary-row .dm{font-size:10px;color:var(--faint)}
+.diary-group{font-size:11px;font-weight:800;color:var(--teal-d);margin:11px 0 3px}
+.diary-group:first-child{margin-top:0}
+.need-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:10px}
+.need-grid div{background:var(--mint);border-radius:11px;padding:11px;text-align:center}
+.need-grid span{display:block;font-size:10.5px;color:var(--muted)}
+.need-grid b{display:block;font-size:20px;color:var(--teal-d);margin-top:2px}
+.need-grid small{font-size:10px;color:var(--faint)}
+.diff-line{font-size:12.5px;line-height:1.8;padding:6px 0;border-bottom:1px dashed var(--line)}
+.diff-line:last-child{border-bottom:0}
+@media(max-width:1000px){.formula-box,.need-grid{grid-template-columns:repeat(2,1fr)}.cook-cols{grid-template-columns:1fr}}
+@media(max-width:640px){.formula-box,.need-grid{grid-template-columns:1fr}}
 
 /* portion tweaks */
 .tweak-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:12.5px}
@@ -243,6 +292,7 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
 @media(max-width:1000px){.hero-in{grid-template-columns:1fr;gap:26px;padding:36px 18px 42px}.g4,.recipe-grid,.g3,.flow{grid-template-columns:repeat(2,1fr)}.shop-layout,.nutri-layout{grid-template-columns:1fr}.side-card{position:static}.plan-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:640px){.nav-in{gap:9px;padding:9px 13px}.tabs{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}.today-chip{display:none}.wrap{padding:0 13px}.g2,.g3,.g4,.recipe-grid,.flow,.form-grid,.goal-grid{grid-template-columns:1fr}.plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section{padding-top:26px}.hero h1{font-size:29px}}
 @media print{.nav,.hero,.toolbar,.no-print,footer,#toast,.modal-mask,.side-card{display:none!important}body{background:#fff}.view{display:none!important}.view.active{display:block!important}.card{box-shadow:none;border:1px solid #ddd}.shop-layout{grid-template-columns:1fr}}
+@media print{body.print-cook #view-plan{display:block!important}body.print-cook .view:not(#view-plan){display:none!important}body.print-cook #view-plan .wrap>.section>*:not(#cookbookCard){display:none!important}body.print-cook #cookbookCard{border:0;box-shadow:none;padding:0}body.print-cook .cook-item{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -250,13 +300,13 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
   <div class="brand"><span class="logo">🍲</span><span>Elsapciz<small>SA · EDDIE · ELIZ</small></span></div>
   <div class="tabs" id="tabs">
     <button class="tab active" data-tab="home">總覽</button>
-    <button class="tab" data-tab="family">👨‍👩‍👧 我屋企</button>
-    <button class="tab" data-tab="body">📊 身體紀錄</button>
+    <button class="tab" data-tab="family">👨‍👩‍👧 我屋企＋身體</button>
     <button class="tab" data-tab="plan">每週 Cooking Menu</button>
     <button class="tab" data-tab="recipes">Sa Recipes</button>
+    <button class="tab" data-tab="diary">📝 食咗乜</button>
     <button class="tab" data-tab="shopping">購物清單</button>
     <button class="tab" data-tab="nutrition">營養追蹤</button>
-    <button class="tab" data-tab="update">🔄 Update</button>
+    <button class="tab" data-tab="update">🔄 更新</button>
   </div>
   <div class="nav-tools"><span class="today-chip" id="todayChip"></span><button class="btn btn-ghost btn-sm" data-action="export">⬇ 備份</button><button class="btn btn-ghost btn-sm" data-action="import-backup">⬆ 還原</button></div>
 </div></nav>
@@ -271,7 +321,8 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
       <div class="hero-cta">
         <button class="btn btn-primary" data-go="plan">📅 排呢個禮拜嘅餐</button>
         <button class="btn btn-ghost" data-go="recipes">⭐ 開 Sa Recipes</button>
-        <button class="btn btn-ghost" data-go="body">📊 三人身體紀錄</button>
+        <button class="btn btn-ghost" data-go="family">📊 我地嘅數字＋飲食檔案</button>
+        <button class="btn btn-ghost" data-go="diary">📝 記低今日食咗乜</button>
         <button class="btn btn-ghost" data-go="update">🔗 比條 link 我轉食譜</button>
       </div>
       <div class="chips"><span class="tag green">🍽 3 人份自動計</span><span class="tag blue">❤️ Eddie 低鈉穩糖</span><span class="tag purple">🦴 Sa 高鈣</span><span class="tag amber">🧠 Eliz 補腦減脂</span><span class="tag gray">📱 手機／電腦都用得</span></div>
@@ -285,23 +336,32 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
   </div>
 </section>
 
-<!-- ================= FAMILY ================= -->
+<!-- ================= FAMILY + BODY（合併：數字 → 飲食檔案） ================= -->
 <section class="view" id="view-family"><div class="wrap"><div class="section">
-  <div class="section-head"><div><span class="eyebrow">Family Health Profile</span><h2>我屋企三個人嘅飲食檔案</h2><p>每日目標用嚟對照餐單；以下係飲食方向參考，唔係診斷或處方。</p></div></div>
-  <div class="g3" id="familyDetail"></div>
-  <div class="section"><div class="card pad"><h3 style="font-size:16px;margin-bottom:8px">📚 呢啲建議嘅依據（可以撳去睇原文）</h3><div class="source-list" id="sourceList"></div></div></div>
-  <div class="section"><div class="notice"><b>⚠️ 重要聲明：</b>呢個網站係飲食規劃工具，唔係醫療意見。Eddie 有心臟手術史同糖尿病，<b>低鈉／高鉀飲食（例如 DASH、代鹽、鉀補充劑）必須先問主診醫生</b>，尤其正服用 ACEI／ARB／保鉀利尿劑；Sa 甲狀腺指數邊緣要定期覆驗 TSH，唔好自行食碘或硒補充劑；Eliz 未滿 18 歲，減重前請先問醫生／註冊營養師，唔好大幅扣熱量。所有營養數字都係估算值。</div></div>
-</div></div></section>
-
-<!-- ================= BODY ================= -->
-<section class="view" id="view-body"><div class="wrap"><div class="section">
-  <div class="section-head"><div><span class="eyebrow">Body Composition · 智能體重磅報告</span><h2>我屋企三個人嘅身體紀錄</h2><p>三張報告逐項抄錄，加埋逐人分析同飲食行動；同網站每日目標互相對照。</p></div>
-    <button class="btn btn-ghost btn-sm" data-go="family">睇飲食檔案 →</button></div>
+  <div class="section-head"><div><span class="eyebrow">Family Health Profile · 由我地嘅數字計起</span><h2>我屋企三個人 · 身體數字 → 飲食檔案</h2><p>每條建議都寫明「<b>因為你嘅邊個數字 → 所以點做</b>」；每日目標由 07/11 智能磅報告嘅 BMR／體脂／肌肉量推導，唔係將坊間通則套落你地身上。</p></div>
+    <div class="toolbar no-print" style="margin:0"><button class="btn btn-soft btn-sm" data-action="recalc-goals">🔄 用我地嘅 BMR 自動計目標</button><button class="btn btn-ghost btn-sm" data-action="go-measure">📏 Update 體重／體脂</button></div></div>
   <div class="notice" id="bodyMeta"></div>
-  <div class="g3" id="bodyCards" style="margin-top:16px"></div>
-  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:4px">👨‍👩‍👧 三人對照</h3><p class="tiny muted">同一晚量度，方便一齊睇；Eliz 未成年，磅無提供嘅項目留空，唔作推算。</p><div style="overflow-x:auto"><table class="cmp-table" id="bodyCompare"></table></div></div></div>
-  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:8px">🧭 整體觀察（我幫你睇完三張報告嘅結論）</h3><div id="bodyFamilyNote"></div></div></div>
+  <div class="g3" id="familyDetail" style="margin-top:16px"></div>
+  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:4px">📐 每日需要幾多？由你地嘅身體數字計出嚟</h3><p class="tiny muted">BMR（磅實量度）× 活動系數 = TDEE，再對應網站每日熱量目標；蛋白按去脂體重計。呢度唔使你自己計。</p><div id="goalDerivation"></div></div></div>
+  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:4px">👨‍👩‍👧 三人對照（07/11 報告 ＋ 最新自填）</h3><p class="tiny muted">同一晚量度方便比較；Eliz 未成年，磅無提供嘅項目留空，唔作推算。有自填新數字會用綠色標示。</p><div style="overflow-x:auto"><table class="cmp-table" id="bodyCompare"></table></div></div></div>
+  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:8px">🧭 整體觀察（我睇完三張報告嘅結論）</h3><div id="bodyFamilyNote"></div></div></div>
+
+  <div class="section" id="measureSection"><div class="card pad no-print"><h3 style="font-size:15.5px;margin-bottom:4px">📏 每週／每月 Update 我地嘅身體數字</h3><p class="tiny muted">填完即刻更新上面三張檔案卡、三人對照同下面嘅走勢分析；日期可以揀舊日子補充。想永久寫入 <code>data/body.js</code>，撳「複製俾 WorkBuddy」貼去對話就得。</p>
+    <div class="g4" style="gap:9px;margin-top:11px">
+      <div class="field"><label>成員</label><select id="msMember"></select></div>
+      <div class="field"><label>量度日期（可補充）</label><input id="msDate" type="date"></div>
+      <div class="field"><label>體重 lb ＊</label><input id="msWeight" type="number" step="0.1" placeholder="例如 142.0"></div>
+      <div class="field"><label>體脂率 %（可選）</label><input id="msFat" type="number" step="0.1" placeholder="例如 32.9"></div>
+      <div class="field"><label>內臟脂肪等級（可選）</label><input id="msVisc" type="number" step="1" placeholder="例如 9"></div>
+      <div class="field"><label>肌肉量 lb（可選）</label><input id="msMuscle" type="number" step="0.1" placeholder="例如 89.5"></div>
+      <div class="field" style="grid-column:span 2"><label>備註（可選）</label><input id="msNote" placeholder="例如：兩星期後再磅，今次係飯前量"></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:11px;flex-wrap:wrap"><button class="btn btn-primary btn-sm" data-action="save-measure">💾 儲存並更新我嘅檔案</button><button class="btn btn-ghost btn-sm" data-action="copy-measure">📋 複製新數字俾 WorkBuddy</button><button class="btn btn-ghost btn-sm" data-action="clear-measures">🗑 清除自填紀錄</button></div>
+    <div id="measureList" style="margin-top:13px"></div><div id="bodyTrend" style="margin-top:10px"></div>
+  </div></div>
+  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:8px">📚 飲食方向嘅依據（可撳去睇原文）</h3><p class="tiny muted">下面嘅「因為 → 所以」用嘅係你地自己嘅磅報告數字；權威指引只係用嚟定目標上限（例如鈉 1,500 mg、鈣 1,200 mg）。</p><div class="source-list" id="sourceList"></div></div></div>
   <div class="section"><div class="notice" id="bodyDisclaimer"></div></div>
+  <div class="section"><div class="notice"><b>⚠️ 重要聲明：</b>呢個網站係飲食規劃工具，唔係醫療意見。Eddie 有心臟手術史同糖尿病，<b>低鈉／高鉀飲食（例如 DASH、代鹽、鉀補充劑）必須先問主診醫生</b>，尤其正服用 ACEI／ARB／保鉀利尿劑；Sa 甲狀腺指數邊緣要定期覆驗 TSH，唔好自行食碘或硒補充劑；Eliz 未滿 18 歲，減重前請先問醫生／註冊營養師，唔好大幅扣熱量。所有營養數字都係估算值。</div></div>
 </div></div></section>
 
 <!-- ================= PLAN ================= -->
@@ -316,6 +376,7 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
   </div>
   <div class="plan-grid" id="planGrid"></div>
   <div class="g4" id="planStats" style="margin-top:15px"></div>
+  <div class="card pad" id="cookbookCard" style="margin-top:15px"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><div><h3 style="font-size:15.5px;margin-bottom:3px">📖 呢週點煮（餐單入面係乜、點樣煮）</h3><p class="tiny muted">上面每格食譜名都可以撳開詳情；呢度一次過列晒本週用到嘅食譜、材料份量同步驟。</p></div><button class="btn btn-ghost btn-sm no-print" data-action="print-cookbook">🖨 列印本週食譜</button></div><div id="weekCookbook" style="margin-top:12px"></div></div>
   <div class="card health-strip" style="margin-top:15px"><h3 style="font-size:14.5px;margin-bottom:8px">🩺 呢週每日健康檢視（按每人每日目標）</h3><div id="planHealth"></div></div>
 </div></div></section>
 
@@ -349,6 +410,27 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
   </div>
 </div></section>
 
+<!-- ================= DIARY（每日食過乜） ================= -->
+<section class="view" id="view-diary"><div class="wrap"><div class="section">
+  <div class="section-head"><div><span class="eyebrow">Daily Food Log · 實際食咗乜</span><h2>每日食過乜 · 自動計 Calories</h2><p>寫低<b>實際食咗</b>嘅嘢，網站即時對照你嘅每日目標，話你知超標定係食少咗啲乜；第日先至補充都得，揀返嗰個日期就得。</p></div>
+    <div class="toolbar no-print" style="margin:0"><input id="diaryDate" type="date" class="field" style="width:168px"><select id="diaryMember" class="field" style="width:185px"></select></div></div>
+  <div class="toolbar no-print" style="gap:6px"><span class="tiny muted">快速跳去：</span><span id="diaryQuickDates"></span></div>
+  <div class="g2">
+    <div class="card panel no-print"><h3>✍️ 加入呢日食過嘅嘢</h3><p class="desc">三種寫法都得；加入後右邊同下面分析即時更新。</p>
+      <div class="field"><label>① 用自己說話描述（本地食材表即時估算）</label><div style="display:flex;gap:8px"><input id="diaryText" class="field" style="flex:1" placeholder="一碗白飯、雞胸肉、西蘭花、煎蛋"><button class="btn btn-primary btn-sm" data-action="diary-quick">＋ 加入</button></div><div id="diaryQuickResult"></div></div>
+      <div class="divider"></div>
+      <div class="field"><label>② 由 Sa Recipes 揀（帶完整營養）</label><div style="display:flex;gap:8px;flex-wrap:wrap"><select id="diaryRecipe" class="field" style="flex:1;min-width:170px"></select><select id="diaryMeal" class="field" style="width:105px"><option value="breakfast">早餐</option><option value="lunch">午餐</option><option value="dinner">晚餐</option><option value="snack">小食</option></select><button class="btn btn-soft btn-sm" data-action="diary-add-recipe">＋ 加入</button></div></div>
+      <div class="divider"></div>
+      <div class="field"><label>③ 手動填 calories（出街食／包裝食品）</label><div style="display:flex;gap:8px;flex-wrap:wrap"><input id="diaryName" class="field" style="flex:1;min-width:145px" placeholder="例如 叉燒飯"><input id="diaryKcal" class="field" type="number" style="width:105px" placeholder="kcal"><button class="btn btn-ghost btn-sm" data-action="diary-add-manual">＋ 加入</button></div></div>
+      <label style="font-size:12px;display:flex;gap:6px;align-items:center;margin-top:12px"><input type="checkbox" id="diaryAllThree" style="width:15px;height:15px;accent-color:var(--teal)">同一樣嘢三人都有食（一次過記低）</label>
+      <div class="mini muted" style="margin-top:10px">💡 「營養追蹤」頁會用呢度嘅實際數字；未記低嘅日子會標明用緊餐單估算，唔會當你已食咗。</div>
+    </div>
+    <div class="card panel"><h3>📋 呢日食過嘅清單</h3><p class="tiny muted" id="diaryListMeta"></p><div id="diaryList"></div></div>
+  </div>
+  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:4px">📊 我食咗幾多 vs 需要幾多（自動對照）</h3><p class="tiny muted" id="diarySourceNote"></p><div id="diaryAnalysis"></div></div></div>
+  <div class="section"><div class="card pad"><h3 style="font-size:15.5px;margin-bottom:8px">📅 最近 7 日回顧</h3><div id="diaryWeek"></div></div></div>
+</div></div></section>
+
 <!-- ================= SHOPPING ================= -->
 <section class="view" id="view-shopping"><div class="wrap"><div class="section">
   <div class="section-head"><div><span class="eyebrow">Auto Shopping List · ×3 人</span><h2>自動購物清單</h2><p>按每餐人數同食譜原本份數放大，同名同單位自動合計。</p></div>
@@ -362,12 +444,13 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
 
 <!-- ================= NUTRITION ================= -->
 <section class="view" id="view-nutrition"><div class="wrap"><div class="section">
-  <div class="section-head"><div><span class="eyebrow">Calories &amp; Nutrients · 逐餐計</span><h2>每餐營養價值 / Calories</h2><p>轉成員視角，即刻對照嗰個人嘅每日目標同健康重點。</p></div>
-    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><select id="memberSelect" class="field" style="width:190px"></select><button class="btn btn-ghost btn-sm" data-action="reset-today">↺ 重設今日記錄</button></div></div>
+  <div class="section-head"><div><span class="eyebrow">Calories &amp; Nutrients · 唔使自己計</span><h2>每日需要幾多 · 實際食咗幾多</h2><p>需要幾多由你嘅 BMR 自動計；食咗幾多由「📝 食咗乜」日記自動代入，唔使再手動計。</p></div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><select id="memberSelect" class="field" style="width:190px"></select><button class="btn btn-soft btn-sm" data-go="diary">📝 去寫今日食咗乜</button><button class="btn btn-ghost btn-sm" data-action="reset-today">↺ 重設今日記錄</button></div></div>
+  <div class="card panel" style="margin-bottom:15px"><h3>🧮 我每日需要幾多？（由身體數字自動計）</h3><div id="needCard"></div></div>
   <div class="nutri-layout">
     <div style="display:flex;flex-direction:column;gap:15px">
-      <div class="card panel"><h3>🎯 今日目標 vs 實際（每人一份）</h3><p class="desc">實際 = 今日餐單所有食譜（每份計）＋ 手動記錄。目標可改。</p>
-        <div class="g4" id="goalInputs" style="gap:8px"></div><button class="btn btn-soft btn-sm" style="margin-top:10px" data-action="save-goals">儲存目標</button>
+      <div class="card panel"><h3>🎯 今日目標 vs 實際（每人一份）</h3><p class="desc" id="actualSourceLabel">實際數字來源：載入中…</p>
+        <div class="g4" id="goalInputs" style="gap:8px"></div><button class="btn btn-soft btn-sm" style="margin-top:10px" data-action="save-goals">儲存目標</button><button class="btn btn-ghost btn-sm" style="margin-top:10px" data-action="recalc-goals">🔄 用 BMR 重算</button>
         <div class="divider"></div><div id="macroBars"></div><div class="divider"></div><h4 style="font-size:12.5px;margin-bottom:7px">今日手動記錄</h4><div id="todayLogs"></div></div>
       <div class="card panel"><h3>💬 用自己說話描述菜式，即時估算</h3><p class="desc">例如「一碗白飯、雞胸肉、西蘭花、煎蛋」。本地食材表配對，屬粗略參考。</p>
         <div style="display:flex;gap:8px"><input id="estimateInput" class="field" style="flex:1" placeholder="白飯、三文魚、菠菜、蛋…"><button class="btn btn-primary btn-sm" data-action="estimate">估算</button></div><div id="estimateResult"></div></div>
@@ -377,7 +460,7 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
         <div style="display:flex;align-items:center;gap:12px"><button class="btn btn-ghost btn-sm" data-action="water-minus">−</button><div style="font-size:26px;font-weight:850" id="waterNum">0 <small style="font-size:12px;color:var(--faint)">/ 8 杯</small></div><button class="btn btn-primary btn-sm" data-action="water-plus">＋ 一杯</button></div><div class="water-cups" id="waterCups" style="margin-top:12px"></div></div>
       <div class="card panel"><h3>⚖️ 體重日記（跟上面揀咗嘅成員）</h3><p class="desc">單位用 <b>lb</b>（同你部磅一致）；已帶入 07/11/2026 三張報告嘅真實磅數。Eliz 唔好日日磅，兩星期一次就夠。</p>
         <div style="display:flex;gap:8px"><input id="weightInput" class="field" type="number" step="0.1" placeholder="例如 142.0" style="flex:1"><button class="btn btn-primary btn-sm" data-action="add-weight">記錄 lb</button></div>
-        <svg class="spark" id="weightSpark" viewBox="0 0 320 86" preserveAspectRatio="none"></svg><div class="tiny muted" id="weightInfo"></div><div class="mini" style="margin-top:5px"><button class="link" data-go="body">📊 睇完整身體紀錄 →</button></div></div>
+        <svg class="spark" id="weightSpark" viewBox="0 0 320 86" preserveAspectRatio="none"></svg><div class="tiny muted" id="weightInfo"></div><div class="mini" style="margin-top:5px"><button class="link" data-go="family">📊 睇完整身體紀錄 →</button></div></div>
       <div class="card panel"><h3>⏳ 間歇性斷食計時</h3><p class="desc">只供成年人參考；Eliz 準備 DSE，唔建議斷食，要食夠先有腦力。</p>
         <div class="fasting-num" id="fastingNum">00:00:00</div><div class="tiny muted" id="fastingInfo" style="margin:5px 0 12px">未開始計時</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-primary btn-sm" data-action="fasting-toggle">開始斷食</button><button class="btn btn-ghost btn-sm" data-action="fasting-reset">重設</button><span class="tag amber" style="align-self:center">目標 16 小時</span></div></div>
@@ -417,6 +500,9 @@ footer{border-top:1px solid var(--line);background:#fff;padding:22px 18px;margin
     <div class="mc-line"><b>自己 upload</b><span>可以。手動新增／一次過上載多張相片／貼文字／貼 JSON，全部都得；資料即時存低。</span></div>
     <div class="mc-line"><b>手機同步</b><span>而家各自裝置獨立（localStorage）。要真・跨裝置同步，就要加雲端資料庫或者全部經 <code>data/recipes.js</code> 由我統一寫入 —— 後者唔使訪客端 call API。</span></div>
     <div class="mc-line"><b>影片轉食譜</b><span>我會拎影片字幕／頁面內容，抽材料、步驟、份量，估算每份營養，再標「邊個啱食／邊個要留意」。無字幕嘅片會用畫面描述＋食譜常理重建，並標明估算。</span></div>
+    <div class="mc-line"><b>我屋企＋身體</b><span>兩頁已合一。每條建議都寫明「因為你嘅邊個數字 → 所以點做」，目標由 07/11 磅報告嘅 BMR／體脂／肌肉量推導；坊間指引只放喺「通用方向」摺疊區做輔助。</span></div>
+    <div class="mc-line"><b>食咗乜</b><span>「📝 食咗乜」記低實際飲食（可揀日期第日補充、可一次過記三人），網站自動對照每人目標講你知超標定食少咗啲乜，並附具體食物建議；「營養追蹤」會自動改用呢啲實數。</span></div>
+    <div class="mc-line"><b>Update 磅數</b><span>「我屋企＋身體」頁可以每週／每月填體重、體脂、內臟脂肪、肌肉量；一儲存，三張檔案卡、對照表、走勢分析同體重日記即刻更新。撳「複製俾 WorkBuddy」我可以寫入 <code>data/body.js</code> 做永久版。</span></div>
     <div class="mc-line"><b>營養數字</b><span>全部係每份估算值，用嚟比較同規劃；改份量後嘅數字係「以原本估算校準嘅按比例重算」，唔取代營養師計算或醫療建議。</span></div>
   </div></div>
 </div></section>
@@ -591,12 +677,14 @@ function emptyNut(){const o={};NUT_KEYS.forEach(k=>o[k]=0);return o;}
 /* ---------- state ---------- */
 function defaultGoals(){const g={};FAMILY.forEach(f=>g[f.id]=clone(f.goals));return g;}
 function defaultState(){return {recipes:[],inbox:[],plan:{},checked:{},custom:[],goals:defaultGoals(),logs:{},water:{},weights:{},fasting:{start:null},
-  tweaks:{},originals:{},bodySeedVersion:0,
-  ui:{weekOffset:0,member:'sa',recipeTab:'all',people:3,parsed:null}};}
+  tweaks:{},originals:{},bodySeedVersion:0,diary:{},measure:{},
+  ui:{weekOffset:0,member:'sa',recipeTab:'all',people:3,parsed:null,diaryDate:null,diaryMember:'sa'}};}
 let S;try{const raw=localStorage.getItem(KEY);S=raw?Object.assign(defaultState(),JSON.parse(raw)):defaultState();}catch(e){S=defaultState();}
-['ui','goals','logs','water','weights','checked','plan','custom','inbox','recipes','tweaks','originals'].forEach(k=>{if(!S[k])S[k]=defaultState()[k];});
-FAMILY.forEach(f=>{if(!S.goals[f.id])S.goals[f.id]=clone(f.goals);if(!S.weights[f.id])S.weights[f.id]=[];});
+['ui','goals','logs','water','weights','checked','plan','custom','inbox','recipes','tweaks','originals','diary','measure'].forEach(k=>{if(!S[k])S[k]=defaultState()[k];});
+FAMILY.forEach(f=>{if(!S.goals[f.id])S.goals[f.id]=clone(f.goals);if(!S.weights[f.id])S.weights[f.id]=[];if(!S.measure[f.id])S.measure[f.id]=[];});
 if(!S.ui.people)S.ui.people=3;
+if(!S.ui.diaryDate)S.ui.diaryDate=todayKey();
+if(!S.ui.diaryMember)S.ui.diaryMember=S.ui.member;
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){toast('⚠️ 儲存失敗（可能相片太大）：'+e.message);}}
 function mergeLibrary(){
   const data=window.SA_DATA;
@@ -636,7 +724,7 @@ mergeLibrary();seedPlan();seedBodyWeights();
 if(S.water[todayKey()]===undefined)S.water[todayKey()]=5;
 
 /* ---------- routing ---------- */
-function go(tab){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+function go(tab){if(tab==='body')tab='family';document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+tab));window.scrollTo({top:0,behavior:'smooth'});renderAll();}
 document.addEventListener('click',e=>{const t=e.target.closest('[data-tab]');if(t){go(t.dataset.tab);return;}const g=e.target.closest('[data-go]');if(g){go(g.dataset.go);return;}});
 
@@ -647,7 +735,7 @@ function dayEntries(dateKey){const out=[];MEALS.forEach(([m])=>slotEntries(dateK
 function weekEntries(off){return weekDates(off).flatMap(d=>dayEntries(todayKey(d)));}
 function sumNut(list){const t=emptyNut();list.forEach(({recipe})=>{const n=nutOf(recipe);NUT_KEYS.forEach(k=>t[k]+=n[k]);});NUT_KEYS.forEach(k=>t[k]=Math.round(t[k]*10)/10);return t;}
 function dayNut(dateKey){return sumNut(dayEntries(dateKey));}
-function todayNut(memberId){const t=dayNut(todayKey());(S.logs[todayKey()]||[]).forEach(l=>{if(l.member&&l.member!==memberId)return;NUT_KEYS.forEach(k=>t[k]+=Number(l[k])||0);});NUT_KEYS.forEach(k=>t[k]=Math.round(t[k]*10)/10);return t;}
+function todayNut(memberId){return planNutFor(todayKey(),memberId);}
 function suitability(r){
   const n=nutOf(r),g={good:{},warn:{}};FAMILY.forEach(f=>{g.good[f.id]=[];g.warn[f.id]=[];});
   if(n.sodium<=400&&n.satfat<=4)g.good.eddie.push('低鈉低飽和脂肪');
@@ -715,6 +803,87 @@ function buildShopping(off){
 function checkedKey(it){return weekKey(S.ui.weekOffset)+'||'+it.key;}
 function isChecked(it){return it.custom?!!(S.custom.find(c=>c.id===it.id)||{}).done:!!S.checked[checkedKey(it)];}
 
+/* ============================================================
+   數字驅動層：身體報告 → 每日目標 → 個人飲食檔案 → 實際攝取
+   ============================================================ */
+function BODY(){return (window.SA_BODY&&window.SA_BODY.members)?window.SA_BODY:null;}
+const ACTIVITY={eddie:1.12,sa:1.30,eliz:1.40};
+function goalFormula(f){
+  const B=BODY(),b=B?B.members[f.id]:null,bmr=b?(b.metrics||{}).bmr||0:0,fa=ACTIVITY[f.id]||1.3;
+  const tdee=Math.round(bmr*fa/10)*10,target=S.goals[f.id].kcal;
+  return {bmr:bmr,factor:fa,tdee:tdee,target:target,diff:target-tdee,lean:b?(b.metrics||{}).lean:null,weight:b?b.weight:null};}
+function autoGoals(){const B=BODY();if(!B)return 0;
+  FAMILY.forEach(f=>{const b=B.members[f.id],g=S.goals[f.id],fm=goalFormula(f),leanKg=((b.metrics||{}).lean||b.weight*.68)*0.45359237;
+    g.kcal=fm.tdee;
+    g.protein=Math.round((f.id==='eliz'?2.0:f.id==='eddie'?1.25:1.7)*leanKg/5)*5;
+    g.carbs=Math.round(fm.tdee*.48/4/5)*5;g.fat=Math.round(fm.tdee*.30/9/5)*5;
+    if(f.id==='eddie')Object.assign(g,{sodium:1500,added:25,satfat:13,fiber:28,calcium:800});
+    if(f.id==='sa')Object.assign(g,{sodium:2000,added:25,satfat:11,fiber:28,calcium:1200});
+    if(f.id==='eliz')Object.assign(g,{sodium:2000,added:30,satfat:14,fiber:26,calcium:1000});});
+  return 1;}
+function measureMerged(id){const B=BODY(),b=B?B.members[id]:null;if(!b)return null;
+  const arr=(S.measure[id]||[]).slice().sort((x,y)=>String(x.date).localeCompare(String(y.date))),last=arr[arr.length-1]||null,m=b.metrics||{};
+  return {base:b,arr:arr,last:last,date:last?last.date:b.date,
+    lb:last?last.lb:b.weight,
+    bodyfat:(last&&last.bodyfat!=null)?last.bodyfat:b.bodyfat,
+    visceral:(last&&last.visceral!=null)?last.visceral:(m.visceral==null?null:m.visceral),
+    muscle:(last&&last.muscle!=null)?last.muscle:m.muscle};}
+function deltaTxt(cur,base,unit,lowerGood){if(cur==null||base==null)return '';const d=Math.round((cur-base)*10)/10;
+  if(!d)return '（同 07/11 報告無變化）';const good=lowerGood?d<0:d>0;
+  return '（較 07/11 '+(d>0?'+':'')+d+unit+' '+(good?'✅ 方向啱':'⚠️ 要留意')+'）';}
+function fmtNum(v){return Math.round(Number(v||0)*10)/10;}
+function deriveLines(f){
+  const B=BODY();if(!B)return '<div class="tiny muted">搵唔到 data/body.js</div>';
+  const b=B.members[f.id],m=b.metrics||{},L=measureMerged(f.id),g=S.goals[f.id],fm=goalFormula(f),q=[];
+  const P=(num,text,tag)=>q.push('<div class="derive-line"><span class="num">因為 '+num+'</span><span class="src">'+(tag||'07/11 報告')+'</span><span class="arrow"> → 所以</span> '+text+'</div>');
+  const leanKg=fmtNum((m.lean||b.weight)*0.45359237);
+  if(f.id==='eddie'){
+    P('BMR <b>'+fm.bmr+' kcal</b> × 活動系數 '+fm.factor+' = <b>'+fm.tdee+' kcal</b>（網站目標 '+fm.target+'）','每日 <b>'+g.kcal+' kcal</b> 已經係溫和赤字；心臟手術後唔好自行再扣到 1,500 kcal 以下，要先問主診醫生。');
+    P('體重 <b>'+b.weight+' lb</b>／BMI '+b.bmi+'／15 日跌 1.3 lb、體脂 '+b.bodyfat+'%（↓0.4）','方向啱，目標先減 5–10% 體重（約 9–19 lb）。磅計嘅「標準體重 134.3 lb／−57.5 lb」係用 BMI≈22 推算，對 60 歲＋心臟史唔適用，<b>唔好當硬目標</b>。');
+    P('內臟脂肪等級 <b>'+m.visceral+'</b>（↓1，仍偏高）＋高血壓＋輕微糖尿','優先次序係 <b>鈉 ≤'+g.sodium+' mg、添加糖 ≤'+g.added+' g、飽和脂肪 &lt;'+g.satfat+' g</b>；全穀取代白飯、少食多餐、飯後散步 15–20 分鐘穩飯後血糖。');
+    P('去脂體重 <b>'+m.lean+' lb</b>（≈'+leanKg+' kg）、骨骼肌 '+m.skeletalMuscle+' lb（↑0.7）','蛋白目標 <b>'+g.protein+' g／日</b>，每餐都要有蛋白保住肌肉；減重唔好靠「淨係食少啲」，否則會連肌肉都跌。');
+    P('心臟手術史＋高血壓藥（可能 ACEI／ARB／保鉀利尿劑）','DASH 高鉀飲食、代鹽、鉀補充劑、極低碳或大幅減重，<b>必須先問主診醫生</b>；呢個唔係坊間通則，係對應佢嘅用藥風險。');
+    P('鍾意飲 Zero ＋ 添加糖目標 '+g.added+' g','Zero 可以係過渡，但 WHO 2023 唔建議靠非糖甜味劑長期控重；用「每日一罐 → 隔日 → 氣泡水加檸檬」逐步減。');
+  }else if(f.id==='sa'){
+    P('BMR <b>'+fm.bmr+' kcal</b> × 活動系數 '+fm.factor+' = <b>'+fm.tdee+' kcal</b>（網站目標 '+fm.target+'）','每日 <b>'+g.kcal+' kcal</b> 屬維持／極溫和赤字，啱用，<b>唔建議再扣熱量</b> —— 更年期再扣會先跌肌肉。');
+    P('體重 <b>'+b.weight+' lb</b>／BMI '+b.bmi+'（磅判「標準」，但亞洲成人 ≥23 已算過重）／體脂 '+b.bodyfat+'%（↑0.1）／身體類型「偏胖」','目標係<b>減腰圍同內臟脂肪</b>，唔係狂減磅；體重 6 日無變化唔代表無進展，要睇體脂同腰圍。');
+    P('內臟脂肪 <b>'+m.visceral+'</b>（↑1，偏高）＋推測腰臀比 '+m.waistHip+'（偏高）＋膽固醇問題','飽和脂肪 <b>&lt;'+g.satfat+' g／日</b>、水溶性纖維 <b>'+g.fiber+' g</b>（燕麥、豆類）係最直接的飲食槓桿；呢兩個數比磅數更值得跟。');
+    P('肌肉量 <b>'+m.muscle+' lb</b>（↓0.2）、骨骼肌 '+m.skeletalMuscle+' lb（↓0.7）、BMR '+fm.bmr+' kcal（↓2）','蛋白 <b>'+g.protein+' g／日</b>（去脂體重 '+m.lean+' lb ≈ '+leanKg+' kg × 1.7），每餐都有；配合快走＋簡單阻力運動，先護住腰酸背痛同更年期骨質流失。');
+    P('開始更年期＋骨量／骨鹽率 '+m.bonePct+'%','鈣目標 <b>'+g.calcium+' mg／日，分幾餐食</b>（低脂奶／加鈣豆漿／硬豆腐／小魚乾／芝麻／芥蘭）＋維他命 D，吸收先好。');
+    P('甲狀腺驗過「邊緣」、有時忟／多 worry、身體年齡 '+m.bodyAge+' 歲（得分 '+b.score+'）','碘要足夠但唔過量、唔好自行食海藻／碘片，定期覆驗 TSH；飲食加鎂／B 雜／Omega-3（深綠菜、合桃、魚）對情緒同睡眠有幫助。整體屬「調整就見效」階段。');
+  }else{
+    P('BMR <b>'+fm.bmr+' kcal</b> × 活動系數 '+fm.factor+' = <b>'+fm.tdee+' kcal</b>（網站目標 '+fm.target+'）','每日 <b>'+g.kcal+' kcal</b> 溫和範圍；DSE 備考<b>千祈唔好跳餐／keto／斷食</b>，食唔夠就無腦力記書。');
+    P('體重 <b>'+b.weight+' lb</b>／BMI '+b.bmi+'（↑0.2）／體脂 '+b.bodyfat+'%（↑0.1），但未滿 18 歲','要用兒青「年齡別 BMI 百分位」睇，<b>唔好用成人 18.5–24 硬套</b>；唔設進取減重目標，亦唔好用「160 磅」呢個數字嚟施壓。');
+    P('19 日 +1.1 lb，但同時肌肉 '+m.muscle+' lb（↑0.4）、骨骼肌 '+m.skeletalMuscle+' lb（↑1.3）、去脂體重 '+m.lean+' lb（↑0.7）、BMR ↑7','似發育／水份／經期／溫書期少郁，<b>唔似純粹肥咗</b>；壓力大皮質醇高亦會令水份滯留，唔好為咗減磅搞垮佢。');
+    P('去脂體重 <b>'+m.lean+' lb</b>（≈'+leanKg+' kg）＋要 memorise 好多書','蛋白 <b>'+g.protein+' g／日</b>＋低 GI 碳水（糙米／燕麥／全麥），血糖穩定先坐得耐、記得入腦；補腦重点 Omega-3（魚／合桃／奇亞籽）、蛋（膽鹼）、鐵＋B 雜、鈣 '+g.calcium+' mg。');
+    P('身體年齡 '+m.bodyAge+' 歲、心率 '+m.heartRate+'／分（兩項都好好）＋DSE 壓力超大','規律早餐、每 2–3 小時一次小食、每日 20 分鐘散步、瞓夠、睡前避咖啡因；<b>80/20 留返兩成佢鍾意食嘅嘢</b>，開心先撐到 DSE。');
+    P('未成年，磅無提供內臟脂肪／腰臀比／體重建議／得分','我<b>唔會代佢推算</b>，亦唔會幫佢計進取赤字；減重前先問醫生／註冊營養師。');
+  }
+  if(L.last){P('你自填嘅最新數字：<b>'+L.lb+' lb</b>'+(L.bodyfat!=null?'／體脂 '+L.bodyfat+'%':'')+(L.visceral!=null?'／內臟脂肪 '+L.visceral:'')+'（'+L.date+'）',
+    '上面嘅目標同分析已經跟住最新數字更新；'+ (L.lb<b.weight?'體重向下，繼續保持而唔好再加赤字。':L.lb>b.weight?'體重向上，先睇埋體脂同肌肉有無一齊升，唔好即刻扣熱量。':'體重無變，睇體脂／肌肉趨勢比磅數重要。')+' 趨勢比單次數字重要。','你自填');}
+  return q.join('');
+}
+function planNutFor(date,member){const t=dayNut(date);(S.logs[date]||[]).forEach(l=>{if(l.member&&l.member!==member)return;NUT_KEYS.forEach(k=>t[k]+=Number(l[k])||0);});NUT_KEYS.forEach(k=>t[k]=Math.round(t[k]*10)/10);return t;}
+function diaryEntries(date,member){return (S.diary[date]||[]).filter(x=>!x.member||x.member===member);}
+function diaryNut(date,member){const t=emptyNut();diaryEntries(date,member).forEach(x=>{const n=x.nut||{};NUT_KEYS.forEach(k=>t[k]+=Number(n[k])||0);});NUT_KEYS.forEach(k=>t[k]=Math.round(t[k]*10)/10);return t;}
+function actualNut(date,member){const has=(S.diary[date]||[]).some(x=>!x.member||x.member===member);
+  return has?{nut:diaryNut(date,member),source:'diary',count:diaryEntries(date,member).length}:{nut:planNutFor(date,member),source:'plan',count:dayEntries(date).length};}
+const FOOD_HINT={kcal:['糙米飯 1 碗（215 kcal）','香蕉＋乳酪（約 235 kcal）','全麥包＋花生醬（約 250 kcal）'],protein:['雞胸肉 1 份（31 g）','豆腐 1 磚＋蛋 1 隻（約 16 g）','低脂奶 1 杯（8 g）'],
+  fiber:['燕麥 1 碗','黑豆／豆類 1 份','西蘭花 1 份'],calcium:['加鈣豆漿 1 杯（約 300 mg）','硬豆腐 1 磚（約 250 mg）','低脂奶 1 杯（約 300 mg）'],
+  sodium:['改用減鹽豉油＋檸檬／香草提味','避湯麵湯底、醃製同加工肉','用新鮮食材取代罐頭'],added:['以水果取代甜品','飲品轉無糖茶／氣泡水','睇包裝「添加糖」一欄'],satfat:['去皮瘦肉、蒸代替炸','用橄欖油取代牛油／忌廉','少肥肉同加工肉']};
+function gapAdvice(f,n,g){const low=[],over=[],ok=[];
+  [['kcal','熱量','kcal'],['protein','蛋白質','g'],['fiber','膳食纖維','g'],['calcium','鈣','mg']].forEach(([k,l,u])=>{
+    const t=g[k]||1,pct=n[k]/t,diff=Math.round((t-n[k])*10)/10;
+    if(pct<0.8)low.push('<div class="diff-line"><span class="tag amber">🔻 食少咗</span> <b>'+l+' '+n[k]+' / '+t+' '+u+'</b>（尚欠 '+diff+' '+u+'）→ 建議加：'+FOOD_HINT[k].join('／')+'</div>');
+    else if(k==='kcal'&&pct>1.15)low.push('<div class="diff-line"><span class="tag red">⚠️ 食多咗</span> <b>熱量 '+n[k]+' / '+t+' kcal</b>（超出 '+Math.round(n[k]-t)+' kcal）→ 下一餐減少量主食或油炸，唔好靠跳餐補數。</div>');
+    else ok.push(l+' 達標');
+  });
+  [['sodium','鈉','mg'],['added','添加糖','g'],['satfat','飽和脂肪','g']].forEach(([k,l,u])=>{
+    if(n[k]>g[k])over.push('<div class="diff-line"><span class="tag red">⚠️ 超標</span> <b>'+l+' '+n[k]+' / 上限 '+g[k]+' '+u+'</b>（超出 '+Math.round((n[k]-g[k])*10)/10+' '+u+'）→ '+FOOD_HINT[k].join('；')+'</div>');
+    else ok.push(l+' 未超標');
+  });
+  return (over.join('')+low.join(''))||'<div class="notice ok">✅ 目前項目大致達標（'+(ok.join('、')||'—')+'）。繼續保持，唔使刻意加減。</div>';}
+
 /* ---------- render: hero / home ---------- */
 function renderHeroCard(){
   const tk=todayKey(),e=dayEntries(tk);let meals='';
@@ -761,72 +930,95 @@ function renderWidgets(){
   function wcard(ico,t,b,tab){return '<div class="card widget"><div class="w-top"><span>'+t+'</span><span>'+ico+'</span></div>'+b+'<button class="link" style="margin-top:auto" data-go="'+tab+'">開啟 →</button></div>';}
 }
 
-/* ---------- render: family ---------- */
+/* ---------- render: 合併檔案（身體數字 → 飲食檔案） ---------- */
 function renderFamily(){
+  const B=BODY();
   $('#familyDetail').innerHTML=FAMILY.map(f=>{
-    const g=S.goals[f.id],B=window.SA_BODY,b=B&&B.members?B.members[f.id]:null;
-    const bodyLine=b?'<div class="mc-line"><b>最新磅數</b><span>'+b.weight+' lb（'+lb2kg(b.weight)+' kg）・BMI '+b.bmi+'・體脂 '+b.bodyfat+'% <button class="link" data-go="body">📊 睇完整報告 →</button></span></div>':'';
-    return '<div class="card member-card"><div class="mc-head" style="background:'+f.color+'"><div class="av">'+f.emoji+'</div><div><h3>'+f.name+'</h3><div class="role">'+f.role+'</div></div></div><div class="mc-body">'+
-      '<div class="chiprow" style="margin-bottom:9px">'+f.conditions.map(c=>'<span class="tag gray">'+esc(c)+'</span>').join('')+'</div>'+
-      '<div class="tiny" style="color:var(--teal-d);font-weight:800;margin-bottom:9px">🎯 '+esc(f.focus)+'</div>'+
-      '<div class="goal-grid">'+[['kcal','熱量'],['protein','蛋白 g'],['sodium','鈉 mg'],['calcium','鈣 mg']].map(x=>'<div>'+x[1]+'<b>'+g[x[0]]+'</b></div>').join('')+'</div>'+bodyLine+
-      '<div class="divider"></div><div class="mc-line"><b>要多啲</b><span>'+esc(f.more)+'</span></div><div class="mc-line"><b>要少啲</b><span>'+esc(f.less)+'</span></div>'+
-      '<div class="divider"></div><ul style="font-size:12px;line-height:1.75;padding-left:17px">'+f.tips.map(t=>'<li style="margin-bottom:5px">'+esc(t)+'</li>').join('')+'</ul>'+
-      '<div class="divider"></div><div class="mini">依據：'+f.src.map(u=>'<a href="'+u+'" target="_blank" rel="noopener">'+esc(new URL(u).hostname.replace('www.',''))+'</a>').join('・')+'</div></div></div>';
+    const b=B?B.members[f.id]:null;if(!b)return '';
+    const m=b.metrics||{},L=measureMerged(f.id),g=S.goals[f.id],fm=goalFormula(f);
+    const chips=[
+      '<span class="tag '+(b.bmi>=30?'red':b.bmi>=23?'amber':'green')+'">BMI '+b.bmi+'</span>',
+      '<span class="tag amber">體脂 '+(L.bodyfat!=null?L.bodyfat:b.bodyfat)+'%</span>',
+      '<span class="tag '+(L.visceral!=null&&L.visceral>=10?'red':'gray')+'">'+(L.visceral==null?'內臟脂肪：未成年不提供':'內臟脂肪 '+L.visceral)+'</span>',
+      '<span class="tag blue">BMR '+fm.bmr+' kcal</span>',
+      '<span class="tag gray">身體年齡 '+m.bodyAge+' 歲</span>'
+    ].join('');
+    const metrics=[
+      bcell('體重（07/11）',b.weight,' lb'),bcell('肌肉量',m.muscle,' lb',m.muscleDelta),
+      bcell('體脂率',b.bodyfat,'%',b.bodyfatDelta),bcell('骨骼肌量',m.skeletalMuscle,' lb',m.skeletalMuscleDelta),
+      bcell('去脂體重',m.lean,' lb',m.leanDelta),bcell('基礎代謝率',fm.bmr,' kcal',m.bmrDelta),
+      bcell('身體水分率',m.waterPct,'%',m.waterPctDelta),bcell('蛋白質率',m.proteinPct,'%',m.proteinPctDelta),
+      bcell('骨量／骨鹽率',m.bonePct,'%',m.bonePctDelta),bcell('心率',m.heartRate,' 次/分')
+    ].join('');
+    const latest=L.last?'<div class="latest-badge">📏 最新自填 '+esc(L.date)+'：<b>'+L.lb+' lb</b>（'+lb2kg(L.lb)+' kg）'+deltaTxt(L.lb,b.weight,' lb',true)+(L.bodyfat!=null?'・體脂 '+L.bodyfat+'%'+deltaTxt(L.bodyfat,b.bodyfat,'%',true):'')+(L.visceral!=null?'・內臟脂肪 '+L.visceral:'' )+(L.muscle!=null?'・肌肉 '+L.muscle+' lb'+deltaTxt(L.muscle,m.muscle,' lb',false):'')+'</div>':'';
+    return '<div class="card body-card"><div class="bc-head" style="background:'+f.color+'"><div class="av">'+f.emoji+'</div><div><h3>'+esc(b.name)+' <span style="font-size:11px;opacity:.85">('+esc(f.role)+')</span></h3><div class="role">'+esc(f.focus)+' · 07/11 '+esc(b.time)+' 量度</div></div></div>'+
+      '<div class="bc-body"><div class="bc-weight"><b>'+b.weight+'</b><small>lb（'+lb2kg(b.weight)+' kg）・'+esc(b.scale||'')+'</small></div>'+latest+
+      '<div class="bc-chips">'+chips+'</div><div class="bc-metrics">'+metrics+'</div>'+
+      '<div class="bc-analysis"><h4>🔍 由我嘅數字推導出嘅飲食檔案（每條都對應返上面個數字）</h4><div class="derive-list">'+deriveLines(f)+'</div></div>'+
+      '<div class="bc-goal"><b>🎯 每日目標（由 BMR 計，唔係手填）</b><br>'+fm.bmr+' kcal × '+fm.factor+' = '+fm.tdee+' kcal → 網站用 '+fm.target+' kcal（差 '+(fm.diff>0?'+':'')+fm.diff+'）・蛋白 '+g.protein+' g・鈉 ≤'+g.sodium+' mg・添加糖 ≤'+g.added+' g・鈣 '+g.calcium+' mg・纖維 '+g.fiber+' g<br><span class="mini">'+esc(b.goalCheck||'')+'</span></div>'+
+      '<div class="bc-actions" style="margin-top:9px"><b>🍽 要多啲 / 要少啲（對應上面目標）</b><div>✅ '+esc(f.more)+'</div><div>🚫 '+esc(f.less)+'</div></div>'+
+      '<details style="margin-top:10px"><summary class="link" style="cursor:pointer">📚 通用飲食方向同來源（輔助，唔係個人結論）</summary><ul style="font-size:11.5px;line-height:1.7;padding-left:17px;margin-top:7px">'+f.tips.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul><div class="mini" style="margin-top:6px">'+f.src.map(u=>'<a href="'+u+'" target="_blank" rel="noopener">'+esc(new URL(u).hostname.replace('www.',''))+'</a>').join('・')+'</div></details></div></div>';
   }).join('');
+  renderGoalDerivation();
   const data=window.SA_DATA;
   $('#sourceList').innerHTML=(data&&data.sources?data.sources:[]).map(s=>'<div>🔗 <a href="'+s.url+'" target="_blank" rel="noopener">'+esc(s.title)+'</a></div>').join('')||'<div class="muted">（資料檔未載入）</div>';
+}
+function renderGoalDerivation(){
+  const B=BODY();if(!B){$('#goalDerivation').innerHTML='<div class="tiny muted">搵唔到 data/body.js</div>';return;}
+  $('#goalDerivation').innerHTML='<div class="formula-box">'+FAMILY.map(f=>{const fm=goalFormula(f),g=S.goals[f.id],b=B.members[f.id];
+    return '<div class="fb"><h4>'+f.emoji+' '+f.name+'</h4><div class="eq">'+
+      'BMR（磅量度）<b>'+fm.bmr+'</b> kcal<br>× 活動系數 <b>'+fm.factor+'</b>（'+esc(f.role)+'）<br>= TDEE <b>'+fm.tdee+'</b> kcal<br>→ 網站每日目標 <b>'+fm.target+'</b> kcal <span class="tag '+(Math.abs(fm.diff)<=100?'green':'amber')+'">'+(Math.abs(fm.diff)<=100?'對得上':'差 '+(fm.diff>0?'+':'')+fm.diff)+'</span><br>'+
+      '<span class="mini">蛋白 '+g.protein+' g ≈ 去脂體重 '+fmtNum((b.metrics.lean||b.weight)*0.45359237)+' kg × '+(f.id==='eliz'?'2.0':f.id==='eddie'?'1.25':'1.7')+' g</span></div>'+
+      '<div class="mini" style="margin-top:7px">'+esc(b.goalCheck||'')+'</div></div>';}).join('')+'</div>'+
+    '<div class="notice ok" style="margin-top:11px"><b>點解唔係三個人一式一樣？</b>三個 BMR 唔同（Eddie '+B.members.eddie.metrics.bmr+'／Sa '+B.members.sa.metrics.bmr+'／Eliz '+B.members.eliz.metrics.bmr+' kcal），體脂／內臟脂肪／肌肉走勢亦唔同，所以熱量、蛋白、鈉、鈣、纖維目標都係逐人計。想改動，撳上面「🔄 用我地嘅 BMR 自動計目標」或去「營養追蹤」頁手改。</div>';
 }
 
 /* ---------- render: body records ---------- */
 function bdelta(v){return v==null||v===0?'':'<em> '+(v>0?'↑':'↓')+Math.abs(v)+'</em>';}
 function bcell(label,val,unit,d){return '<div>'+label+'<b>'+(val==null?'—':val)+(unit||'')+'</b>'+(d!=null?bdelta(d):'')+'</div>';}
 function renderBody(){
-  const B=window.SA_BODY;
-  if(!B||!B.members){$('#bodyMeta').innerHTML='<b>⚠️ 搵唔到 data/body.js</b>，請連同 data 資料夾一齊放。';$('#bodyCards').innerHTML='';return;}
+  const B=BODY();
+  if(!B){$('#bodyMeta').innerHTML='<b>⚠️ 搵唔到 data/body.js</b>，請連同 data 資料夾一齊放。';return;}
   const M=B.members;
-  $('#bodyMeta').innerHTML='<b>📏 點讀呢份紀錄：</b>量度 '+esc(B.meta.measured)+' '+esc(B.meta.measuredAt)+'（單位 lb）・'+esc(B.meta.source)+'。'+esc(B.meta.note)+' 生物電阻抗磅嘅絕對值受水份／進食／運動影響，<b>趨勢比單次數字重要</b>。';
+  $('#bodyMeta').innerHTML='<b>📏 點讀呢份紀錄：</b>量度 '+esc(B.meta.measured)+' '+esc(B.meta.measuredAt)+'（單位 lb）・'+esc(B.meta.source)+'。'+esc(B.meta.note)+' 生物電阻抗磅絕對值受水份／進食／運動影響，<b>趨勢比單次數字重要</b>。上面三張卡嘅每條建議都對應返呢份報告嘅數字。';
   $('#bodyDisclaimer').innerHTML='<b>⚠️ 聲明：</b>'+esc(B.disclaimer);
-  $('#bodyCards').innerHTML=FAMILY.map(f=>{
-    const b=M[f.id];if(!b)return '';const m=b.metrics||{},t=b.targets||{},c=b.composition||{};
-    const chips=[
-      '<span class="tag '+(b.bmi>=30?'red':b.bmi>=23?'amber':'green')+'">BMI '+b.bmi+(b.bmiDelta!=null?' '+(b.bmiDelta>0?'↑':'↓')+Math.abs(b.bmiDelta):'')+'</span>',
-      '<span class="tag amber">體脂 '+b.bodyfat+'%'+(b.bodyfatDelta!=null?' '+(b.bodyfatDelta>0?'↑':'↓')+Math.abs(b.bodyfatDelta):'')+'</span>',
-      '<span class="tag '+(m.visceral>=10?'red':'gray')+'">'+(m.visceral==null?'內臟脂肪：未成年不提供':'內臟脂肪 '+m.visceral)+'</span>',
-      '<span class="tag blue">BMR '+m.bmr+' kcal</span>',
-      '<span class="tag gray">身體年齡 '+m.bodyAge+' 歲</span>',
-      b.score!=null?'<span class="tag green">得分 '+b.score+'</span>':''
-    ].join('');
-    const metrics=[
-      bcell('肌肉量',m.muscle,' lb',m.muscleDelta),bcell('肌肉率',m.musclePct,'%',m.musclePctDelta),
-      bcell('身體水分',m.waterPct,'%',m.waterPctDelta),bcell('蛋白質率',m.proteinPct,'%',m.proteinPctDelta),
-      bcell('骨量／骨鹽率',m.bonePct,'%',m.bonePctDelta),bcell('骨骼肌量',m.skeletalMuscle,' lb',m.skeletalMuscleDelta),
-      bcell('基礎代謝率',m.bmr,' kcal',m.bmrDelta),bcell('去脂體重',m.lean,' lb',m.leanDelta),
-      bcell('心率',m.heartRate,' 次/分'),bcell('推測腰臀比',m.waistHip==null?null:m.waistHip,''),
-      bcell('身體水分量',c.water,' lb'),bcell('脂肪量 / 蛋白質量',c.fat+' / '+c.protein,' lb')
-    ].join('');
-    return '<div class="card body-card"><div class="bc-head" style="background:'+f.color+'"><div class="av">'+f.emoji+'</div><div><h3>'+esc(b.name)+' <span style="font-size:11px;opacity:.85">('+esc(b.profile)+')</span></h3><div class="role">'+esc(b.role)+' · '+esc(b.date)+' '+esc(b.time)+'</div></div></div>'+
-      '<div class="bc-body"><div class="bc-weight"><b>'+b.weight+'</b><small>lb（'+lb2kg(b.weight)+' kg）'+(b.weightTag?' · 磅評：'+esc(b.weightTag):'')+'</small></div>'+
-      '<div class="bc-scale">'+esc(b.scale||'')+(b.bodyType?' ・身體類型「'+esc(b.bodyType)+'」':'')+'</div>'+
-      '<div class="bc-chips">'+chips+'</div>'+
-      (b.scoreNote?'<div class="tiny muted" style="margin-bottom:8px">📝 '+esc(b.scoreNote)+'</div>':'')+
-      '<div class="bc-metrics">'+metrics+'</div>'+
-      (t&&t.standardWeight?'<div class="tiny muted">🎯 磅嘅體重建議：標準體重 '+t.standardWeight+' lb・體重控制 '+t.weightControl+' lb・脂肪控制 '+t.fatControl+' lb・肌肉 '+esc(t.muscleControl)+'<br><span class="mini">呢啲係磅用 BMI≈22 推算，唔等於醫生建議，唔使當硬目標。</span></div>':'<div class="tiny muted">🎯 未成年：磅無提供體重建議，我亦唔會代佢推算。</div>')+
-      '<div class="bc-analysis"><h4>🔍 '+esc(b.headline)+'</h4><ol>'+b.points.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ol>'+
-      '<div class="bc-actions"><b>✅ 飲食／生活行動</b>'+b.actions.map(a=>'<div>・'+esc(a)+'</div>').join('')+'</div>'+
-      '<div class="bc-goal"><b>🎯 同網站每日目標對照</b>'+esc(b.goalCheck)+'</div></div></div></div>';
-  }).join('');
   const rows=[
-    ['體重 (lb)',b=>b.weight],['BMI',b=>b.bmi+(b.bmiTag?'（'+b.bmiTag+'）':'')],
-    ['體脂率',b=>b.bodyfat+'%'],['內臟脂肪等級',b=>b.metrics.visceral==null?'—（未成年）':b.metrics.visceral+'（'+b.metrics.visceralTag+'）'],
+    ['體重 (lb) · 07/11',b=>b.weight],    ['體重 (lb) · 最新',(b,f)=>{const L=measureMerged(f.id);return L.last?'<span style="color:var(--green);font-weight:800">'+L.lb+'（'+esc(L.date)+'）</span>':b.weight+'（未自填）';}],
+    ['BMI',b=>b.bmi+(b.bmiTag?'（'+b.bmiTag+'）':'')],
+    ['體脂率',(b,f)=>{const L=measureMerged(f.id);return (L.bodyfat!=null?L.bodyfat:b.bodyfat)+'%'+(L.last&&L.bodyfat!=null?' <span class="tag green">自填</span>':'');}],
+    ['內臟脂肪等級',b=>b.metrics.visceral==null?'—（未成年，不推算）':b.metrics.visceral+'（'+b.metrics.visceralTag+'）'],
     ['基礎代謝 (kcal)',b=>b.metrics.bmr],['身體年齡',b=>b.metrics.bodyAge+' 歲'],
     ['肌肉量 (lb)',b=>b.metrics.muscle],['去脂體重 (lb)',b=>b.metrics.lean],
+    ['每日熱量目標',(b,f)=>S.goals[f.id].kcal+' kcal'],
     ['近期趨勢',b=>esc(b.scale)]
   ];
   $('#bodyCompare').innerHTML='<thead><tr><th>項目</th>'+FAMILY.map(f=>'<th>'+f.emoji+' '+f.name+'</th>').join('')+'</tr></thead><tbody>'+
-    rows.map(([l,fn])=>'<tr><td>'+l+'</td>'+FAMILY.map(f=>'<td>'+fn(M[f.id])+'</td>').join('')+'</tr>').join('')+'</tbody>';
-  $('#bodyFamilyNote').innerHTML='<ul style="font-size:12.5px;line-height:1.8;padding-left:18px">'+B.familyNote.map(n=>'<li style="margin-bottom:7px">'+esc(n)+'</li>').join('')+'</ul>';
+    rows.map(([l,fn])=>'<tr><td>'+l+'</td>'+FAMILY.map(f=>'<td>'+fn(M[f.id],f)+'</td>').join('')+'</tr>').join('')+'</tbody>';
+  $('#bodyFamilyNote').innerHTML='<ul style="font-size:12.5px;line-height:1.8;padding-left:18px">'+B.familyNote.map(n=>'<li style="margin-bottom:7px">'+esc(n)+'</li>').join('')+'</ul>'+
+    '<div class="notice ok" style="margin-top:10px"><b>🔗 同「食咗乜」點串：</b>去「📝 食咗乜」寫低實際食過嘅嘢，網站會用上面每人嘅目標去計「超標定食少咗啲乜」；唔會再要你自己計需要幾多。</div>';
+  renderMeasure();
 }
+function renderMeasure(){
+  const sel=$('#msMember');if(!sel)return;
+  sel.innerHTML=FAMILY.map(f=>'<option value="'+f.id+'"'+(f.id===S.ui.member?' selected':'')+'>'+f.emoji+' '+f.name+'</option>').join('');
+  if($('#msDate'))$('#msDate').value=todayKey();
+  const all=FAMILY.flatMap(f=>(S.measure[f.id]||[]).map(x=>({...x,f:f}))).sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  $('#measureList').innerHTML=all.length?('<div class="tiny muted" style="margin-bottom:5px">已儲存 '+all.length+' 筆自填紀錄（新至舊）：</div>'+all.slice(0,8).map(x=>
+    '<div class="diary-row"><span class="dn">'+esc(x.date)+' · '+x.f.emoji+' '+x.f.name+' · <b>'+x.lb+' lb</b>'+(x.bodyfat!=null?' · 體脂 '+x.bodyfat+'%':'')+(x.visceral!=null?' · 內臟脂肪 '+x.visceral:'')+(x.muscle!=null?' · 肌肉 '+x.muscle+' lb':'')+(x.note?'<span class="dm"> · '+esc(x.note)+'</span>':'')+'</span><button class="btn-icon" data-action="del-measure" data-id="'+esc(x.id)+'" title="刪除">×</button></div>').join('')):'<div class="tiny muted">未有自填紀錄。可以每週或每兩個星期填一次，唔使日日磅。</div>';
+  const trends=FAMILY.map(f=>{const b=BODY()?BODY().members[f.id]:null,L=measureMerged(f.id);if(!b)return '';
+    const dw=deltaTxt(L.lb,b.weight,' lb',true),df=(L.last&&L.last.bodyfat!=null)?deltaTxt(L.last.bodyfat,b.bodyfat,'%',true):'',dm=(L.last&&L.last.muscle!=null)?deltaTxt(L.last.muscle,b.metrics.muscle,' lb',false):'';
+    if(!L.last)return '<div class="trend-line">'+f.emoji+' <b>'+f.name+'</b>：暫時只有 07/11 基準（'+b.weight+' lb／體脂 '+b.bodyfat+'%）—— 填入第一筆新數字就有得比。</div>';
+    let verdict='';
+    if(L.last.bodyfat!=null){const d=Math.round((L.last.bodyfat-b.bodyfat)*10)/10;verdict=d<0?'體脂向下 ✅ 方向啱，維持現時熱量同蛋白目標，唔好再加赤字。':d>0?'體脂向上 ⚠️ 先檢查添加糖、飽和脂肪同份量，唔好即刻扣熱量。':'體脂無變，繼續保持，睇埋肌肉同腰圍。';}
+    else verdict='冇填體脂，只睇到體重變化；體重受水份影響大，建議下次連體脂一齊填。';
+    return '<div class="trend-line">'+f.emoji+' <b>'+f.name+'</b>（'+esc(L.date)+'）：體重 '+L.lb+' lb '+dw+(df?'・體脂 '+L.last.bodyfat+'% '+df:'')+(dm?'・肌肉 '+L.last.muscle+' lb '+dm:'')+'<br><span class="mini">'+verdict+'</span></div>';
+  }).join('');
+  $('#bodyTrend').innerHTML='<h4 style="font-size:12.5px;color:var(--teal-d);margin:10px 0 5px">📈 對住 07/11 報告嘅走勢分析（已套用去上面檔案卡）</h4>'+trends;
+}
+function measurePrompt(){const B=BODY();if(!B)return '';
+  const lines=FAMILY.map(f=>{const L=measureMerged(f.id),b=B.members[f.id];
+    return f.name+'：07/11 基準 '+b.weight+' lb／體脂 '+b.bodyfat+'%'+(b.metrics.visceral!=null?'／內臟脂肪 '+b.metrics.visceral:'')+' → 最新 '+L.lb+' lb'+(L.bodyfat!=null?'／體脂 '+L.bodyfat+'%':'')+(L.visceral!=null?'／內臟脂肪 '+L.visceral:'')+'（'+L.date+'）';}).join('\n');
+  return '請幫我將以下最新身體數字寫入 Elsapciz 嘅 sa-family-mealplan/data/body.js（更新 meta.measured／members 對應欄位），並重新計一次三人嘅飲食檔案同每日目標：\n\n'+lines+'\n\n【自填紀錄明細】\n'+FAMILY.flatMap(f=>(S.measure[f.id]||[]).map(x=>f.name+' '+x.date+'：'+x.lb+' lb'+(x.bodyfat!=null?'／體脂 '+x.bodyfat+'%':'')+(x.visceral!=null?'／內臟脂肪 '+x.visceral:'')+(x.muscle!=null?'／肌肉 '+x.muscle+' lb':'')+(x.note?'／'+x.note:''))).join('\n')+'\n\n請保留「未成年 Eliz 唔推算內臟脂肪／體重建議」呢條規則，並講解每人走勢同需唔需要調整目標。';}
 
 /* ---------- render: planner ---------- */
 let pendingSlot=null;
@@ -838,7 +1030,7 @@ function renderPlan(){
     h+='<div class="day-col '+(isT?'is-today':'')+'"><div class="day-head '+(isT?'is-today':'')+'"><div class="dow">週'+DOW[(d.getDay()+6)%7]+'</div><div class="dnum">'+d.getDate()+'</div></div>';
     MEALS.forEach(([m,lb])=>{const arr=planSlot(key,m);count+=arr.length;
       let pills='';slotEntries(key,m).forEach((e,i)=>{const r=recipeById(e.id);if(!r)return;
-        pills+='<div class="meal-pill"><button class="x" data-action="remove-meal" data-key="'+key+'" data-meal="'+m+'" data-i="'+i+'">×</button><span class="nm">'+r.emoji+' '+esc(r.name)+'</span><div class="kc">'+nutOf(r).kcal+' kcal/人 · '+(e.people||3)+' 人 = '+Math.round(nutOf(r).kcal*(e.people||3))+' kcal/全家</div></div>';});
+        pills+='<div class="meal-pill clickable" data-action="view-plan-recipe" data-id="'+r.id+'" title="撳開食譜：材料＋步驟＋營養"><button class="x" data-action="remove-meal" data-key="'+key+'" data-meal="'+m+'" data-i="'+i+'">×</button><span class="nm">'+r.emoji+' '+esc(r.name)+'</span><div class="kc">'+nutOf(r).kcal+' kcal/人 · '+(e.people||3)+' 人 = '+Math.round(nutOf(r).kcal*(e.people||3))+' kcal/全家</div><span class="open">📖 撳我睇點煮 →</span></div>';});
       h+='<div class="meal-slot"><div class="meal-label"><span>'+lb+'</span><span>'+(arr.length||'')+'</span></div>'+pills+'<button class="add-meal" data-action="pick-recipe" data-key="'+key+'" data-meal="'+m+'">＋ 由 Sa Recipes 揀</button></div>';});
     h+='</div>';});
   $('#planGrid').innerHTML=h;$('#planCount').textContent='呢週已排 '+count+' 道菜';
@@ -848,6 +1040,23 @@ function renderPlan(){
   $('#planHealth').innerHTML=ds.map(d=>{const k=todayKey(d),hs=healthForDay(k);
     return '<div class="hs-day"><b>'+fmtShort(d)+' 週'+DOW[(d.getDay()+6)%7]+'</b><div class="chiprow">'+hs.map(x=>'<span class="tag '+(x.warn.length?'red':'green')+'">'+x.f.emoji+' '+x.f.name+' '+(x.warn.length?'⚠️ '+esc(x.warn[0]):'✅ 大致達標')+'</span>').join('')+'</div></div>';}).join('')+
     '<div class="mini" style="margin-top:9px">呢份係功能示範菜單，用嚟示範點計同點提你；實際份量同意見請按主診醫生／註冊營養師建議調整。紅色提示唔代表「唔食得」，係提你留意份量或換配菜。</div>';
+  renderCookbook();
+}
+function renderCookbook(){
+  const off=S.ui.weekOffset,seen=new Map();
+  weekDates(off).forEach(d=>{const k=todayKey(d);dayEntries(k).forEach(e=>{
+    if(!seen.has(e.recipe.id))seen.set(e.recipe.id,{r:e.recipe,days:[]});
+    const x=seen.get(e.recipe.id),lbl=fmtShort(d)+' '+MEALS.find(m=>m[0]===e.meal)[1];
+    if(x.days.indexOf(lbl)<0)x.days.push(lbl);});});
+  const list=[...seen.values()];
+  $('#weekCookbook').innerHTML=list.length?('<div class="tiny muted" style="margin-bottom:10px">本週共 <b>'+list.length+'</b> 道菜；下面份量係食譜原本 '+'2 人份基準，排 3 人餐單時購物清單會自動 ×1.5。每道亦可以撳名開大圖詳情。</div>'+
+    list.map(({r,days})=>{const n=nutOf(r),thumb=r.cover||r.img;
+      return '<div class="cook-item"><div class="cook-head">'+(thumb?'<img src="'+esc(thumb)+'" alt="">':'<span style="font-size:30px">'+r.emoji+'</span>')+
+        '<div style="flex:1;min-width:140px"><h4><button class="link" data-action="view-plan-recipe" data-id="'+r.id+'" style="font-size:14.5px">'+esc(r.name)+' ↗</button></h4><div class="days">📅 '+esc(days.join('、'))+'　⏱ '+(r.mins||20)+' 分鐘　🍽 '+(r.servings||2)+' 人份　🔥 '+n.kcal+' kcal／份</div></div>'+
+        '<span class="tag blue">鈉 '+n.sodium+' mg</span><span class="tag green">鈣 '+n.calcium+' mg</span></div>'+
+        '<div class="cook-cols"><div><h5>🧾 材料</h5><div class="ing">'+(r.ingredients||[]).map(i=>'・'+esc(i.name)+' <b>'+esc(qtyText(i.qty,i.unit))+'</b>').join('<br>')+'</div></div>'+
+        '<div><h5>👩‍🍳 步驟</h5><div class="stp">'+(r.steps||[]).map((s,i)=>'<div><b>'+(i+1)+'.</b>'+esc(s)+'</div>').join('')+'</div></div></div></div>';}).join('')):
+    '<div class="tiny muted">呢週未排餐，去上面加菜就見到食譜同做法。</div>';
 }
 
 /* ---------- render: recipes ---------- */
@@ -895,9 +1104,45 @@ function renderUpdate(){
    ['1','一堆食譜交俾我','食譜截圖直接貼去 WorkBuddy 對話；IG／FB／YouTube／TikTok link 可以喺「Sa Recipes」或收件箱<b>一次過貼多條（每行一條）</b>，唔使逐道嚟。'],
    ['2','我 AUTO 轉 ＋ 搵相','我讀圖／拎影片字幕同頁面內容，抽出材料、份量、步驟，估算每份營養，標埋邊個啱食、邊個要留意；無相嘅我上網搵相關食物相片存落 images/ 並標來源。'],
    ['3','入 Sa Recipes','我直接寫入 data/recipes.js（commit / push）＋ data/body.js（身體紀錄），或者俾你一段 JSON，你喺「貼 JSON 即刻入庫」一貼就用得。'],
-   ['4','排餐・計營養・再試煮','去每週 Cooking Menu 由 Sa Recipes 揀菜，3 人份放大、逐餐計 calories；試煮完撳「🍳 我試過・改份量」自己改，網站即時重算，購物清單同步跟住改。']];
+   ['4','排餐 → 記低食咗乜 → Update 磅數','每週 Cooking Menu 每格可以撳開食譜睇材料同步驟，下面「呢週點煮」一次過列晒；去「📝 食咗乜」記低實際食過嘅嘢，網站自動計超標／食少咗啲乜；每週或每月去「我屋企＋身體」填新磅數，檔案卡同目標即刻跟住更新。']];
   $('#flowSteps').innerHTML=steps.map(s=>'<div class="card flow-step"><div class="n">'+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div>').join('');
   renderInbox();
+}
+
+/* ---------- render: 每日食咗乜 ---------- */
+const MEAL_LABEL4={breakfast:'🌅 早餐',lunch:'☀️ 午餐',dinner:'🌙 晚餐',snack:'🍎 小食'};
+function renderDiary(){
+  const date=S.ui.diaryDate||todayKey(),mem=S.ui.diaryMember||'sa',f=F(mem),g=S.goals[mem];
+  const dd=$('#diaryDate');if(dd)dd.value=date;
+  $('#diaryMember').innerHTML=FAMILY.map(x=>'<option value="'+x.id+'"'+(x.id===mem?' selected':'')+'>'+x.emoji+' '+x.name+'（'+x.role+'）</option>').join('');
+  $('#diaryQuickDates').innerHTML=Array.from({length:7},(_,i)=>{const k=shiftDate(todayKey(),-i);return '<button class="btn '+(k===date?'btn-primary':'btn-ghost')+' btn-sm" data-action="diary-date" data-date="'+k+'" style="margin:2px">'+(i===0?'今日':i===1?'尋日':fmtShort(new Date(k+'T12:00:00')))+'</button>';}).join('');
+  $('#diaryRecipe').innerHTML=S.recipes.map(r=>'<option value="'+r.id+'">'+esc(r.name)+' · '+nutOf(r).kcal+' kcal</option>').join('');
+  const list=diaryEntries(date,mem);
+  $('#diaryListMeta').textContent=esc(date)+' · '+f.name+' · 共 '+list.length+' 項';
+  const groups={};list.forEach(x=>{(groups[x.meal||'snack']=groups[x.meal||'snack']||[]).push(x);});
+  const order=['breakfast','lunch','dinner','snack'].filter(k=>groups[k]);
+  $('#diaryList').innerHTML=order.length?order.map(k=>'<div class="diary-group">'+(MEAL_LABEL4[k]||k)+' <span class="mini">'+Math.round(groups[k].reduce((s,x)=>s+(x.nut.kcal||0),0))+' kcal</span></div>'+
+    groups[k].map(x=>'<div class="diary-row"><span class="dn">'+esc(x.name)+'<span class="dm"> · '+esc(x.source||'手動')+'</span></span><span class="dk">'+(x.nut.kcal||0)+' kcal</span><button class="btn-icon" data-action="diary-del" data-id="'+esc(x.id)+'" title="刪除">×</button></div>').join('')).join(''):
+    '<div class="empty" style="padding:22px"><span class="big">📝</span>呢日仲未記低。<br>可以第日先補充 —— 揀返日期就得。</div>';
+  const A=actualNut(date,mem),n=A.nut;
+  $('#diarySourceNote').innerHTML=A.source==='diary'?'✅ 用緊<b>你寫低嘅實際紀錄</b>（'+A.count+' 項）對照 '+f.name+' 嘅每日目標。':'⚠️ 呢日<b>未寫低實際食咗乜</b>，以下暫用「餐單計劃＋手動記錄」估算（'+A.count+' 道菜），<b>唔代表已食咗</b>。去左邊加返實際紀錄就自動轉。';
+  const bars=[['kcal','熱量'],['protein','蛋白質'],['fiber','膳食纖維'],['calcium','鈣']];
+  $('#diaryAnalysis').innerHTML='<div class="need-grid">'+
+    [['每日需要',g.kcal+' kcal','BMR '+goalFormula(f).bmr+' × '+goalFormula(f).factor],[A.source==='diary'?'實際食咗':'餐單估算（未記）',n.kcal+' kcal',A.source==='diary'?'日記 '+A.count+' 項':'唔代表已食咗'],
+     ['差額',(n.kcal-g.kcal>0?'+':'')+Math.round(n.kcal-g.kcal)+' kcal',n.kcal>g.kcal?'超出':'尚欠'],['今日鈉 / 上限',n.sodium+' / '+g.sodium+' mg',n.sodium>g.sodium?'⚠️ 超標':'✅ 未超標']].map(x=>'<div><span>'+x[0]+'</span><b>'+x[1]+'</b><small>'+x[2]+'</small></div>').join('')+'</div>'+
+    '<div style="margin-top:12px">'+bars.map(([k,l])=>{const t=g[k]||1,pct=Math.min(100,Math.round(n[k]/t*100));return '<div class="macro"><div class="mrow"><span>'+l+'</span><span><b>'+n[k]+'</b> / '+t+'　<span class="muted">'+Math.round(n[k]/t*100)+'%</span></span></div><div class="bar"><i style="width:'+pct+'%"></i></div></div>';}).join('')+'</div>'+
+    '<div class="divider"></div><h4 style="font-size:13px;margin-bottom:6px">🔍 我超標定係食少咗啲乜？（附具體食物建議）</h4>'+gapAdvice(f,n,g)+
+    '<div class="mini muted" style="margin-top:9px">對照嘅目標由 '+f.name+' 嘅 BMR／體脂／肌肉量推導（見「我屋企＋身體」頁）。營養全屬估算，唔取代營養師或醫生意見。</div>';
+  $('#diaryWeek').innerHTML=Array.from({length:7},(_,i)=>{const k=shiftDate(todayKey(),-6+i),a=actualNut(k,mem),t=g.kcal,p=Math.round(a.nut.kcal/t*100);
+    return '<div class="trend-line">'+esc(k)+'（'+(k===todayKey()?'今日':'週'+DOW[(new Date(k+'T12:00:00').getDay()+6)%7])+'）　<b>'+a.nut.kcal+' / '+t+' kcal</b>　<span class="tag '+(p>115?'red':p<80?'amber':'green')+'">'+(p>115?'超出 '+(p-100)+'%':p<80?'得 '+p+'%，可能食少咗':'大致合適')+'</span> <span class="mini">· '+(a.source==='diary'?'實記 ':'估算 ')+a.count+' 項</span></div>';}).join('');
+}
+function renderNeedCard(){
+  const m=S.ui.member,f=F(m),g=S.goals[m],fm=goalFormula(f),A=actualNut(todayKey(),m),n=A.nut;
+  $('#needCard').innerHTML='<div class="need-grid">'+
+    [['BMR（磅量度）',fm.bmr+' kcal','07/11 智能磅報告'],['× 活動系數',fm.factor,f.role+' 日常活動'],
+     ['每日需要 TDEE',fm.tdee+' kcal','自動計，唔使你自己計'],[A.source==='diary'?'實際食咗':'餐單估算（未記）',n.kcal+' kcal',A.source==='diary'?'📝 日記實數 '+'（'+A.count+' 項）':'⚠️ 唔代表已食咗']].map(x=>'<div><span>'+x[0]+'</span><b>'+x[1]+'</b><small>'+x[2]+'</small></div>').join('')+'</div>'+
+    '<div class="notice '+(A.source==='diary'?'ok':'')+'" style="margin-top:11px"><b>'+ (A.source==='diary'?'✅ 今日已記低實際飲食':'⚠️ 今日仲未寫低「食咗乜」')+'</b>：需要 '+g.kcal+' kcal，'+(A.source==='diary'?'實際食咗 '+n.kcal+' kcal，差額 '+(n.kcal-g.kcal>0?'+':'')+Math.round(n.kcal-g.kcal)+' kcal。':'以下進度條暫用今日餐單估算，唔當你已食咗。')+' <button class="link" data-go="diary">📝 去寫今日食咗乜 →</button></div>'+
+    '<div class="mini muted" style="margin-top:8px">公式：BMR '+fm.bmr+' × '+fm.factor+' = '+fm.tdee+' kcal（TDEE）→ 網站目標 '+g.kcal+' kcal；蛋白 '+g.protein+' g 按去脂體重計。目標數字喺「我屋企＋身體」頁有逐條「因為 → 所以」解釋。</div>';
 }
 
 /* ---------- render: shopping ---------- */
@@ -920,7 +1165,8 @@ function renderNutrition(){
   const m=S.ui.member,g=S.goals[m];
   $('#memberSelect').innerHTML=FAMILY.map(f=>'<option value="'+f.id+'"'+(f.id===m?' selected':'')+'>'+f.emoji+' '+f.name+'（'+f.role+'）</option>').join('');
   $('#goalInputs').innerHTML=GOAL_KEYS.map(k=>'<div class="field"><label>'+NUT_LABEL[k]+'</label><input type="number" id="goal-'+k+'" value="'+g[k]+'" min="0"></div>').join('');
-  const n=todayNut(m);
+  const A=actualNut(todayKey(),m),n=A.nut;
+  $('#actualSourceLabel').innerHTML=A.source==='diary'?'✅ 用緊<b>「📝 食咗乜」嘅實際紀錄</b>（'+A.count+' 項）＋ 對照下面目標。':'⚠️ 今日<b>未寫低實際食咗乜</b>，以下暫用<b>餐單計劃估算</b>（'+A.count+' 道菜），唔代表已食咗。<button class="link" data-go="diary">去寫 →</button>';
   const bars=[['kcal','熱量',''],['protein','蛋白質','blue'],['carbs','碳水化合物','amber'],['fat','脂肪','purple'],['fiber','膳食纖維','green'],['sodium','鈉（越低越好）','blue'],['added','添加糖（越低越好）','amber'],['calcium','鈣','green']];
   $('#macroBars').innerHTML=bars.map(([k,l,cls])=>{const t=g[k]||1,pct=Math.min(100,Math.round(n[k]/t*100));const over=k==='sodium'||k==='added'?n[k]>t:false;
     return '<div class="macro"><div class="mrow"><span>'+l+'</span><span><b>'+n[k]+'</b> / '+t+' '+NUT_LABEL[k].split(' ').pop()+'　<span class="muted">'+Math.round(n[k]/t*100)+'%</span></span></div><div class="bar"><i class="'+cls+(over?' over':'')+'" style="width:'+pct+'%"></i></div></div>';}).join('');
@@ -928,7 +1174,7 @@ function renderNutrition(){
   $('#todayLogs').innerHTML=logs.length?logs.map(l=>'<div style="display:flex;justify-content:space-between;font-size:12.5px;padding:6px 0;border-bottom:1px solid #f3f4f6"><span>'+esc(l.name)+' <span class="mini">'+l.kcal+' kcal</span></span><button class="btn-icon" data-action="remove-log" data-name="'+esc(l.name)+'">×</button></div>').join(''):'<div class="tiny muted">暫無手動記錄。</div>';
   const w=S.water[todayKey()]||0;$('#waterNum').innerHTML=w+' <small style="font-size:12px;color:var(--faint)">/ 8 杯</small>';
   let cups='';for(let i=0;i<8;i++)cups+='<span class="'+(i<w?'on':'')+'"></span>';$('#waterCups').innerHTML=cups;
-  renderWeight();renderFasting();
+  renderNeedCard();renderWeight();renderFasting();
 }
 function fmtDur(ms){const s=Math.max(0,Math.floor(ms/1000)),p=n=>String(n).padStart(2,'0');return p(Math.floor(s/3600))+':'+p(Math.floor(s%3600/60))+':'+p(s%60);}
 function renderFasting(){const el=$('#fastingNum');if(!el)return;
@@ -946,8 +1192,8 @@ function renderWeight(){const svg=$('#weightSpark');if(!svg)return;const m=S.ui.
     '<polyline points="'+line+'" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round"/>'+pts.map(p=>'<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="3.2" fill="#fff" stroke="#0f766e" stroke-width="2"/>').join('');
   const d=(v[v.length-1]-v[0]).toFixed(1);$('#weightInfo').textContent=F(m).name+' 共 '+all.length+' 筆・最近 '+(d>0?'+':'')+d+' lb・最新 '+v[v.length-1]+' lb（'+lb2kg(v[v.length-1])+' kg）';
 }
-function renderAll(){applyTweaks();renderHeroCard();renderFamilyStrip();renderToday();renderWidgets();renderFamily();renderBody();renderPlan();renderRecipes();renderShopping();renderNutrition();renderUpdate();
-  $('#todayChip').textContent='📅 '+new Date().toLocaleDateString('zh-Hant',{year:'numeric',month:'long',day:'numeric',weekday:'short'});}
+function renderAll(){applyTweaks();renderHeroCard();renderFamilyStrip();renderToday();renderWidgets();renderFamily();renderBody();renderPlan();renderRecipes();renderShopping();renderNutrition();renderDiary();renderUpdate();
+  $('#todayChip').textContent='📅 '+new Date().toLocaleDateString('zh-Hant',{month:'numeric',day:'numeric',weekday:'short'});}
 
 /* ---------- modal ---------- */
 function openModal(title,body,foot){$('#modal-root').innerHTML='<div class="modal-mask" data-action="mask-close"><div class="modal" data-stop="1"><div class="modal-head"><h3>'+title+'</h3><button class="close-x" data-action="close-modal">×</button></div><div class="modal-body">'+body+'</div>'+(foot?'<div class="modal-foot">'+foot+'</div>':'')+'</div></div>';}
@@ -1087,8 +1333,48 @@ function promptText(){const links=S.inbox.filter(x=>x.status!=='done');
    '\n最後用兩三句講：邊個最啱食、邊個要留意、有冇低鈉／減糖改法。無字幕嘅片請標明邊部分係估算。';}
 function jsonTemplate(){return JSON.stringify({name:'食譜名',emoji:'🍽️',cat:'主菜',mins:25,servings:2,tags:['快手'],flags:['heart'],ingredients:[{name:'雞胸肉',qty:200,unit:'g',cat:'肉類'}],steps:['步驟一','步驟二'],nut:{kcal:320,carbs:12,protein:38,fat:13,fiber:5,sugar:2,added:0,sodium:420,satfat:2.5,calcium:80,omega3:0.1},source:{title:'',url:''},img:'',imgCredit:{title:'',author:'',license:'',url:''}},null,2);}
 
+function addDiaryEntry(name,nut,source,meal){
+  const date=S.ui.diaryDate||todayKey(),all=!!($('#diaryAllThree')&&$('#diaryAllThree').checked);
+  const ids=all?FAMILY.map(f=>f.id):[S.ui.diaryMember||S.ui.member||'sa'];
+  if(!S.diary[date])S.diary[date]=[];
+  ids.forEach(mid=>S.diary[date].push({id:uid(),member:mid,name:String(name||'未命名'),meal:meal||'snack',nut:clone(nut),source:source||'手動',ts:Date.now()}));
+  save();return ids.length;}
+
 /* ---------- actions ---------- */
 document.addEventListener('click',e=>{const el=e.target.closest('[data-action]');if(!el)return;const a=el.dataset.action;
+  /* ---- 合併檔案 / 身體數字自填 ---- */
+  if(a==='view-plan-recipe'){openDetail(el.dataset.id);return;}
+  if(a==='print-cookbook'){go('plan');document.body.classList.add('print-cook');window.print();setTimeout(()=>document.body.classList.remove('print-cook'),1200);return;}
+  if(a==='recalc-goals'){if(!autoGoals()){toast('⚠️ 搵唔到 data/body.js');return;}save();renderAll();toast('✅ 已用三人 BMR 重算每日目標');return;}
+  if(a==='go-measure'){go('family');const s=$('#measureSection');if(s&&s.scrollIntoView)s.scrollIntoView({behavior:'smooth',block:'start'});return;}
+  if(a==='save-measure'){const mid=$('#msMember').value,date=$('#msDate').value||todayKey(),lb=parseFloat($('#msWeight').value);
+    if(!lb||lb<40||lb>600){toast('⚠️ 請填合理體重（40–600 lb）');return;}
+    const num=id=>{const v=parseFloat($('#'+id).value);return isNaN(v)?null:v;};
+    const rec={id:uid(),date:date,lb:lb,bodyfat:num('msFat'),visceral:num('msVisc'),muscle:num('msMuscle'),note:$('#msNote').value.trim()};
+    S.measure[mid]=(S.measure[mid]||[]).filter(x=>x.date!==date);S.measure[mid].push(rec);S.measure[mid].sort((x,y)=>String(x.date).localeCompare(String(y.date)));
+    if(!S.weights[mid])S.weights[mid]=[];const ex=S.weights[mid].find(w=>w.date===date);
+    if(ex)Object.assign(ex,{date:date,lb:lb,kg:lb2kg(lb)});else S.weights[mid].push({date:date,lb:lb,kg:lb2kg(lb)});
+    S.weights[mid].sort((x,y)=>String(x.date).localeCompare(String(y.date)));
+    ['msWeight','msFat','msVisc','msMuscle','msNote'].forEach(k=>{$('#'+k).value='';});
+    save();renderAll();toast('✅ 已更新 '+F(mid).name+' 嘅檔案卡、對照表同走勢');return;}
+  if(a==='copy-measure'){copyText(measurePrompt(),'✅ 已複製新身體數字，貼去 WorkBuddy 對話就得');return;}
+  if(a==='del-measure'){FAMILY.forEach(f=>{S.measure[f.id]=(S.measure[f.id]||[]).filter(x=>x.id!==el.dataset.id);});save();renderAll();toast('已刪除該筆自填紀錄');return;}
+  if(a==='clear-measures'){if(!confirm('清除全部自填身體紀錄？（07/11 原報告唔會刪）'))return;FAMILY.forEach(f=>S.measure[f.id]=[]);save();renderAll();toast('已清除自填紀錄');return;}
+  /* ---- 每日食咗乜 ---- */
+  if(a==='diary-date'){S.ui.diaryDate=el.dataset.date;save();renderDiary();return;}
+  if(a==='diary-quick'){const text=$('#diaryText').value.trim();if(!text){toast('⚠️ 請寫低食咗乜');return;}
+    const est=estimateFromText(text);
+    if(!est.hits.length){$('#diaryQuickResult').innerHTML='<div class="notice" style="margin-top:9px">🔍 搵唔到已收錄食材。試吓「白飯、雞胸肉、西蘭花、蛋、牛奶、三文魚、藍莓」；或者用下面 ②／③。</div>';return;}
+    const n=emptyNut();n.kcal=est.total.kcal;n.carbs=est.total.carbs;n.protein=est.total.protein;n.fat=est.total.fat;n.sodium=est.total.sodium;n.calcium=est.total.calcium;n.added=est.total.added;
+    n.fiber=Math.round(est.hits.filter(h=>/菜|蘭花|燕麥|豆|果|菇/.test(h.n)).length*1.8);
+    const c=addDiaryEntry(text.slice(0,40),n,'口語估算 · '+est.hits.length+' 項食材',$('#diaryMeal').value);
+    $('#diaryText').value='';$('#diaryQuickResult').innerHTML='<div class="notice ok" style="margin-top:9px">✅ 已加入 '+c+' 筆：'+est.hits.map(h=>esc(h.n)).join('、')+'，合計 <b>'+n.kcal+' kcal</b>。</div>';renderAll();toast('✅ 已記低 '+n.kcal+' kcal');return;}
+  if(a==='diary-add-recipe'){const r=recipeById($('#diaryRecipe').value);if(!r){toast('⚠️ 請先揀食譜');return;}
+    const c=addDiaryEntry(r.name,nutOf(r),'Sa Recipes · 每份估算',$('#diaryMeal').value);renderAll();toast('✅ 已加入 '+c+' 筆：'+r.name);return;}
+  if(a==='diary-add-manual'){const name=$('#diaryName').value.trim()||'手動記錄',k=parseFloat($('#diaryKcal').value);
+    if(!k||k<0){toast('⚠️ 請填 calories');return;}const n=emptyNut();n.kcal=Math.round(k);
+    const c=addDiaryEntry(name,n,'手動輸入 kcal',$('#diaryMeal').value);$('#diaryName').value='';$('#diaryKcal').value='';renderAll();toast('✅ 已加入 '+c+' 筆：'+name);return;}
+  if(a==='diary-del'){const date=S.ui.diaryDate||todayKey();S.diary[date]=(S.diary[date]||[]).filter(x=>x.id!==el.dataset.id);save();renderAll();toast('已刪除');return;}
   if(a==='mask-close'){if(e.target===el)closeModal();return;}
   if(a==='close-modal'){closeModal();return;}
   if(a==='export'){const b=new Blob([JSON.stringify(S,null,2)],{type:'application/json'}),u=URL.createObjectURL(b),l=document.createElement('a');l.href=u;l.download='sa-mealplan-backup-'+todayKey()+'.json';l.click();URL.revokeObjectURL(u);toast('✅ 備份已下載');return;}
@@ -1162,10 +1448,13 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-action]')
       est.hits.map(h=>'<tr><td>'+esc(h.n)+'</td><td>'+h.kcal+' kcal</td></tr>').join('')+'</tbody></table><div style="font-size:12px;margin-top:8px">合計 <b>'+t.kcal+' kcal</b>・蛋白 '+t.protein+'g・鈉 '+t.sodium+'mg・鈣 '+t.calcium+'mg</div>'+
       '<div style="display:flex;gap:7px;margin-top:9px"><input id="logName" class="field" style="flex:1" value="'+esc(text.slice(0,26))+'"><button class="btn btn-primary btn-sm" data-action="add-log">加到今日</button></div></div>';
     $('#estimateResult').dataset.kcal=t.kcal;$('#estimateResult').dataset.protein=t.protein;$('#estimateResult').dataset.carbs=t.carbs;$('#estimateResult').dataset.fat=t.fat;$('#estimateResult').dataset.sodium=t.sodium;$('#estimateResult').dataset.calcium=t.calcium;$('#estimateResult').dataset.added=t.added;return;}
-  if(a==='add-log'){const b=$('#estimateResult'),name=$('#logName').value.trim()||'手動記錄';const rec={name:name,member:S.ui.member,kcal:+b.dataset.kcal||0,protein:+b.dataset.protein||0,carbs:+b.dataset.carbs||0,fat:+b.dataset.fat||0,sodium:+b.dataset.sodium||0,calcium:+b.dataset.calcium||0,added:+b.dataset.added||0,fiber:0,sugar:0,satfat:0,omega3:0};
-    if(!S.logs[todayKey()])S.logs[todayKey()]=[];S.logs[todayKey()].push(rec);save();renderNutrition();renderHeroCard();renderToday();toast('✅ 已加到今日記錄');return;}
-  if(a==='remove-log'){S.logs[todayKey()]=(S.logs[todayKey()]||[]).filter(l=>l.name!==el.dataset.name);save();renderNutrition();renderToday();return;}
-  if(a==='reset-today'){if(!confirm('重設今日手動記錄、飲水同斷食計時？'))return;delete S.logs[todayKey()];delete S.water[todayKey()];S.fasting={start:null};save();renderAll();toast('已重設');return;}
+  if(a==='add-log'){const b=$('#estimateResult'),name=$('#logName').value.trim()||'手動記錄',n=emptyNut();
+    ['kcal','protein','carbs','fat','sodium','calcium','added'].forEach(k=>n[k]=+b.dataset[k]||0);
+    const k=todayKey();if(!S.diary[k])S.diary[k]=[];
+    S.diary[k].push({id:uid(),member:S.ui.member,name:name,meal:'snack',nut:n,source:'營養頁口語估算',ts:Date.now()});
+    save();renderAll();toast('✅ 已記入今日「食咗乜」日記');return;}
+  if(a==='remove-log'){S.logs[todayKey()]=(S.logs[todayKey()]||[]).filter(l=>l.name!==el.dataset.name);save();renderAll();return;}
+  if(a==='reset-today'){if(!confirm('重設今日「食咗乜」日記、手動記錄、飲水同斷食計時？'))return;delete S.diary[todayKey()];delete S.logs[todayKey()];delete S.water[todayKey()];S.fasting={start:null};save();renderAll();toast('已重設');return;}
   if(a==='water-plus'||a==='water-minus'){const k=todayKey();S.water[k]=Math.max(0,Math.min(20,(S.water[k]||0)+(a==='water-plus'?1:-1)));save();renderNutrition();renderWidgets();return;}
   if(a==='add-weight'){const v=parseFloat($('#weightInput').value);if(!v||v<40||v>600){toast('請輸入合理體重（40–600 lb）');return;}
     const m=S.ui.member,k=todayKey();if(!S.weights[m])S.weights[m]=[];
@@ -1180,14 +1469,17 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-action]')
 /* ---------- 其他事件 ---------- */
 $('#recipeSearch').addEventListener('input',renderRecipes);
 $('#recipeFilter').addEventListener('change',renderRecipes);
-$('#memberSelect').addEventListener('change',e=>{S.ui.member=e.target.value;save();renderNutrition();renderFamilyStrip();renderWidgets();});
+$('#memberSelect').addEventListener('change',e=>{S.ui.member=e.target.value;S.ui.diaryMember=e.target.value;save();renderNutrition();renderDiary();renderFamilyStrip();renderWidgets();renderNeedCard();});
+$('#diaryDate').addEventListener('change',e=>{S.ui.diaryDate=e.target.value||todayKey();save();renderDiary();});
+$('#diaryMember').addEventListener('change',e=>{S.ui.diaryMember=e.target.value;save();renderDiary();});
+$('#diaryText').addEventListener('keydown',e=>{if(e.key==='Enter')document.querySelector('[data-action="diary-quick"]').click();});
 $('#modal-root').addEventListener('input',e=>{if((e.target.matches&&e.target.matches('[data-ing]'))||e.target.id==='tweakServings'){if($('#tweakResult'))updateTweakResult();}});
 $('#estimateInput').addEventListener('keydown',e=>{if(e.key==='Enter')document.querySelector('[data-action="estimate"]').click();});
 $('#inboxInput').addEventListener('keydown',e=>{if(e.key==='Enter')document.querySelector('#view-update [data-action="add-inbox"]').click();});
 $('#jsonInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey))document.querySelector('[data-action="import-json"]').click();});
 $('#importFile').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();
   rd.onload=()=>{try{const d=JSON.parse(rd.result);if(!d.recipes)throw new Error('唔似備份檔');if(!confirm('還原備份會覆蓋目前資料，確定？'))return;
-    S=Object.assign(defaultState(),d);FAMILY.forEach(f=>{if(!S.goals[f.id])S.goals[f.id]=clone(f.goals);if(!S.weights[f.id])S.weights[f.id]=[];});mergeLibrary();save();renderAll();toast('✅ 備份已還原');
+    S=Object.assign(defaultState(),d);FAMILY.forEach(f=>{if(!S.goals[f.id])S.goals[f.id]=clone(f.goals);if(!S.weights[f.id])S.weights[f.id]=[];if(!S.measure[f.id])S.measure[f.id]=[];});if(!S.diary)S.diary={};if(!S.ui.diaryDate)S.ui.diaryDate=todayKey();mergeLibrary();save();renderAll();toast('✅ 備份已還原');
   }catch(err){toast('⚠️ 還原失敗：'+err.message);}};rd.readAsText(f);e.target.value='';});
 function photoRecipe(file,done){const rd=new FileReader();
   rd.onload=()=>{const img=new Image();img.onload=()=>{const c=document.createElement('canvas'),sc=Math.min(1,520/Math.max(img.width,img.height));
@@ -1204,8 +1496,8 @@ $('#photoInput').addEventListener('change',e=>{const inp=e.target,files=Array.fr
 if('serviceWorker' in navigator&&location.protocol.indexOf('http')===0){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 setInterval(()=>{if(S.fasting.start&&$('#view-nutrition').classList.contains('active'))renderFasting();},1000);
 renderAll();save();
-// 深連結：index.html?tab=plan / recipes / shopping / nutrition / family / body / update
-try{const q=new URLSearchParams(location.search).get('tab');if(q&&$('#view-'+q))go(q);}catch(e){}
+// 深連結：?tab=plan / recipes / diary / shopping / nutrition / family / update（舊 ?tab=body 自動轉 family）
+try{const q=new URLSearchParams(location.search).get('tab');if(q&&($('#view-'+q)||q==='body'))go(q);}catch(e){}
 </script>
 </body>
 </html>
